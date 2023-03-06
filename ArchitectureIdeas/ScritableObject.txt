@@ -1,0 +1,15 @@
+Number
+Text
+Events[]
+  * SetItem("xxx")
+  * SetMony("100")
+  * RemoveItem("xxx")
+JumpTo[]
+  * Text
+  * refScriptable object
+  * Condition
+    ** CompareMony('<|>=', "100")
+    ** HasItem("xxx")
+  * EventsOnChoosen[]
+    ** RemoveItem("xxx")
+Picture // optinal 

@@ -1,0 +1,31 @@
+Reference to Scriptparser and Interpreter
+current ScriptObj // needs to be set by the Load procederal
+Interface to DrawText; JumpTo; DrawPicture
+
+on start
+find functions of Interfaces
+update Text
+updatePictures
+Execute events
+
+UpdateText
+handover ScriptObj.Number
+draw scriptObj.Text
+draw for each JumpTo
+  RefNumber
+  IsClickable
+
+OnClick(refnubmer)
+  scriptbj.JumpTo[refNum].events
+  jump to bject scriptObj.JumpTo[RefNum].ref
+
+IsClickable
+  for each Condition assigned to jumpTo
+    parse Comand -> com, para[]
+    Interpret com, para[]
+
+
+JumpToObj
+  set scriptObj = scriptObj.JumpTo[RefNum].Ref
+  update text
+  update picture

@@ -1,0 +1,10 @@
+IClickablw
+* Hit()
+IMony
+* GetMony()
+* CompareMony('comperator', Value)
+IItem
+* SetItem()
+* HasItem()
+
+....

@@ -1,0 +1,11 @@
+onKeyUp
+switch Key // not case sensitive
+  case 'I': open Inventory
+  case 'M': open Menue
+  case 'S': Save
+...
+  default: // empty
+
+onMouseUp
+  Raytrace(obj)
+  obj.hit() // if obj implements the interface IClickable

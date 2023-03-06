@@ -1,0 +1,11 @@
+For Events and Condition
+Return Camand as string
+ and para[] as string
+
+structure of Comands
+  comand(para1, para2, ... paraN)
+
+Remove Whitspaces
+Finde 'C'
+Delimiter ','
+Execute IsParsable // Is the structure correct?

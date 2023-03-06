@@ -1,0 +1,34 @@
+References to the actual Functions as Interace functions
+
++ string command
++ string para[]
+
+struct TComandReturn
+  executed
+  value
+
+TCommandReturn Run(command, para[])
+  ret = false
+  val = 0;
+  switch cammand
+  case "SetItem":
+    ret = SetItem.Run(para) // false if number of para is unexpected
+    val = 0;
+  case "SetMony":
+    ret = SetMony.Run(para)
+    val = 0; // mony which is set?
+  ..
+  case "CompareMony"
+    ret = CompareMony.run(para)
+    val = 1 or 0; // ture or false
+  default:
+    ret = false;
+    val = 0;
+return {ret, val}
+
+
+
+
+Note:
+Parameter Interpretation in the classes
+    

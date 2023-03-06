@@ -1,0 +1,11 @@
+See save functions on other prjects
+What to save:
+* State sheed: Health, Mony, History, Items ...
+* On wich script object are we 
+
+* Make sure Save is only execute when all things are set. E.g. Enter a new Element, which gets you a key. But betore the key is stored in inventory is the things got saved.
+
+
+Load:
+Load the new scriptobject, posibly it will mess with the inventory. than Load the inventory settings and overwrite the gathere stuff.
+-> Events are executed at the beginning and des not mess with the save / load function.

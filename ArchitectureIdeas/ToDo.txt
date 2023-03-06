@@ -1,0 +1,6 @@
+* JumpTo References inside the Text? How to handle?
+* Object handler, When will it be tested for "Clickable"?
+* Exectuion of Events: Direct on start, on when something is clicked
+ How about event which are needed to click on some thing like:
+ "You enter a room find a Key and a locked door. Option: 1. Use the Key to open the door. 2. Turn around search for a second room."
+ Another aspect to considere is the Save / load ability. One doesent wnat to have 2 keys in the inventory, right?
