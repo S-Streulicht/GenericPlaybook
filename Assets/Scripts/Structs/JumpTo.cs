@@ -6,7 +6,7 @@ namespace PB.Jump
   public struct JumpTo
   {
     public string text;
-    public TextElements reference;
+    public string referenceId;
     public string[] conditions;
     public string[] comands;
   }
