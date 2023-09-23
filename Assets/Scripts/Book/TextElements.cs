@@ -1,8 +1,4 @@
-using UnityEngine;
-
-using PB.Jump;
-
-namespace PB.TextElement
+namespace PB.Book
 {
   //[CreateAssetMenu(fileName = "NewTextElement", menuName = "TextCreation/TextElement", order = 0)]
   [System.Serializable]

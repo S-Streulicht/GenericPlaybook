@@ -1,6 +1,4 @@
-﻿using PB.TextElement;
-
-namespace PB.Jump
+﻿namespace PB.Book
 {
   [System.Serializable]
   public struct JumpTo
