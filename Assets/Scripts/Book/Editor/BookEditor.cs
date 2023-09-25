@@ -7,23 +7,65 @@ namespace PB.Book.BookEditor
 {
   public class BookEditor : EditorWindow
   {
+    #region private Variables
+    private Text selectedBook = null;
+    #endregion
+    
+    #region Editor Handels    
     [MenuItem("Window/Book Editor")]
     public static void ShowEditorWindow()
     {
       GetWindow(typeof(BookEditor), false, "Book Editor");
     }
 
-   [OnOpenAssetAttribute(1)]
-   public static bool OnOpenAsset(int instanceID, int line)
-   {
-     Text book = EditorUtility.InstanceIDToObject(instanceID) as Text;
-     if(book != null)
-     {
-       ShowEditorWindow();
-       return true;
-     }
-     return false;
-   }
+    /// <summary>
+    /// OnGUI is called for rendering and handling GUI events.
+    /// This function can be called multiple times per frame (one call per event).
+    /// </summary>
+    private void OnGUI()
+    {
+      if (null == selectedBook)
+      {
+        EditorGUILayout.LabelField("No Book selected.");
+      }
+      else
+      {
+        EditorGUILayout.LabelField(selectedBook.name);
+      }
+    }
+    
+    /// <summary>
+    /// This function is called when the object becomes enabled and active.
+    /// </summary>
+    private void OnEnable()
+    {
+      Selection.selectionChanged += OnSelectionChanges;
+      OnSelectionChanges();
+    }
+    #endregion
 
+    #region Callbacks 
+    [OnOpenAssetAttribute(1)]
+    public static bool OnOpenAsset(int instanceID, int line)
+    {
+      Text book = EditorUtility.InstanceIDToObject(instanceID) as Text;
+      if(null != book)
+      {
+        ShowEditorWindow();
+        return true;
+      }
+      return false;
+    }
+
+    private void OnSelectionChanges()
+    {
+      Text newBook = Selection.activeObject as Text;
+      if(null != newBook)
+      {
+        selectedBook = newBook;
+        Repaint();
+      }
+    }
+    #endregion
   }
 }
