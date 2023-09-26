@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodes:
   - uniqueID: 
-    text: 
+    text: The story begins
     comands: []
     jumpTos:
     - text: 
