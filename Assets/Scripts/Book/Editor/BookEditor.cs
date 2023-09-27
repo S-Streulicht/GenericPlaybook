@@ -34,11 +34,13 @@ namespace PB.Book.BookEditor
         EditorGUILayout.LabelField("");
         foreach(TextElements node in selectedBook.GetAllNodes())
         {
+          EditorGUILayout.LabelField("Node: " + node.uniqueID);
+          EditorGUI.BeginChangeCheck();
           var newText = EditorGUILayout.TextField(node.text);
-          if(newText != node.text)
+          if(EditorGUI.EndChangeCheck())
           {
+            Undo.RecordObject(selectedBook, "Update of Texxt in Node " + node.uniqueID);
             node.text = newText;
-            EditorUtility.SetDirty(selectedBook);
           }
         }
       }

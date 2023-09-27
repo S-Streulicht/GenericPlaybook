@@ -13,19 +13,19 @@ MonoBehaviour:
   m_Name: TestBook
   m_EditorClassIdentifier: 
   nodes:
-  - uniqueID: 
-    text: The story begins second
+  - uniqueID: aa
+    text: The story begins
     comands: []
     jumpTos:
     - text: 
       referenceId: 
       conditions: []
       comands: []
-  - uniqueID: 
+  - uniqueID: bb
     text: ggg
     comands: []
     jumpTos: []
-  - uniqueID: 
+  - uniqueID: cc
     text: 
     comands: []
     jumpTos: []
