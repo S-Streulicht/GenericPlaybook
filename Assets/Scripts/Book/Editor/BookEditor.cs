@@ -34,7 +34,12 @@ namespace PB.Book.BookEditor
         EditorGUILayout.LabelField("");
         foreach(TextElements node in selectedBook.GetAllNodes())
         {
-          EditorGUILayout.LabelField(node.text);
+          var newText = EditorGUILayout.TextField(node.text);
+          if(newText != node.text)
+          {
+            node.text = newText;
+            EditorUtility.SetDirty(selectedBook);
+          }
         }
       }
     }

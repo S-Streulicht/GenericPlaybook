@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodes:
   - uniqueID: 
-    text: The story begins
+    text: The story begins second
     comands: []
     jumpTos:
     - text: 
@@ -22,7 +22,7 @@ MonoBehaviour:
       conditions: []
       comands: []
   - uniqueID: 
-    text: 
+    text: ggg
     comands: []
     jumpTos: []
   - uniqueID: 
