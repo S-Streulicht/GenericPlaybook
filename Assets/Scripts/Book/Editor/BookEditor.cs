@@ -1,5 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using System.Xml;
+using PlasticGui.WorkspaceWindow;
 using UnityEditor;
 using UnityEditor.Callbacks;
 using UnityEngine;
@@ -11,6 +14,8 @@ namespace PB.Book.BookEditor
     #region private Variables
     private Text selectedBook = null;
     private GUIStyle nodeStyle;
+    private TextElements dragginNode = null;
+    private Vector2 dragStart;
     #endregion
     
     #region Editor Handels    
@@ -34,10 +39,30 @@ namespace PB.Book.BookEditor
       {
         EditorGUILayout.LabelField(selectedBook.name);
         EditorGUILayout.LabelField("");
-        foreach(TextElements node in selectedBook.GetAllNodes())
+        ProcessEvents();
+        foreach(TextElements node in selectedBook.GetAllNodes().Reverse()) // TODO Reverse is ininefficent
         {
           OnGuiNode(node);
         }
+      }
+    }
+
+    private void ProcessEvents()
+    {
+      if ((EventType.MouseDown == Event.current.type) && (null == dragginNode))
+      {
+        dragginNode = GetNodeAtPointer(Event.current.mousePosition);
+        dragStart = Event.current.mousePosition - dragginNode.area.position;
+      }
+      else if ((EventType.MouseDrag == Event.current.type) && (null != dragginNode))
+      {
+        Undo.RecordObject(selectedBook, "Move Text of Node " + dragginNode.uniqueID);
+        dragginNode.area.position = Event.current.mousePosition - dragStart;
+        GUI.changed = true;
+      }
+      else if ((EventType.MouseUp == Event.current.type) && (null != dragginNode))
+      {
+        dragginNode = null;
       }
     }
 
@@ -49,10 +74,22 @@ namespace PB.Book.BookEditor
       var newText = EditorGUILayout.TextField(node.text);
       if (EditorGUI.EndChangeCheck())
       {
-        Undo.RecordObject(selectedBook, "Update of Texxt in Node " + node.uniqueID);
+        Undo.RecordObject(selectedBook, "Update of Text in Node " + node.uniqueID);
         node.text = newText;
       }
       GUILayout.EndArea();
+    }
+
+    private TextElements GetNodeAtPointer(Vector2 point)
+    {
+      foreach (TextElements node in selectedBook.GetAllNodes())
+      {
+        if (node.area.Contains(point))
+        {
+          return node;
+        }
+      }
+      return null;
     }
 
     /// <summary>

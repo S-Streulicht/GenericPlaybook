@@ -21,11 +21,29 @@ MonoBehaviour:
       referenceId: 
       conditions: []
       comands: []
+    area:
+      serializedVersion: 2
+      x: 295
+      y: 108
+      width: 200
+      height: 100
   - uniqueID: bb
     text: ggg
     comands: []
     jumpTos: []
+    area:
+      serializedVersion: 2
+      x: 292
+      y: 53
+      width: 200
+      height: 100
   - uniqueID: cc
     text: 
     comands: []
     jumpTos: []
+    area:
+      serializedVersion: 2
+      x: 411
+      y: 27
+      width: 100
+      height: 100
