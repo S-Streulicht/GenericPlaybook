@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace PB.Book
 {
   //[CreateAssetMenu(fileName = "NewTextElement", menuName = "TextCreation/TextElement", order = 0)]
@@ -8,5 +10,6 @@ namespace PB.Book
     public string text;
     public string[] comands;
     public JumpTo[] jumpTos;
+    public Rect area;
   }
 }

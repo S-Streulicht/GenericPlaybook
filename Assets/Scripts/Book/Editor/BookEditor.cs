@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEditor.Callbacks;
+using UnityEngine;
 
 namespace PB.Book.BookEditor
 {
@@ -9,6 +10,7 @@ namespace PB.Book.BookEditor
   {
     #region private Variables
     private Text selectedBook = null;
+    private GUIStyle nodeStyle;
     #endregion
     
     #region Editor Handels    
@@ -34,25 +36,42 @@ namespace PB.Book.BookEditor
         EditorGUILayout.LabelField("");
         foreach(TextElements node in selectedBook.GetAllNodes())
         {
-          EditorGUILayout.LabelField("Node: " + node.uniqueID);
-          EditorGUI.BeginChangeCheck();
-          var newText = EditorGUILayout.TextField(node.text);
-          if(EditorGUI.EndChangeCheck())
-          {
-            Undo.RecordObject(selectedBook, "Update of Texxt in Node " + node.uniqueID);
-            node.text = newText;
-          }
+          OnGuiNode(node);
         }
       }
     }
-    
+
+    private void OnGuiNode(TextElements node)
+    {
+      GUILayout.BeginArea(node.area, nodeStyle);
+      EditorGUILayout.LabelField("Node: " + node.uniqueID);
+      EditorGUI.BeginChangeCheck();
+      var newText = EditorGUILayout.TextField(node.text);
+      if (EditorGUI.EndChangeCheck())
+      {
+        Undo.RecordObject(selectedBook, "Update of Texxt in Node " + node.uniqueID);
+        node.text = newText;
+      }
+      GUILayout.EndArea();
+    }
+
     /// <summary>
     /// This function is called when the object becomes enabled and active.
     /// </summary>
     private void OnEnable()
     {
+      SetNodeStyle();
+
       Selection.selectionChanged += OnSelectionChanges;
       OnSelectionChanges();
+    }
+
+    private void SetNodeStyle()
+    {
+      nodeStyle = new GUIStyle();
+      nodeStyle.normal.background = EditorGUIUtility.Load("node0") as Texture2D;
+      nodeStyle.padding = new RectOffset(10, 10, 10, 10);
+      nodeStyle.border = new RectOffset(12, 12, 12, 12);
     }
     #endregion
 
