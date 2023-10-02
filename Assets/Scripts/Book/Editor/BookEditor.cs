@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml;
 using PlasticGui.WorkspaceWindow;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEditor.Callbacks;
 using UnityEngine;
@@ -42,7 +44,11 @@ namespace PB.Book.BookEditor
         ProcessEvents();
         foreach(TextElements node in selectedBook.GetAllNodesReverse()) // TODO Reverse is ininefficent
         {
-          OnGuiNode(node);
+          DrawConnections(node);
+        }
+        foreach(TextElements node in selectedBook.GetAllNodesReverse()) // TODO Reverse is ininefficent
+        {
+          DrawNode(node);
         }
       }
     }
@@ -52,7 +58,10 @@ namespace PB.Book.BookEditor
       if ((EventType.MouseDown == Event.current.type) && (null == dragginNode))
       {
         dragginNode = GetNodeAtPointer(Event.current.mousePosition);
-        dragStart = Event.current.mousePosition - dragginNode.area.position;
+        if(null != dragginNode)
+        {
+          dragStart = Event.current.mousePosition - dragginNode.area.position;
+        }
       }
       else if ((EventType.MouseDrag == Event.current.type) && (null != dragginNode))
       {
@@ -66,7 +75,7 @@ namespace PB.Book.BookEditor
       }
     }
 
-    private void OnGuiNode(TextElements node)
+    private void DrawNode(TextElements node)
     {
       GUILayout.BeginArea(node.area, nodeStyle);
       EditorGUILayout.LabelField("Node: " + node.uniqueID);
@@ -78,11 +87,21 @@ namespace PB.Book.BookEditor
         node.text = newText;
       }
 
-      foreach(TextElements childNode in selectedBook.GetAllChildren(node))
-      {
-        EditorGUILayout.LabelField(childNode.uniqueID);
-      }
       GUILayout.EndArea();
+    }
+
+    private void DrawConnections(TextElements parent)
+    {
+      Vector3 startPosition = new Vector2(parent.area.xMax, parent.area.center.y);
+      foreach (TextElements childeNode in selectedBook.GetAllChildren(parent))
+      {
+        Vector3 endPosition = new Vector2(childeNode.area.xMin, childeNode.area.center.y);
+        float distance = Vector3.Distance(endPosition, startPosition);
+        Vector3 tangentOffset = new Vector2(distance * 0.5f, 0.0f);
+        Handles.DrawBezier(startPosition, endPosition,
+          startPosition + tangentOffset, endPosition - tangentOffset,
+          Color.white, null, 4f);
+      }
     }
 
     private TextElements GetNodeAtPointer(Vector2 point)
