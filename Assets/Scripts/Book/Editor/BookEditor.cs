@@ -40,7 +40,7 @@ namespace PB.Book.BookEditor
         EditorGUILayout.LabelField(selectedBook.name);
         EditorGUILayout.LabelField("");
         ProcessEvents();
-        foreach(TextElements node in selectedBook.GetAllNodes().Reverse()) // TODO Reverse is ininefficent
+        foreach(TextElements node in selectedBook.GetAllNodesReverse()) // TODO Reverse is ininefficent
         {
           OnGuiNode(node);
         }
@@ -76,6 +76,11 @@ namespace PB.Book.BookEditor
       {
         Undo.RecordObject(selectedBook, "Update of Text in Node " + node.uniqueID);
         node.text = newText;
+      }
+
+      foreach(TextElements childNode in selectedBook.GetAllChildren(node))
+      {
+        EditorGUILayout.LabelField(childNode.uniqueID);
       }
       GUILayout.EndArea();
     }

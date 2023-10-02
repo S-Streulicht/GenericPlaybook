@@ -18,13 +18,21 @@ MonoBehaviour:
     comands: []
     jumpTos:
     - text: 
-      referenceId: 
+      referenceId: bb
+      conditions: []
+      comands: []
+    - text: 
+      referenceId: cc
+      conditions: []
+      comands: []
+    - text: 
+      referenceId: ccc
       conditions: []
       comands: []
     area:
       serializedVersion: 2
-      x: 295
-      y: 108
+      x: 454
+      y: 45
       width: 200
       height: 100
   - uniqueID: bb
@@ -33,17 +41,21 @@ MonoBehaviour:
     jumpTos: []
     area:
       serializedVersion: 2
-      x: 292
-      y: 53
+      x: 195
+      y: 36
       width: 200
       height: 100
   - uniqueID: cc
     text: 
     comands: []
-    jumpTos: []
+    jumpTos:
+    - text: 
+      referenceId: 
+      conditions: []
+      comands: []
     area:
       serializedVersion: 2
-      x: 411
-      y: 27
+      x: 280
+      y: 155
       width: 100
       height: 100
