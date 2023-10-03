@@ -8,6 +8,7 @@ namespace PB.Book
   {
     public string uniqueID;
     public string text;
+    public int textNumber;
     public string[] comands;
     public JumpTo[] jumpTos;
     public Rect area;

@@ -40,7 +40,13 @@ namespace PB.Book.BookEditor
       else
       {
         EditorGUILayout.LabelField(selectedBook.name);
-        EditorGUILayout.LabelField("");
+        if (GUILayout.Button("Save"))
+        {
+          EditorUtility.SetDirty(selectedBook);
+          AssetDatabase.SaveAssets();
+          AssetDatabase.Refresh();
+          Debug.Log("Create nw node");
+        }
         ProcessEvents();
         foreach(TextElements node in selectedBook.GetAllNodesReverse()) // TODO Reverse is ininefficent
         {

@@ -15,6 +15,7 @@ MonoBehaviour:
   nodes:
   - uniqueID: aa
     text: The story begins
+    textNumber: 0
     comands: []
     jumpTos:
     - text: 
@@ -31,22 +32,24 @@ MonoBehaviour:
       comands: []
     area:
       serializedVersion: 2
-      x: 454
-      y: 45
+      x: 86
+      y: 73
       width: 200
       height: 100
   - uniqueID: bb
     text: ggg
+    textNumber: 0
     comands: []
     jumpTos: []
     area:
       serializedVersion: 2
-      x: 195
-      y: 36
+      x: 344
+      y: 195
       width: 200
       height: 100
   - uniqueID: cc
     text: 
+    textNumber: 0
     comands: []
     jumpTos:
     - text: 
@@ -55,7 +58,7 @@ MonoBehaviour:
       comands: []
     area:
       serializedVersion: 2
-      x: 280
-      y: 155
+      x: 473
+      y: 68
       width: 100
       height: 100
