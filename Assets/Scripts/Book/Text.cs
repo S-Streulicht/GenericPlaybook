@@ -24,15 +24,38 @@ namespace PB.Book
     {
       if (0 == nodes.Count)
       {
-        nodes.Add(new TextElements());
+        TextElements rootNode = new TextElements();
+        rootNode.uniqueID = System.Guid.NewGuid().ToString();
+        nodes.Add(rootNode);
       }
-    }
-#else
-    void Awake()
-    {
-      OnValidate();   
+      OnValidate();
     }
 #endif
+
+    public void CreateNode(TextElements parent)
+    {
+        TextElements child = new TextElements();
+        child.uniqueID = System.Guid.NewGuid().ToString();
+        child.textNumber = getBiggestTextNum() + 1;
+        Vector3 positionOffset = new Vector2( parent.area.width + 20, parent.area.height * parent.jumpTos.Count());
+        child.area.x = parent.area.xMax + 100;
+        child.area.y = parent.area.y + (parent.area.height + 5) * parent.jumpTos.Count();
+        JumpTo newJumpPoint = new JumpTo();
+        newJumpPoint.referenceId = child.uniqueID;
+        parent.jumpTos.Add(newJumpPoint);
+        nodes.Add(child);
+        OnValidate();
+    }
+
+    private int getBiggestTextNum()
+    {
+      int ret = 0;
+      foreach(TextElements node in nodes)
+      {
+        if(node.textNumber > ret) {ret = node.textNumber;}
+      }
+      return ret;
+    }
 
     /// <summary>
     /// Called when the script is loaded or a value is changed in the

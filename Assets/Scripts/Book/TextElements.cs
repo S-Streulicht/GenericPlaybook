@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace PB.Book
@@ -6,11 +7,11 @@ namespace PB.Book
   [System.Serializable]
   public class TextElements
   {
-    public string uniqueID;
+    public int textNumber = 1;
     public string text;
-    public int textNumber;
-    public string[] comands;
-    public JumpTo[] jumpTos;
-    public Rect area;
+    public List<string> comands = new List<string>();
+    public List<JumpTo> jumpTos = new List<JumpTo>();
+    public string uniqueID;
+    public Rect area = new Rect(10, 50, 200, 100);
   }
 }

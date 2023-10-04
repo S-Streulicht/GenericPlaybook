@@ -15,9 +15,15 @@ namespace PB.Book.BookEditor
   {
     #region private Variables
     private Text selectedBook = null;
+    [NonSerialized]
     private GUIStyle nodeStyle;
+    [NonSerialized]
     private TextElements dragginNode = null;
+    [NonSerialized]
     private Vector2 dragStart;
+
+    [NonSerialized]
+    private TextElements creationNode = null;
     #endregion
     
     #region Editor Handels    
@@ -56,6 +62,12 @@ namespace PB.Book.BookEditor
         {
           DrawNode(node);
         }
+        if (null != creationNode)
+        {
+          Undo.RecordObject(selectedBook, "Added Node to " + creationNode.text);
+          selectedBook.CreateNode(creationNode);
+          creationNode = null;
+        }
       }
     }
 
@@ -71,7 +83,7 @@ namespace PB.Book.BookEditor
       }
       else if ((EventType.MouseDrag == Event.current.type) && (null != dragginNode))
       {
-        Undo.RecordObject(selectedBook, "Move Text of Node " + dragginNode.uniqueID);
+        Undo.RecordObject(selectedBook, "Move Text of Node " + dragginNode.textNumber);
         dragginNode.area.position = Event.current.mousePosition - dragStart;
         GUI.changed = true;
       }
@@ -84,13 +96,18 @@ namespace PB.Book.BookEditor
     private void DrawNode(TextElements node)
     {
       GUILayout.BeginArea(node.area, nodeStyle);
-      EditorGUILayout.LabelField("Node: " + node.uniqueID);
+      EditorGUILayout.LabelField("Node: " + node.textNumber);
       EditorGUI.BeginChangeCheck();
       var newText = EditorGUILayout.TextField(node.text);
       if (EditorGUI.EndChangeCheck())
       {
-        Undo.RecordObject(selectedBook, "Update of Text in Node " + node.uniqueID);
+        Undo.RecordObject(selectedBook, "Update of Text in Node " + node.textNumber);
         node.text = newText;
+      }
+
+      if (GUILayout.Button("+"))
+      {
+        creationNode = node;
       }
 
       GUILayout.EndArea();
