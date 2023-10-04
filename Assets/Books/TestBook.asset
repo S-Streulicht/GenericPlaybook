@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: TestBook
   m_EditorClassIdentifier: 
   nodes:
-  - uniqueID: aa
+  - textNumber: 0
     text: The story begins
-    textNumber: 0
     comands: []
     jumpTos:
     - text: 
@@ -26,36 +25,33 @@ MonoBehaviour:
       referenceId: cc
       conditions: []
       comands: []
-    - text: 
-      referenceId: ccc
-      conditions: []
-      comands: []
+    uniqueID: aa
     area:
       serializedVersion: 2
       x: 86
       y: 73
       width: 200
       height: 100
-  - uniqueID: bb
+  - textNumber: 0
     text: ggg
-    textNumber: 0
     comands: []
     jumpTos: []
+    uniqueID: bb
     area:
       serializedVersion: 2
       x: 344
       y: 195
       width: 200
       height: 100
-  - uniqueID: cc
+  - textNumber: 0
     text: 
-    textNumber: 0
     comands: []
     jumpTos:
     - text: 
       referenceId: 
       conditions: []
       comands: []
+    uniqueID: cc
     area:
       serializedVersion: 2
       x: 473

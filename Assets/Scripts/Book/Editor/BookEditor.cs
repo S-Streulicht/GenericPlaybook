@@ -24,6 +24,7 @@ namespace PB.Book.BookEditor
 
     [NonSerialized]
     private TextElements creationNode = null;
+    private TextElements deletionNode = null;
     #endregion
     
     #region Editor Handels    
@@ -64,9 +65,15 @@ namespace PB.Book.BookEditor
         }
         if (null != creationNode)
         {
-          Undo.RecordObject(selectedBook, "Added Node to " + creationNode.text);
+          Undo.RecordObject(selectedBook, "Added Node to " + creationNode.textNumber);
           selectedBook.CreateNode(creationNode);
           creationNode = null;
+        }
+        if (null != deletionNode)
+        {
+          Undo.RecordObject(selectedBook, "Remove Node " + deletionNode.textNumber);
+          selectedBook.DeleteNode(deletionNode);
+          deletionNode = null;
         }
       }
     }
@@ -104,11 +111,19 @@ namespace PB.Book.BookEditor
         Undo.RecordObject(selectedBook, "Update of Text in Node " + node.textNumber);
         node.text = newText;
       }
+    
+      GUILayout.BeginHorizontal();
 
+      if (GUILayout.Button("x"))
+      {
+        deletionNode = node;
+      }
       if (GUILayout.Button("+"))
       {
         creationNode = node;
       }
+
+      GUILayout.EndHorizontal();
 
       GUILayout.EndArea();
     }

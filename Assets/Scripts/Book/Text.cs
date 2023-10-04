@@ -47,6 +47,16 @@ namespace PB.Book
         OnValidate();
     }
 
+    public void DeleteNode(TextElements nodeToDelete)
+    {
+      nodes.Remove(nodeToDelete);
+      OnValidate();
+      foreach (TextElements node in GetAllNodes())
+      {
+        node.jumpTos.RemoveAll(x => x.referenceId == nodeToDelete.uniqueID);
+      }
+    }
+
     private int getBiggestTextNum()
     {
       int ret = 0;
