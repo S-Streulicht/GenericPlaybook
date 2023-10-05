@@ -57,6 +57,18 @@ namespace PB.Book
       }
     }
 
+    public void CreateLink(TextElements parent, string childID)
+    {
+      JumpTo link = new JumpTo();
+      link.referenceId = childID;
+      parent.jumpTos.Add(link);
+    }
+
+    public void DeleteLink(TextElements parent, string childID)
+    {
+      parent.jumpTos.RemoveAll(x => x.referenceId == childID);
+    }
+
     private int getBiggestTextNum()
     {
       int ret = 0;

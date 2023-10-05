@@ -24,7 +24,10 @@ namespace PB.Book.BookEditor
 
     [NonSerialized]
     private TextElements creationNode = null;
+    [NonSerialized]
     private TextElements deletionNode = null;
+    [NonSerialized]
+    private TextElements linkingParentNode = null;
     #endregion
     
     #region Editor Handels    
@@ -111,13 +114,15 @@ namespace PB.Book.BookEditor
         Undo.RecordObject(selectedBook, "Update of Text in Node " + node.textNumber);
         node.text = newText;
       }
-    
+
       GUILayout.BeginHorizontal();
 
       if (GUILayout.Button("x"))
       {
         deletionNode = node;
       }
+      DrawLinkButtons(node);
+
       if (GUILayout.Button("+"))
       {
         creationNode = node;
@@ -126,6 +131,45 @@ namespace PB.Book.BookEditor
       GUILayout.EndHorizontal();
 
       GUILayout.EndArea();
+    }
+
+    private void DrawLinkButtons(TextElements node)
+    {
+      if (linkingParentNode == null)
+      {
+        if (GUILayout.Button("link"))
+        {
+          linkingParentNode = node;
+        }
+      }
+      else if (linkingParentNode == node)
+      {
+        if (GUILayout.Button("cancel"))
+        {
+          linkingParentNode = null;
+        }
+      }
+      else
+      {
+        if (-1 < linkingParentNode.jumpTos.FindIndex(x => x.referenceId == node.uniqueID))
+        {
+          if (GUILayout.Button("unlink"))
+          {
+            Undo.RecordObject(selectedBook, "delete link between " + linkingParentNode.textNumber + " and " + node.textNumber);
+            selectedBook.DeleteLink(linkingParentNode, node.uniqueID);
+            linkingParentNode = null;
+          }
+        }
+        else
+        {
+          if (GUILayout.Button("child"))
+          {
+            Undo.RecordObject(selectedBook, "create link between " + linkingParentNode.textNumber + " and " + node.textNumber);
+            selectedBook.CreateLink(linkingParentNode, node.uniqueID);
+            linkingParentNode = null;
+          }
+        }
+      }
     }
 
     private void DrawConnections(TextElements parent)
