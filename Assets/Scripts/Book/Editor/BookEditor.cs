@@ -7,6 +7,7 @@ using PlasticGui.WorkspaceWindow;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEditor.Callbacks;
+using UnityEditor.VersionControl;
 using UnityEngine;
 
 namespace PB.Book.BookEditor
@@ -28,6 +29,8 @@ namespace PB.Book.BookEditor
     private TextElements deletionNode = null;
     [NonSerialized]
     private TextElements linkingParentNode = null;
+
+    Vector2 scrollPosition;
     #endregion
     
     #region Editor Handels    
@@ -58,6 +61,11 @@ namespace PB.Book.BookEditor
           Debug.Log("Create nw node");
         }
         ProcessEvents();
+
+        scrollPosition = EditorGUILayout.BeginScrollView(scrollPosition);
+
+        GUILayoutUtility.GetRect(4000, 4000);
+
         foreach(TextElements node in selectedBook.GetAllNodesReverse()) // TODO Reverse is ininefficent
         {
           DrawConnections(node);
@@ -66,6 +74,9 @@ namespace PB.Book.BookEditor
         {
           DrawNode(node);
         }
+
+        EditorGUILayout.EndScrollView();
+
         if (null != creationNode)
         {
           Undo.RecordObject(selectedBook, "Added Node to " + creationNode.textNumber);
@@ -85,7 +96,7 @@ namespace PB.Book.BookEditor
     {
       if ((EventType.MouseDown == Event.current.type) && (null == dragginNode))
       {
-        dragginNode = GetNodeAtPointer(Event.current.mousePosition);
+        dragginNode = GetNodeAtPointer(Event.current.mousePosition + scrollPosition);
         if(null != dragginNode)
         {
           dragStart = Event.current.mousePosition - dragginNode.area.position;
