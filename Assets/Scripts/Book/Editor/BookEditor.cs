@@ -14,27 +14,20 @@ namespace PB.Book.BookEditor
 {
   public class BookEditor : EditorWindow
   {
-    #region private Variables
-    private Text selectedBook = null;
-    [NonSerialized]
-    private GUIStyle nodeStyle;
-    [NonSerialized]
-    private TextElements dragginNode = null;
-    [NonSerialized]
-    private Vector2 dragStart;
+    #region Variables
+                    Text selectedBook = null;
+    [NonSerialized] private GUIStyle nodeStyle;
+    [NonSerialized] private TextElements dragginNode = null;
+    [NonSerialized] private Vector2 dragStart;
+    [NonSerialized] private TextElements creationNode = null;
+    [NonSerialized] private TextElements deletionNode = null;
+    [NonSerialized] private TextElements linkingParentNode = null;
 
-    [NonSerialized]
-    private TextElements creationNode = null;
-    [NonSerialized]
-    private TextElements deletionNode = null;
-    [NonSerialized]
-    private TextElements linkingParentNode = null;
+                    Vector2 scrollPosition;
+    [NonSerialized] private Vector2 draggingCanvasOffset;
+    [NonSerialized] private bool draggingCanvas = false;
+    [NonSerialized] private Vector2 CanvasSize = new Vector2(4000, 4000);
 
-    Vector2 scrollPosition;
-    [NonSerialized]
-    private Vector2 draggingCanvasOffset;
-    [NonSerialized]
-    private bool draggingCanvas = false;
     #endregion
     
     #region Editor Handels    
@@ -68,13 +61,16 @@ namespace PB.Book.BookEditor
 
         scrollPosition = EditorGUILayout.BeginScrollView(scrollPosition);
 
-        GUILayoutUtility.GetRect(4000, 4000);
+        Rect canvas = GUILayoutUtility.GetRect(CanvasSize.x, CanvasSize.y);
+        Texture2D backGroundTextur = Resources.Load("background") as Texture2D;
+        Rect textureCoordinates = new Rect(0, 0, CanvasSize.x / backGroundTextur.width, CanvasSize.y / backGroundTextur.height);
+        GUI.DrawTextureWithTexCoords(canvas, backGroundTextur, textureCoordinates);
 
-        foreach(TextElements node in selectedBook.GetAllNodesReverse()) // TODO Reverse is ininefficent
+        foreach(TextElements node in selectedBook.GetAllNodesReverse())
         {
           DrawConnections(node);
         }
-        foreach(TextElements node in selectedBook.GetAllNodesReverse()) // TODO Reverse is ininefficent
+        foreach(TextElements node in selectedBook.GetAllNodesReverse())
         {
           DrawNode(node);
         }
