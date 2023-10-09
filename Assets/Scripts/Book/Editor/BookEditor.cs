@@ -31,6 +31,10 @@ namespace PB.Book.BookEditor
     private TextElements linkingParentNode = null;
 
     Vector2 scrollPosition;
+    [NonSerialized]
+    private Vector2 draggingCanvasOffset;
+    [NonSerialized]
+    private bool draggingCanvas = false;
     #endregion
     
     #region Editor Handels    
@@ -101,6 +105,16 @@ namespace PB.Book.BookEditor
         {
           dragStart = Event.current.mousePosition - dragginNode.area.position;
         }
+        else
+        {
+          draggingCanvasOffset = Event.current.mousePosition + scrollPosition;
+          draggingCanvas = true;
+        }
+      }
+      else if ((EventType.MouseDrag == Event.current.type) && (true == draggingCanvas))
+      {
+        scrollPosition = draggingCanvasOffset - Event.current.mousePosition;
+        GUI.changed = true;
       }
       else if ((EventType.MouseDrag == Event.current.type) && (null != dragginNode))
       {
@@ -111,6 +125,10 @@ namespace PB.Book.BookEditor
       else if ((EventType.MouseUp == Event.current.type) && (null != dragginNode))
       {
         dragginNode = null;
+      }
+      else if ((EventType.MouseUp == Event.current.type) && (true == draggingCanvas))
+      {
+        draggingCanvas = false;
       }
     }
 
