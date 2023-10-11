@@ -55,7 +55,6 @@ namespace PB.Book.BookEditor
           EditorUtility.SetDirty(selectedBook);
           AssetDatabase.SaveAssets();
           AssetDatabase.Refresh();
-          Debug.Log("Create nw node");
         }
         ProcessEvents();
 
@@ -100,11 +99,13 @@ namespace PB.Book.BookEditor
         if(null != dragginNode)
         {
           dragStart = Event.current.mousePosition - dragginNode.area.position;
+          Selection.activeObject = dragginNode;
         }
         else
         {
           draggingCanvasOffset = Event.current.mousePosition + scrollPosition;
           draggingCanvas = true;
+          Selection.activeObject = selectedBook;
         }
       }
       else if ((EventType.MouseDrag == Event.current.type) && (true == draggingCanvas))
@@ -176,12 +177,12 @@ namespace PB.Book.BookEditor
       }
       else
       {
-        if (-1 < linkingParentNode.jumpTos.FindIndex(x => x.referenceId == node.uniqueID))
+        if (-1 < linkingParentNode.jumpTos.FindIndex(x => x.referenceId == node.name))
         {
           if (GUILayout.Button("unlink"))
           {
             Undo.RecordObject(selectedBook, "delete link between " + linkingParentNode.textNumber + " and " + node.textNumber);
-            selectedBook.DeleteLink(linkingParentNode, node.uniqueID);
+            selectedBook.DeleteLink(linkingParentNode, node.name);
             linkingParentNode = null;
           }
         }
@@ -190,7 +191,7 @@ namespace PB.Book.BookEditor
           if (GUILayout.Button("child"))
           {
             Undo.RecordObject(selectedBook, "create link between " + linkingParentNode.textNumber + " and " + node.textNumber);
-            selectedBook.CreateLink(linkingParentNode, node.uniqueID);
+            selectedBook.CreateLink(linkingParentNode, node.name);
             linkingParentNode = null;
           }
         }
