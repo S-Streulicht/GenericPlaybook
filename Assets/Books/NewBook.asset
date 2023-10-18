@@ -1,0 +1,92 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8641847427302505673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6f41ca39e160c7429d60d6cc22046f4, type: 3}
+  m_Name: 67963ae1-cc41-4625-b378-003d9e54157b
+  m_EditorClassIdentifier: 
+  textNumber: 3
+  text: 
+  comands: []
+  jumpTos: []
+  area:
+    serializedVersion: 2
+    x: 634
+    y: 19
+    width: 200
+    height: 100
+--- !u!114 &-5991664832945135628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6f41ca39e160c7429d60d6cc22046f4, type: 3}
+  m_Name: 9b90753a-507c-47a7-85ae-5713702b9324
+  m_EditorClassIdentifier: 
+  textNumber: 1
+  text: 
+  comands: []
+  jumpTos:
+  - text: 
+    referenceId: 4cc6da8b-cf2f-433b-a4a4-945fee9b7453
+    conditions: []
+    comands: []
+  area:
+    serializedVersion: 2
+    x: 35
+    y: 19
+    width: 200
+    height: 100
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 793d1090766c2ba489c299883ab49110, type: 3}
+  m_Name: NewBook
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: -5991664832945135628}
+  - {fileID: -8641847427302505673}
+  - {fileID: 5419234578610706401}
+--- !u!114 &5419234578610706401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6f41ca39e160c7429d60d6cc22046f4, type: 3}
+  m_Name: 4cc6da8b-cf2f-433b-a4a4-945fee9b7453
+  m_EditorClassIdentifier: 
+  textNumber: 4
+  text: 
+  comands: []
+  jumpTos:
+  - text: 
+    referenceId: 67963ae1-cc41-4625-b378-003d9e54157b
+    conditions: []
+    comands: []
+  area:
+    serializedVersion: 2
+    x: 334
+    y: 19
+    width: 200
+    height: 100

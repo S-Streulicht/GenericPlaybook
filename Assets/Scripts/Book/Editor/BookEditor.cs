@@ -35,6 +35,12 @@ namespace PB.Book.BookEditor
     public static void ShowEditorWindow()
     {
       GetWindow(typeof(BookEditor), false, "Book Editor");
+
+    }
+
+    static void UndoRedoAction()
+    {
+      GUI.changed = true;
     }
 
     /// <summary>
@@ -78,13 +84,11 @@ namespace PB.Book.BookEditor
 
         if (null != creationNode)
         {
-          Undo.RecordObject(selectedBook, "Added Node to " + creationNode.textNumber);
           selectedBook.CreateNode(creationNode);
           creationNode = null;
         }
         if (null != deletionNode)
         {
-          Undo.RecordObject(selectedBook, "Remove Node " + deletionNode.textNumber);
           selectedBook.DeleteNode(deletionNode);
           deletionNode = null;
         }
@@ -93,12 +97,13 @@ namespace PB.Book.BookEditor
 
     private void ProcessEvents()
     {
+      Undo.undoRedoPerformed += UndoRedoAction;
       if ((EventType.MouseDown == Event.current.type) && (null == dragginNode))
       {
         dragginNode = GetNodeAtPointer(Event.current.mousePosition + scrollPosition);
         if(null != dragginNode)
         {
-          dragStart = Event.current.mousePosition - dragginNode.area.position;
+          dragStart = Event.current.mousePosition - dragginNode.Area.position;
           Selection.activeObject = dragginNode;
         }
         else
@@ -115,8 +120,9 @@ namespace PB.Book.BookEditor
       }
       else if ((EventType.MouseDrag == Event.current.type) && (null != dragginNode))
       {
-        Undo.RecordObject(selectedBook, "Move Text of Node " + dragginNode.textNumber);
-        dragginNode.area.position = Event.current.mousePosition - dragStart;
+        Rect newArea = dragginNode.Area;
+        newArea.position = Event.current.mousePosition - dragStart;
+        dragginNode.Area = newArea;
         GUI.changed = true;
       }
       else if ((EventType.MouseUp == Event.current.type) && (null != dragginNode))
@@ -131,15 +137,10 @@ namespace PB.Book.BookEditor
 
     private void DrawNode(TextElements node)
     {
-      GUILayout.BeginArea(node.area, nodeStyle);
-      EditorGUILayout.LabelField("Node: " + node.textNumber);
-      EditorGUI.BeginChangeCheck();
-      var newText = EditorGUILayout.TextField(node.text);
-      if (EditorGUI.EndChangeCheck())
-      {
-        Undo.RecordObject(selectedBook, "Update of Text in Node " + node.textNumber);
-        node.text = newText;
-      }
+      GUILayout.BeginArea(node.Area, nodeStyle);
+      EditorGUILayout.LabelField("Node: " + node.TextNumber);
+
+      node.Text = EditorGUILayout.TextField(node.Text);
 
       GUILayout.BeginHorizontal();
 
@@ -177,12 +178,11 @@ namespace PB.Book.BookEditor
       }
       else
       {
-        if (-1 < linkingParentNode.jumpTos.FindIndex(x => x.referenceId == node.name))
+        if (-1 < linkingParentNode.JumpTos.FindIndex(x => x.referenceId == node.name))
         {
           if (GUILayout.Button("unlink"))
           {
-            Undo.RecordObject(selectedBook, "delete link between " + linkingParentNode.textNumber + " and " + node.textNumber);
-            selectedBook.DeleteLink(linkingParentNode, node.name);
+            linkingParentNode.DeleteLink(node.name);
             linkingParentNode = null;
           }
         }
@@ -190,8 +190,7 @@ namespace PB.Book.BookEditor
         {
           if (GUILayout.Button("child"))
           {
-            Undo.RecordObject(selectedBook, "create link between " + linkingParentNode.textNumber + " and " + node.textNumber);
-            selectedBook.CreateLink(linkingParentNode, node.name);
+            linkingParentNode.CreateLink(node.name);
             linkingParentNode = null;
           }
         }
@@ -200,10 +199,10 @@ namespace PB.Book.BookEditor
 
     private void DrawConnections(TextElements parent)
     {
-      Vector3 startPosition = new Vector2(parent.area.xMax, parent.area.center.y);
+      Vector3 startPosition = new Vector2(parent.Area.xMax, parent.Area.center.y);
       foreach (TextElements childeNode in selectedBook.GetAllChildren(parent))
       {
-        Vector3 endPosition = new Vector2(childeNode.area.xMin, childeNode.area.center.y);
+        Vector3 endPosition = new Vector2(childeNode.Area.xMin, childeNode.Area.center.y);
         float distance = Vector3.Distance(endPosition, startPosition);
         Vector3 tangentOffset = new Vector2(distance * 0.5f, 0.0f);
         Handles.DrawBezier(startPosition, endPosition,
@@ -216,7 +215,7 @@ namespace PB.Book.BookEditor
     {
       foreach (TextElements node in selectedBook.GetAllNodes())
       {
-        if (node.area.Contains(point))
+        if (node.Area.Contains(point))
         {
           return node;
         }

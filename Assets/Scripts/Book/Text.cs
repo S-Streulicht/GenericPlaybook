@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace PB.Book
 {
@@ -12,7 +13,8 @@ namespace PB.Book
     [SerializeField] List<TextElements> nodes = new List<TextElements>();
     List<TextElements> reverseNodes = new List<TextElements>();
 
-    Dictionary<string, TextElements> nodeLookup = new Dictionary<string, TextElements>();    
+    Dictionary<string, TextElements> nodeLookup = new Dictionary<string, TextElements>();
+    static bool onSerialiseIsActive = false;    
 
 #if UNITY_EDITOR
     /// <summary>
@@ -20,60 +22,71 @@ namespace PB.Book
     /// </summary>
     private void Awake()
     {
+    }
+#else
+    private void Awake()
+    {
       OnValidate();
     }
 #endif
 
+#region  EditorRelated stuff
+#if UNITY_EDITOR
     public void CreateNode(TextElements parent)
     {
-        TextElements child = CreateInstance<TextElements>();
-        child.name = System.Guid.NewGuid().ToString();
-        child.textNumber = getBiggestTextNum() + 1;
-        if( null != parent)
-        {
-          Vector3 positionOffset = new Vector2( parent.area.width + 20, parent.area.height * parent.jumpTos.Count());
-          child.area.x = parent.area.xMax + 100;
-          child.area.y = parent.area.y + (parent.area.height + 5) * parent.jumpTos.Count();
-          JumpTo newJumpPoint = new JumpTo();
-          newJumpPoint.referenceId = child.name;
-          parent.jumpTos.Add(newJumpPoint);
-        }
+      TextElements child = MakeNode(parent);
 
-        Undo.RegisterCreatedObjectUndo(child, "Created TestElement " + child.textNumber);
+      Undo.RegisterCreatedObjectUndo(child, "Created Node " + child.TextNumber);
+      Undo.RecordObject(this, "Added Node to " + child.TextNumber);
 
-        nodes.Add(child);
-        OnValidate();
+      AddNode(child);
+    }
+
+    private TextElements MakeNode(TextElements parent)
+    {
+      TextElements child = CreateInstance<TextElements>();
+      child.name = System.Guid.NewGuid().ToString();
+      child.TextNumber = getBiggestTextNum() + 1;
+
+      if (null != parent)
+      {
+        Rect newArea = child.Area;
+        newArea.x = parent.Area.xMax + 100;
+        newArea.y = parent.Area.y + (parent.Area.height + 5) * parent.JumpTos.Count();
+        child.Area = newArea;
+
+        parent.CreateLink(child.name);
+      }
+
+      return child;
+    }
+
+    private void AddNode(TextElements child)
+    {
+      nodes.Add(child);
+      OnValidate();
     }
 
     public void DeleteNode(TextElements nodeToDelete)
     {
+      Undo.RecordObject(this, "Remove Node " + nodeToDelete.TextNumber);
       nodes.Remove(nodeToDelete);
       OnValidate();
       foreach (TextElements node in GetAllNodes())
       {
-        node.jumpTos.RemoveAll(x => x.referenceId == nodeToDelete.name);
+        node.DeleteLink(nodeToDelete.name);
       }
       Undo.DestroyObjectImmediate(nodeToDelete);
     }
-
-    public void CreateLink(TextElements parent, string childID)
-    {
-      JumpTo link = new JumpTo();
-      link.referenceId = childID;
-      parent.jumpTos.Add(link);
-    }
-
-    public void DeleteLink(TextElements parent, string childID)
-    {
-      parent.jumpTos.RemoveAll(x => x.referenceId == childID);
-    }
+#endif
+#endregion
 
     private int getBiggestTextNum()
     {
       int ret = 0;
       foreach(TextElements node in nodes)
       {
-        if(node.textNumber > ret) {ret = node.textNumber;}
+        if(node.TextNumber > ret) {ret = node.TextNumber;}
       }
       return ret;
     }
@@ -107,7 +120,7 @@ namespace PB.Book
 
     public IEnumerable<TextElements> GetAllChildren(TextElements parentNode)
     {
-      foreach(JumpTo jumps in parentNode.jumpTos)
+      foreach(JumpTo jumps in parentNode.JumpTos)
       {
         //yield return nodes.Find( x => jumps.referenceId == x.uniqueID);
         if( nodeLookup.ContainsKey(jumps.referenceId) )
@@ -119,21 +132,29 @@ namespace PB.Book
 
     public void OnBeforeSerialize()
     {
-      if (0 == nodes.Count)
+#if UNITY_EDITOR
+      if(onSerialiseIsActive == false)
       {
-        CreateNode(null);
-      }
-
-      if (AssetDatabase.GetAssetPath(this) != "" )
-      {
-        foreach (TextElements node in GetAllNodes())
+        onSerialiseIsActive = true;
+        if (0 == nodes.Count())
         {
-          if (AssetDatabase.GetAssetPath(node) == "")
+          TextElements child = MakeNode(null);
+          AddNode(child);
+        }
+
+        if (AssetDatabase.GetAssetPath(this) != "" )
+        {
+          foreach (TextElements node in GetAllNodes())
           {
-            AssetDatabase.AddObjectToAsset(node, this);
+            if (AssetDatabase.GetAssetPath(node) == "")
+            {
+              AssetDatabase.AddObjectToAsset(node, this);
+            }
           }
         }
+        onSerialiseIsActive = false;
       }
+#endif
     }
 
     public void OnAfterDeserialize() {}
