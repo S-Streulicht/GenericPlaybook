@@ -17,7 +17,9 @@ namespace PB.Book
 #if UNITY_EDITOR
       set {
         Undo.RecordObject(this, "changed number of " + textNumber);
-        textNumber = value; }
+        textNumber = value;
+        EditorUtility.SetDirty(this);
+      }
 #endif
     }
     public string Text {
@@ -28,6 +30,7 @@ namespace PB.Book
         {
           Undo.RecordObject(this, "change text of " + textNumber);
           text = value;
+          EditorUtility.SetDirty(this);
         }
       }
 #endif
@@ -37,7 +40,9 @@ namespace PB.Book
 #if UNITY_EDITOR
       set {
         Undo.RecordObject(this, "changed Comand of " + textNumber);
-        comands = value; }
+        comands = value;
+        EditorUtility.SetDirty(this);
+      }
 #endif
     }
     public List<JumpTo> JumpTos {
@@ -46,7 +51,8 @@ namespace PB.Book
       set {
         Undo.RecordObject( this, "changed Jump of " + textNumber);
         jumpTos = value;
-          }
+        EditorUtility.SetDirty(this);
+      }
 #endif
     }
     public Rect Area {
@@ -54,7 +60,9 @@ namespace PB.Book
 #if UNITY_EDITOR
       set {
         Undo.RecordObject(this, "changed ares of " + textNumber);
-        area = value; }
+        area = value;
+        EditorUtility.SetDirty(this);    
+      }
 #endif
     }
 
@@ -65,12 +73,14 @@ namespace PB.Book
       JumpTo link = new JumpTo();
       link.referenceId = childID;
       JumpTos.Add(link);
+      EditorUtility.SetDirty(this);
     }
 
     public void DeleteLink(string childID)
     {
       Undo.RecordObject(this, "delete link of " + textNumber);
       JumpTos.RemoveAll(x => x.referenceId == childID);
+      EditorUtility.SetDirty(this);
     }
 #endif
   }
