@@ -13,13 +13,22 @@ MonoBehaviour:
   m_Name: 67963ae1-cc41-4625-b378-003d9e54157b
   m_EditorClassIdentifier: 
   textNumber: 3
-  text: 
+  text: 3 At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+    gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+    dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
+    ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+    et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+    sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+    sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos
+    erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren,
+    kasd magna no rebum. sanctus sea sed takimata ut vero voluptua. est Lorem ipsum
+    dolor sit amet. Lorem ipsum dolor sit amet, consetetur
   comands: []
   jumpTos: []
   area:
     serializedVersion: 2
-    x: 634
-    y: 19
+    x: 644
+    y: 14
     width: 200
     height: 100
 --- !u!114 &-5991664832945135628
@@ -35,17 +44,76 @@ MonoBehaviour:
   m_Name: 9b90753a-507c-47a7-85ae-5713702b9324
   m_EditorClassIdentifier: 
   textNumber: 1
-  text: 
+  text: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+    eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+    At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+    no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
+    amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+    labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+    et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+    sanctus est Lorem ipsum dolor sit amet.
   comands: []
   jumpTos:
-  - text: 
+  - text: jump to the 4
+    referenceId: 4cc6da8b-cf2f-433b-a4a4-945fee9b7453
+    conditions: []
+    comands: []
+  - text: jumpto the 5
+    referenceId: 4fa9cf56-8282-4d92-a47f-34ed7620cac9
+    conditions: []
+    comands: []
+  - text: jumpto the 7
+    referenceId: 8fdd8638-294c-47f3-81ac-ed927e7ffcd4
+    conditions: []
+    comands: []
+  area:
+    serializedVersion: 2
+    x: 34
+    y: 18
+    width: 200
+    height: 100
+--- !u!114 &-1832395943682213312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6f41ca39e160c7429d60d6cc22046f4, type: 3}
+  m_Name: 12434914-7aa0-45ce-82ef-0dc64fcf5d78
+  m_EditorClassIdentifier: 
+  textNumber: 6
+  text: 6 Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+    labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+    et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+    sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+    sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+    magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+    et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+    dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+    diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
+    diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+    clita kasd gubergren, no sea takimata sanctus.
+  comands: []
+  jumpTos:
+  - text: Get To 5
+    referenceId: 4fa9cf56-8282-4d92-a47f-34ed7620cac9
+    conditions: []
+    comands: []
+  - text: Get to 7
+    referenceId: 8fdd8638-294c-47f3-81ac-ed927e7ffcd4
+    conditions: []
+    comands: []
+  - text: Get To 4
     referenceId: 4cc6da8b-cf2f-433b-a4a4-945fee9b7453
     conditions: []
     comands: []
   area:
     serializedVersion: 2
-    x: 35
-    y: 19
+    x: 644
+    y: 151
     width: 200
     height: 100
 --- !u!114 &11400000
@@ -64,6 +132,58 @@ MonoBehaviour:
   - {fileID: -5991664832945135628}
   - {fileID: -8641847427302505673}
   - {fileID: 5419234578610706401}
+  - {fileID: 1404967823078539787}
+  - {fileID: -1832395943682213312}
+  - {fileID: 1029867894999663587}
+--- !u!114 &1029867894999663587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6f41ca39e160c7429d60d6cc22046f4, type: 3}
+  m_Name: 8fdd8638-294c-47f3-81ac-ed927e7ffcd4
+  m_EditorClassIdentifier: 
+  textNumber: 7
+  text: '7 Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie
+    consequat, vel illum dolore eu feugiat nulla facilisis.   '
+  comands: []
+  jumpTos: []
+  area:
+    serializedVersion: 2
+    x: 336
+    y: 228
+    width: 200
+    height: 100
+--- !u!114 &1404967823078539787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6f41ca39e160c7429d60d6cc22046f4, type: 3}
+  m_Name: 4fa9cf56-8282-4d92-a47f-34ed7620cac9
+  m_EditorClassIdentifier: 
+  textNumber: 5
+  text: '5 Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet
+    doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet,
+    consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
+    dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud
+    exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.   '
+  comands: []
+  jumpTos: []
+  area:
+    serializedVersion: 2
+    x: 330
+    y: 112
+    width: 200
+    height: 100
 --- !u!114 &5419234578610706401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77,16 +197,25 @@ MonoBehaviour:
   m_Name: 4cc6da8b-cf2f-433b-a4a4-945fee9b7453
   m_EditorClassIdentifier: 
   textNumber: 4
-  text: 
-  comands: []
+  text: '4 Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
+    lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor
+    in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu
+    feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui
+    blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.    '
+  comands:
+  - CHANGE(AttrMoney, ADD, 10)
   jumpTos:
-  - text: 
+  - text: getting to 3
     referenceId: 67963ae1-cc41-4625-b378-003d9e54157b
+    conditions: []
+    comands: []
+  - text: getting to 6
+    referenceId: 12434914-7aa0-45ce-82ef-0dc64fcf5d78
     conditions: []
     comands: []
   area:
     serializedVersion: 2
-    x: 334
-    y: 19
+    x: 326
+    y: 6
     width: 200
     height: 100

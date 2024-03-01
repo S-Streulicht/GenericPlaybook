@@ -113,6 +113,11 @@ namespace PB.Book
       return nodes;
     }
 
+    public TextElements GetRootNode()
+    {
+      return nodes.First();
+    }
+
     public IEnumerable<TextElements> GetAllNodesReverse()
     {
       return reverseNodes;
