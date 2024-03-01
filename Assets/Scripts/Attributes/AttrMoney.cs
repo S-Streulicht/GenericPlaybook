@@ -9,10 +9,8 @@ namespace PB.Attribute
   {
     [SerializeField] int Money;
 
-    private SortedDictionary<string, Action<string>> ChangeFunction = new SortedDictionary<string, Action<string>>() /*{ 
-      { "ADD", TryAddMoney }, 
-      { "SUB", TrySubMoney }, 
-      { "SET", TrySetMoney } }*/;
+    private readonly SortedDictionary<string, Action<string>> ChangeFunction = new SortedDictionary<string, Action<string>>();
+    private readonly SortedDictionary<string, Func<int, bool>> Isfunction = new SortedDictionary<string, Func<int, bool>>();
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +18,9 @@ namespace PB.Attribute
       ChangeFunction.Add("ADD", TryAddMoney);
       ChangeFunction.Add("SUB", TrySubMoney);
       ChangeFunction.Add("SET", TrySetMoney);
+      Isfunction.Add("<", x => { return Money < x; });
+      Isfunction.Add(">", x => { return Money > x; });
+      Isfunction.Add("==", x => { return Money == x; });
     }
 
     /// <summary>
@@ -74,10 +75,14 @@ namespace PB.Attribute
 
     bool IAttributeInterface.Is(List<string> arg)
     {
-      if (!isRightClass(arg[0])) return false;
+      if (!((IAttributeInterface)this).Test("Is", arg)) return false;
+      int val = 0;
+      if (Int32.TryParse(arg[2], out val))
+      {
+        return Isfunction[arg[1]](val);
+      }
 
-
-      return true;
+      return false;
     }
 
     bool IAttributeInterface.Test(string Interface, List<string> arg)
@@ -95,10 +100,12 @@ namespace PB.Attribute
             isArgFunctionName |= funct.Key == arg[1];
           }
           ret &= isArgFunctionName;
-          ret &= arg.Count == 3;
           ret &= int.TryParse(arg[2], out _);
           break;
         case "Is":
+          if (arg.Count != 3) return false;
+          ret &= isRightClass(arg[0]);
+          ret &= int.TryParse(arg[2], out _);
           break;
         default:
           Debug.Log("Wrong interface (" + Interface + ") to be testerd in AttrMonney");

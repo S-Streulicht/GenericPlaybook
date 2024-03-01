@@ -71,7 +71,22 @@ namespace PB.Logic
       foreach (JumpTo jump in jumpTos)
       {
         ///ToDo test the condition and only than add
-        ret.Add(jump);
+        if (jump.conditions.Count() > 0)
+        {
+          bool cond = true;
+          foreach (string condition in jump.conditions)
+          {
+            cond &= Interpreter.TestCommand(condition);
+          }
+          if (cond == true)
+          {
+            ret.Add(jump);
+          }
+        }
+        else
+        {
+          ret.Add(jump);
+        }
       }
       return ret;
     }

@@ -36,6 +36,15 @@ namespace PB.Logic
       //Debug.Log(AttributPair[seperatedCommand.Arguments[0]].Test("Change", seperatedCommand.Arguments));
     }
 
+    public bool TestCommand(string CommandString)
+    {
+      Command seperatedCommand = Parser.Parse(CommandString);
+      // ToDo stuff
+      return AttributPair[seperatedCommand.Arguments[0]].Is(seperatedCommand.Arguments);
+      //Debug.Log(AttributPair[seperatedCommand.Arguments[0]].Test("Change", seperatedCommand.Arguments));
+    }
+
+
     private void GetAllComponentsWithIAttributeInterface()
     {
       IAttributeInterface[] attributes = AvailableAttributs.GetComponentsInChildren<IAttributeInterface>();

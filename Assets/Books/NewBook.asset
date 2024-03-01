@@ -104,7 +104,8 @@ MonoBehaviour:
     comands: []
   - text: Get to 7
     referenceId: 8fdd8638-294c-47f3-81ac-ed927e7ffcd4
-    conditions: []
+    conditions:
+    - IS(AttrMoney, >, 111)
     comands: []
   - text: Get To 4
     referenceId: 4cc6da8b-cf2f-433b-a4a4-945fee9b7453
@@ -112,8 +113,8 @@ MonoBehaviour:
     comands: []
   area:
     serializedVersion: 2
-    x: 644
-    y: 151
+    x: 576
+    y: 149
     width: 200
     height: 100
 --- !u!114 &11400000
