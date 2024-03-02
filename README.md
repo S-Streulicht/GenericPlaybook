@@ -5,3 +5,8 @@ Inspired on the Books by Jackson, Steve / Livingstone, Ian, like the "Duell der 
 * The Generic handling, this repositry
 * Content of the actual Playbook (second private repositry)
 * Non public third party librarys (third private repositry)
+## Documentation
+Download Doxygen; copy to main folder (same than the Doxfile)
+Download graphviz-2.38; extract to main folder
+execute doygen
+results in html/index.html

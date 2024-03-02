@@ -61,3 +61,11 @@ crashlytics-build.properties
 # packages
 /Assets/TextMesh Pro/
 TextMesh Pro.meta
+
+# Documnetation
+doxygen.exe
+doxyindexer.exe
+doxysearch.cgi.exe
+libclang.dll
+/graphviz-2.38/
+
