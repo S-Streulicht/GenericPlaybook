@@ -94,118 +94,127 @@ $(document).ready(function(){initNavTree('_dice_numbers_8cs_source.html',''); in
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">using</span> System.Security.Cryptography;</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">using</span> System.Text;</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="class_dice_numbers.html">    9</a></span>&#160;<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class </span><a class="code" href="class_dice_numbers.html">DiceNumbers</a></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_p_b_1_1_logic.html">PB.Logic</a></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">bool</span> IfOnce = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">int</span> GetNumberOf(<span class="keywordtype">int</span> Page)</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="comment">//return UsingHash(Page);</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="comment">//return UsingRandom(Page);</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordflow">return</span> UsingHashregions(Page,24);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  }</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">int</span> UsingHash(<span class="keywordtype">int</span> Page)</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  {</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="comment">//int[] ans = new int[6];</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">using</span> (HashAlgorithm algorithm = SHA256.Create())</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;      <span class="comment">//for (int i = 1; i &lt; 20000; i++)</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;      {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordtype">byte</span>[] b = algorithm.ComputeHash(Encoding.UTF8.GetBytes(Page.ToString()));</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordtype">string</span> oString = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordflow">foreach</span> (var by <span class="keywordflow">in</span> b)</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;          oString += by.ToString(<span class="stringliteral">&quot;X2&quot;</span>);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        }</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="comment">// For statistic reason</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="comment">//Debug.Log(Convert.ToInt64(oString.Substring(0,8).ToLower(),16) % 6 + 1);</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="comment">//ans[Convert.ToInt64(oString.Substring(0,8).ToLower(),16) % 6 ]++;</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordflow">return</span> (<span class="keywordtype">int</span>)(Convert.ToInt64(oString.Substring(0, 8).ToLower(), 16) % 6 + 1);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;      }</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  }</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">int</span> UsingRandom(<span class="keywordtype">int</span> Page)</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">if</span> (IfOnce)</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_p_b_1_1_logic_1_1_dice_numbers.html">   16</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class </span><a class="code" href="class_p_b_1_1_logic_1_1_dice_numbers.html">DiceNumbers</a></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  {</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="class_p_b_1_1_logic_1_1_dice_numbers.html#a9dae8a815b4b57f76306f17b90f7244e">   18</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="class_p_b_1_1_logic_1_1_dice_numbers.html#a9dae8a815b4b57f76306f17b90f7244e">IfOnce</a> = <span class="keyword">true</span>; </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="class_p_b_1_1_logic_1_1_dice_numbers.html#a84b358388734784e3b809b3f77ba4215">   26</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="class_p_b_1_1_logic_1_1_dice_numbers.html#a84b358388734784e3b809b3f77ba4215">GetNumberOf</a>(<span class="keywordtype">int</span> Page)</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;      <span class="comment">//return UsingHash(Page);</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;      <span class="comment">//return UsingRandom(Page);</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="class_p_b_1_1_logic_1_1_dice_numbers.html#a8656bf972d7ffc2e108d3d29f5ccb024">UsingHashregions</a>(Page, 24);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    }</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_p_b_1_1_logic_1_1_dice_numbers.html#a044463dde18771ee9f6333541518bf93">   44</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="class_p_b_1_1_logic_1_1_dice_numbers.html#a044463dde18771ee9f6333541518bf93">UsingHash</a>(<span class="keywordtype">int</span> Page)</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;      UnityEngine.Random.InitState(42);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;      IfOnce = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">return</span> UnityEngine.Random.Range(1, 7);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">/*for (int i = 1; i &lt; 20000; i++)</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">    {</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">      ans[UnityEngine.Random.Range(0, 6)]++;</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">    }</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">    foreach (var a in ans)</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">      Debug.Log(a / 3333.0f);</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">    */</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  }</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="struct_dice_numbers_1_1_num_hash.html">   59</a></span>&#160;  <span class="keyword">private</span> <span class="keyword">struct </span><a class="code" href="struct_dice_numbers_1_1_num_hash.html">NumHash</a> : IComparable</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keyword">public</span> <a class="code" href="struct_dice_numbers_1_1_num_hash.html">NumHash</a>(<span class="keywordtype">int</span> num, <span class="keywordtype">byte</span>[] hash)</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      Num = num;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;      Hash = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;      ConvertToString(hash);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keyword">public</span> <span class="keywordtype">int</span> Num { <span class="keyword">get</span>; }</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keyword">public</span> <span class="keywordtype">string</span> Hash { <span class="keyword">get</span>; <span class="keyword">private</span> <span class="keyword">set</span>; }</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">string</span> ToString() =&gt; $<span class="stringliteral">&quot;({Num}, {Hash})&quot;</span>;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keyword">private</span> <span class="keywordtype">void</span> ConvertToString(<span class="keywordtype">byte</span>[] hash)</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    {</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;      <span class="keywordflow">foreach</span> (var b <span class="keywordflow">in</span> hash)</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;      {</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        Hash += b.ToString(<span class="stringliteral">&quot;X2&quot;</span>);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      }</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">public</span> <span class="keywordtype">int</span> CompareTo(<span class="keywordtype">object</span> obj)</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;      <span class="keywordflow">if</span> (this.GetType() != obj.GetType())</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;      {</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">throw</span> (<span class="keyword">new</span> ArgumentException(</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;               <span class="stringliteral">&quot;Both objects being compared must be of type NumHash.&quot;</span>));</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;      }</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;      <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;      {</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <a class="code" href="struct_dice_numbers_1_1_num_hash.html">NumHash</a> numHash2 = (<a class="code" href="struct_dice_numbers_1_1_num_hash.html">NumHash</a>)obj;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordflow">return</span> String.Compare(numHash2.Hash, <span class="keyword">this</span>.Hash);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;      }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;      <span class="comment">//int[] ans = new int[6];</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;      <span class="keyword">using</span> (HashAlgorithm algorithm = SHA256.Create())</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="comment">//for (int i = 1; i &lt; 20000; i++)</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;          <span class="keywordtype">byte</span>[] b = algorithm.ComputeHash(Encoding.UTF8.GetBytes(Page.ToString()));</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;          <span class="keywordtype">string</span> oString = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;          <span class="keywordflow">foreach</span> (var by <span class="keywordflow">in</span> b)</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;          {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            oString += by.ToString(<span class="stringliteral">&quot;X2&quot;</span>);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;          }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;          <span class="comment">// For statistic reason</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;          <span class="comment">//Debug.Log(Convert.ToInt64(oString.Substring(0,8).ToLower(),16) % 6 + 1);</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;          <span class="comment">//ans[Convert.ToInt64(oString.Substring(0,8).ToLower(),16) % 6 ]++;</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;          <span class="keywordflow">return</span> (<span class="keywordtype">int</span>)(Convert.ToInt64(oString.Substring(0, 8).ToLower(), 16) % 6 + 1);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      }</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="class_p_b_1_1_logic_1_1_dice_numbers.html#a73449a764a13452644e9bbb602c2189b">   76</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="class_p_b_1_1_logic_1_1_dice_numbers.html#a73449a764a13452644e9bbb602c2189b">UsingRandom</a>(<span class="keywordtype">int</span> Page)</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;      <span class="comment">// /todo get the IfOnce into the constructor</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="class_p_b_1_1_logic_1_1_dice_numbers.html#a9dae8a815b4b57f76306f17b90f7244e">IfOnce</a>)</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;      {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        UnityEngine.Random.InitState(42);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <a class="code" href="class_p_b_1_1_logic_1_1_dice_numbers.html#a9dae8a815b4b57f76306f17b90f7244e">IfOnce</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;      }</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;      <span class="keywordflow">return</span> UnityEngine.Random.Range(1, 7);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;      <span class="comment">/*for (int i = 1; i &lt; 20000; i++)</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">      {</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">        ans[UnityEngine.Random.Range(0, 6)]++;</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">      }</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">      foreach (var a in ans)</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment">        Debug.Log(a / 3333.0f);</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment">      */</span></div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  }</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">int</span> UsingHashregions(<span class="keywordtype">int</span> Page, <span class="keywordtype">int</span> Range = 24)</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  {</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keyword">using</span> (HashAlgorithm algorithm = SHA256.Create())</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    {</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;      <span class="keywordtype">int</span> LowerLimit = (int)(Math.Floor(((<span class="keywordtype">float</span>)Page + 0.5f) / (float)Range) * (float)Range);</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;      <span class="keywordtype">int</span> UpperLimit = (int)(Math.Ceiling(((<span class="keywordtype">float</span>)Page + 0.5f) / (<span class="keywordtype">float</span>)Range) * (<span class="keywordtype">float</span>)Range);</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;      <a class="code" href="struct_dice_numbers_1_1_num_hash.html">NumHash</a>[] numHash = <span class="keyword">new</span> <a class="code" href="struct_dice_numbers_1_1_num_hash.html">NumHash</a>[Range];</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = LowerLimit; i &lt; UpperLimit; i++)</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="struct_p_b_1_1_logic_1_1_dice_numbers_1_1_num_hash.html">  100</a></span>&#160;    <span class="keyword">private</span> <span class="keyword">struct </span><a class="code" href="struct_p_b_1_1_logic_1_1_dice_numbers_1_1_num_hash.html">NumHash</a> : IComparable</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;      <span class="keyword">public</span> <a class="code" href="struct_p_b_1_1_logic_1_1_dice_numbers_1_1_num_hash.html">NumHash</a>(<span class="keywordtype">int</span> num, <span class="keywordtype">byte</span>[] hash)</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;      {</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        numHash[i % Range] = <span class="keyword">new</span> <a class="code" href="struct_dice_numbers_1_1_num_hash.html">NumHash</a>(i, algorithm.ComputeHash(Encoding.UTF8.GetBytes(i.ToString())));</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="comment">//Debug.Log(numHash[i % Range]);</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;      }</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;      Array.Sort(numHash);</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;      <span class="comment">/*for (int i = 0; i &lt; Range; i++)</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="comment">      {</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="comment">        Debug.Log(numHash[i].Num % 6 + 1);</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="comment">      }*/</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;      <span class="keywordflow">return</span> numHash[Page % Range].Num % 6 + 1;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    }</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  }</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;}</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        Num = num;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        Hash = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        ConvertToString(hash);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;      }</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;      <span class="keyword">public</span> <span class="keywordtype">int</span> Num { <span class="keyword">get</span>; }</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;      <span class="keyword">public</span> <span class="keywordtype">string</span> Hash { <span class="keyword">get</span>; <span class="keyword">private</span> <span class="keyword">set</span>; }</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;      <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">string</span> ToString() =&gt; $<span class="stringliteral">&quot;({Num}, {Hash})&quot;</span>;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;      <span class="keyword">private</span> <span class="keywordtype">void</span> ConvertToString(<span class="keywordtype">byte</span>[] hash)</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;      {</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="keywordflow">foreach</span> (var b <span class="keywordflow">in</span> hash)</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        {</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;          Hash += b.ToString(<span class="stringliteral">&quot;X2&quot;</span>);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        }</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;      }</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;      <span class="keyword">public</span> <span class="keywordtype">int</span> CompareTo(<span class="keywordtype">object</span> obj)</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;      {</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="keywordflow">if</span> (this.GetType() != obj.GetType())</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        {</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;          <span class="keywordflow">throw</span> (<span class="keyword">new</span> ArgumentException(</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                 <span class="stringliteral">&quot;Both objects being compared must be of type NumHash.&quot;</span>));</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        }</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        {</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;          <a class="code" href="struct_p_b_1_1_logic_1_1_dice_numbers_1_1_num_hash.html">NumHash</a> numHash2 = (<a class="code" href="struct_p_b_1_1_logic_1_1_dice_numbers_1_1_num_hash.html">NumHash</a>)obj;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;          <span class="keywordflow">return</span> String.Compare(numHash2.Hash, <span class="keyword">this</span>.Hash);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        }</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;      }</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    }</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
+<div class="line"><a name="l00148"></a><span class="lineno"><a class="line" href="class_p_b_1_1_logic_1_1_dice_numbers.html#a8656bf972d7ffc2e108d3d29f5ccb024">  148</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="class_p_b_1_1_logic_1_1_dice_numbers.html#a8656bf972d7ffc2e108d3d29f5ccb024">UsingHashregions</a>(<span class="keywordtype">int</span> Page, <span class="keywordtype">int</span> Range = 24)</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    {</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;      <span class="keyword">using</span> (HashAlgorithm algorithm = SHA256.Create())</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;      {</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <span class="keywordtype">int</span> LowerLimit = (int)(Math.Floor(((<span class="keywordtype">float</span>)Page + 0.5f) / (float)Range) * (float)Range);</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <span class="keywordtype">int</span> UpperLimit = (int)(Math.Ceiling(((<span class="keywordtype">float</span>)Page + 0.5f) / (<span class="keywordtype">float</span>)Range) * (<span class="keywordtype">float</span>)Range);</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <a class="code" href="struct_p_b_1_1_logic_1_1_dice_numbers_1_1_num_hash.html">NumHash</a>[] numHash = <span class="keyword">new</span> <a class="code" href="struct_p_b_1_1_logic_1_1_dice_numbers_1_1_num_hash.html">NumHash</a>[Range];</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = LowerLimit; i &lt; UpperLimit; i++)</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        {</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;          numHash[i % Range] = <span class="keyword">new</span> <a class="code" href="struct_p_b_1_1_logic_1_1_dice_numbers_1_1_num_hash.html">NumHash</a>(i, algorithm.ComputeHash(Encoding.UTF8.GetBytes(i.ToString())));</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;          <span class="comment">//Debug.Log(numHash[i % Range]);</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        }</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        Array.Sort(numHash);</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        <span class="comment">/*for (int i = 0; i &lt; Range; i++)</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="comment">        {</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="comment">          Debug.Log(numHash[i].Num % 6 + 1);</span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="comment">        }*/</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        <span class="keywordflow">return</span> numHash[Page % Range].Num % 6 + 1;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;      }</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    }</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  }</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclass_dice_numbers_html"><div class="ttname"><a href="class_dice_numbers.html">DiceNumbers</a></div><div class="ttdef"><b>Definition:</b> <a href="_dice_numbers_8cs_source.html#l00009">DiceNumbers.cs:9</a></div></div>
-<div class="ttc" id="astruct_dice_numbers_1_1_num_hash_html"><div class="ttname"><a href="struct_dice_numbers_1_1_num_hash.html">DiceNumbers.NumHash</a></div><div class="ttdef"><b>Definition:</b> <a href="_dice_numbers_8cs_source.html#l00059">DiceNumbers.cs:59</a></div></div>
+<div class="ttc" id="anamespace_p_b_1_1_logic_html"><div class="ttname"><a href="namespace_p_b_1_1_logic.html">PB.Logic</a></div><div class="ttdef"><b>Definition:</b> <a href="_command_interpreter_8cs_source.html#l00010">CommandInterpreter.cs:10</a></div></div>
+<div class="ttc" id="aclass_p_b_1_1_logic_1_1_dice_numbers_html_a84b358388734784e3b809b3f77ba4215"><div class="ttname"><a href="class_p_b_1_1_logic_1_1_dice_numbers.html#a84b358388734784e3b809b3f77ba4215">PB.Logic.DiceNumbers.GetNumberOf</a></div><div class="ttdeci">static int GetNumberOf(int Page)</div><div class="ttdoc">get the pseudo dice number of a (page) number</div><div class="ttdef"><b>Definition:</b> <a href="_dice_numbers_8cs_source.html#l00026">DiceNumbers.cs:26</a></div></div>
+<div class="ttc" id="aclass_p_b_1_1_logic_1_1_dice_numbers_html_a044463dde18771ee9f6333541518bf93"><div class="ttname"><a href="class_p_b_1_1_logic_1_1_dice_numbers.html#a044463dde18771ee9f6333541518bf93">PB.Logic.DiceNumbers.UsingHash</a></div><div class="ttdeci">static int UsingHash(int Page)</div><div class="ttdoc">get the pseudo dice number of a (page) number using a Hash algorithm</div><div class="ttdef"><b>Definition:</b> <a href="_dice_numbers_8cs_source.html#l00044">DiceNumbers.cs:44</a></div></div>
+<div class="ttc" id="aclass_p_b_1_1_logic_1_1_dice_numbers_html_a73449a764a13452644e9bbb602c2189b"><div class="ttname"><a href="class_p_b_1_1_logic_1_1_dice_numbers.html#a73449a764a13452644e9bbb602c2189b">PB.Logic.DiceNumbers.UsingRandom</a></div><div class="ttdeci">static int UsingRandom(int Page)</div><div class="ttdoc">get the pseudo dice number of a (page) number using a standard random algorithm</div><div class="ttdef"><b>Definition:</b> <a href="_dice_numbers_8cs_source.html#l00076">DiceNumbers.cs:76</a></div></div>
+<div class="ttc" id="aclass_p_b_1_1_logic_1_1_dice_numbers_html"><div class="ttname"><a href="class_p_b_1_1_logic_1_1_dice_numbers.html">PB.Logic.DiceNumbers</a></div><div class="ttdoc">Provides a mapping between a (page) number and a pseudo random dice number (reproducable)</div><div class="ttdef"><b>Definition:</b> <a href="_dice_numbers_8cs_source.html#l00016">DiceNumbers.cs:16</a></div></div>
+<div class="ttc" id="aclass_p_b_1_1_logic_1_1_dice_numbers_html_a9dae8a815b4b57f76306f17b90f7244e"><div class="ttname"><a href="class_p_b_1_1_logic_1_1_dice_numbers.html#a9dae8a815b4b57f76306f17b90f7244e">PB.Logic.DiceNumbers.IfOnce</a></div><div class="ttdeci">static bool IfOnce</div><div class="ttdef"><b>Definition:</b> <a href="_dice_numbers_8cs_source.html#l00018">DiceNumbers.cs:18</a></div></div>
+<div class="ttc" id="aclass_p_b_1_1_logic_1_1_dice_numbers_html_a8656bf972d7ffc2e108d3d29f5ccb024"><div class="ttname"><a href="class_p_b_1_1_logic_1_1_dice_numbers.html#a8656bf972d7ffc2e108d3d29f5ccb024">PB.Logic.DiceNumbers.UsingHashregions</a></div><div class="ttdeci">static int UsingHashregions(int Page, int Range=24)</div><div class="ttdoc">get the pseudo dice number of a (page) number using a goupt of Range numbers sorted by hash</div><div class="ttdef"><b>Definition:</b> <a href="_dice_numbers_8cs_source.html#l00148">DiceNumbers.cs:148</a></div></div>
+<div class="ttc" id="astruct_p_b_1_1_logic_1_1_dice_numbers_1_1_num_hash_html"><div class="ttname"><a href="struct_p_b_1_1_logic_1_1_dice_numbers_1_1_num_hash.html">PB.Logic.DiceNumbers.NumHash</a></div><div class="ttdoc">provides a pair to cantain a number and a hash (string coded)</div><div class="ttdef"><b>Definition:</b> <a href="_dice_numbers_8cs_source.html#l00100">DiceNumbers.cs:100</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

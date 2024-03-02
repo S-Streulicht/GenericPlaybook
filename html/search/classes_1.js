@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['bookeditor_30',['BookEditor',['../class_p_b_1_1_book_1_1_book_editor_1_1_book_editor.html',1,'PB::Book::BookEditor']]]
+  ['bookeditor_41',['BookEditor',['../class_p_b_1_1_book_1_1_book_editor_1_1_book_editor.html',1,'PB::Book::BookEditor']]]
 ];

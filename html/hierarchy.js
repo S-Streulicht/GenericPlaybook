@@ -1,7 +1,7 @@
 var hierarchy =
 [
     [ "PB.Logic.Command", "struct_p_b_1_1_logic_1_1_command.html", null ],
-    [ "DiceNumbers", "class_dice_numbers.html", null ],
+    [ "PB.Logic.DiceNumbers", "class_p_b_1_1_logic_1_1_dice_numbers.html", null ],
     [ "EditorWindow", null, [
       [ "PB.Book.BookEditor.BookEditor", "class_p_b_1_1_book_1_1_book_editor_1_1_book_editor.html", null ]
     ] ],
@@ -9,7 +9,7 @@ var hierarchy =
       [ "PB.Attribute.AttrMoney", "class_p_b_1_1_attribute_1_1_attr_money.html", null ]
     ] ],
     [ "IComparable", null, [
-      [ "DiceNumbers.NumHash", "struct_dice_numbers_1_1_num_hash.html", null ]
+      [ "PB.Logic.DiceNumbers.NumHash", "struct_p_b_1_1_logic_1_1_dice_numbers_1_1_num_hash.html", null ]
     ] ],
     [ "ISerializationCallbackReceiver", null, [
       [ "PB.Book.Text", "class_p_b_1_1_book_1_1_text.html", null ]

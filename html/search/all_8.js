@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['numhash_11',['NumHash',['../struct_dice_numbers_1_1_num_hash.html',1,'DiceNumbers']]]
+  ['numhash_18',['NumHash',['../struct_p_b_1_1_logic_1_1_dice_numbers_1_1_num_hash.html',1,'PB::Logic::DiceNumbers']]]
 ];

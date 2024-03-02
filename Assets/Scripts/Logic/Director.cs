@@ -7,16 +7,28 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
 
+
 namespace PB.Logic
 {
+  /**
+  *  @brief     Provides content for the GUI 
+  *  @details   This class is used to provide generic ports like GetText, SetAnswer ... which eventuelly gets displayed
+  */
   public class Director : MonoBehaviour
   {
-    [SerializeField] Text Book;
+    [SerializeField] Text Book; /**< contains the actual book to be played \todo better way of setting the book */
 
-    private TextElements CurrentNode;
-    private CommandInterpreter Interpreter;
+    private TextElements CurrentNode; /**< contains the currend node of a play book*/
+    private CommandInterpreter Interpreter; /**< contains the Comantlineinterpreter gest filled at Start*/
 
-    // Start is called before the first frame update
+    /**
+    * @brief setup the instance get
+    * @details Start is called before the first frame update
+    *          Get the commandInterpreter instance
+    *          test if a Book is loaded
+    *          initialise the CurrnetNode to the root of the loaded node
+    * @return void
+    */
     void Start()
     {
       Interpreter = GetComponent<CommandInterpreter>();
@@ -28,11 +40,22 @@ namespace PB.Logic
       CurrentNode = Book.GetRootNode();
     }
 
+    /**
+    * @brief get the text of the currend node
+    * @return void
+    */
     public string GetText()
     {
       return CurrentNode.Text;
     }
 
+    /**
+    * @brief get only valid answers of the set of all answers of the current node
+    * @details exctract all jumpToos which are valide
+    *          get the text of all the jumpToos
+    *          return the text
+    * @return returns a lit of answers. Remak the order matters in the feedback to choos the answwers
+    */
     public List<String> GetValideAnswers()
     {
       List<string> ret = new List<string>();
@@ -44,6 +67,15 @@ namespace PB.Logic
       return ret;
     }
 
+    /**
+    * @brief Move to the linked text element
+    * @details choose the numbers element of all valid answers
+    *          execute the Comands of the given Jumpto
+    *          Move to the new node given by the jumpTo
+    *          execute the commands of the new node
+    * @param number the actual number of the valid answers
+    * @return void
+    */
     public void SetAnswer(int number)
     {
       List<JumpTo> jumpTos = GetValidJumps();
@@ -52,38 +84,39 @@ namespace PB.Logic
       {
         if (element.name == jumpTos[number].referenceId)
         {
-          ///ToDo evaluate the comand of the Jumpto and the Node
+          /// \todo evaluate the comand of the Jumpto and the Node
           CurrentNode = element;
           break;
         }
       }
-      ///ToDo Execute Command of new Text
+      /// \todo Execute Command of new Text
       foreach (string commandString in CurrentNode.Comands)
       {
         Interpreter.ExecuteCommand(commandString);
       }
     }
 
+    /**
+    * @brief get only valide JumpTos
+    * @details get all Jumptoos of the curend node
+    *          test each condition of the jump to
+    *          if fullfileld add it to the list of valit jumpTos
+    *          redturn the list
+    * @param number the actual number of the valid answers
+    * @return void
+    */
     private List<JumpTo> GetValidJumps()
     {
       List<JumpTo> ret = new List<JumpTo>();
       List<JumpTo> jumpTos = CurrentNode.JumpTos;
       foreach (JumpTo jump in jumpTos)
       {
-        ///ToDo test the condition and only than add
-        if (jump.conditions.Count() > 0)
+        bool cond = true;
+        foreach (string condition in jump.conditions)
         {
-          bool cond = true;
-          foreach (string condition in jump.conditions)
-          {
-            cond &= Interpreter.TestCommand(condition);
-          }
-          if (cond == true)
-          {
-            ret.Add(jump);
-          }
+          cond &= Interpreter.TestCommand(condition);
         }
-        else
+        if (cond == true)
         {
           ret.Add(jump);
         }
