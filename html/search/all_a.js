@@ -1,10 +1,5 @@
 var searchData=
 [
-  ['attribute_23',['Attribute',['../namespace_p_b_1_1_attribute.html',1,'PB']]],
-  ['book_24',['Book',['../namespace_p_b_1_1_book.html',1,'PB']]],
-  ['bookeditor_25',['BookEditor',['../namespace_p_b_1_1_book_1_1_book_editor.html',1,'PB::Book']]],
-  ['logic_26',['Logic',['../namespace_p_b_1_1_logic.html',1,'PB']]],
-  ['parser_27',['Parser',['../class_p_b_1_1_logic_1_1_parser.html',1,'PB::Logic']]],
-  ['pb_28',['PB',['../namespace_p_b.html',1,'']]],
-  ['ui_29',['UI',['../namespace_p_b_1_1_u_i.html',1,'PB']]]
+  ['num_26',['Num',['../struct_p_b_1_1_logic_1_1_dice_numbers_1_1_num_hash.html#ab03c640a238d8dec815fe2a209fc32f0',1,'PB::Logic::DiceNumbers::NumHash']]],
+  ['numhash_27',['NumHash',['../struct_p_b_1_1_logic_1_1_dice_numbers_1_1_num_hash.html',1,'PB.Logic.DiceNumbers.NumHash'],['../struct_p_b_1_1_logic_1_1_dice_numbers_1_1_num_hash.html#ae31c4ab8b6e1b806aeb498066dd80fbf',1,'PB.Logic.DiceNumbers.NumHash.NumHash()']]]
 ];

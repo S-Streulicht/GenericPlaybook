@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['setanswer_69',['SetAnswer',['../class_p_b_1_1_logic_1_1_director.html#a9188457b3ab257422cf59e7fd289952b',1,'PB::Logic::Director']]],
-  ['start_70',['Start',['../class_p_b_1_1_logic_1_1_command_interpreter.html#a03a41f7e63a11d884e18ce6f969070b7',1,'PB.Logic.CommandInterpreter.Start()'],['../class_p_b_1_1_logic_1_1_director.html#a802d5b74cd2945f6c32c27c7e54dd55b',1,'PB.Logic.Director.Start()']]]
+  ['numhash_80',['NumHash',['../struct_p_b_1_1_logic_1_1_dice_numbers_1_1_num_hash.html#ae31c4ab8b6e1b806aeb498066dd80fbf',1,'PB::Logic::DiceNumbers::NumHash']]]
 ];

@@ -18,10 +18,10 @@ namespace PB.Logic
     static bool IfOnce = true; /**< relevant for the initialisation of the standar Random implementation /todo get it in the constructor*/
 
     /**
-    * @brief get the pseudo dice number of a (page) number
+    * @brief   get the pseudo dice number of a (page) number
     * @details return the result of the individual implementations
-    * @param Page positive integer number
-    * @return number 1 to 6 depending on the Page
+    * @param   Page positive integer number
+    * @return  number 1 to 6 depending on the Page
     */
     static int GetNumberOf(int Page)
     {
@@ -31,15 +31,15 @@ namespace PB.Logic
     }
 
     /**
-    * @brief get the pseudo dice number of a (page) number using a Hash algorithm
+    * @brief   get the pseudo dice number of a (page) number using a Hash algorithm
     * @details calculates te SHA256 hash of the pagnumber
     *          get the fist 8 charater
     *          interpret them as a number and returns it modulu 6 + 1
     *          Drawback it is puryly deterministic random, which means the first few hunderet numbers dosent have a equal distribution of each of the outputs
     *          We have a loaded dice
     *          Advantage it it a direct on to one translation
-    * @param Page positive integer number
-    * @return number 1 to 6 depending on the Page
+    * @param   Page positive integer number
+    * @return  number 1 to 6 depending on the Page
     */
     static int UsingHash(int Page)
     {
@@ -64,14 +64,14 @@ namespace PB.Logic
     }
 
     /**
-    * @brief get the pseudo dice number of a (page) number using a standard random algorithm
+    * @brief   get the pseudo dice number of a (page) number using a standard random algorithm
     * @details initialise the Random function Unity
     *          get a random number in the range of 1 to 6
     *          Drawback it is puryly deterministic random, which means the first few hunderet numbers dosent have a equal distribution of each of the outputs
     *          We have a loaded dice
     *          Advantage it it a direct on to one translation
-    * @param Page positive integer number
-    * @return number 1 to 6 depending on the Page
+    * @param   Page positive integer number
+    * @return  number 1 to 6 depending on the Page
     */
     static int UsingRandom(int Page)
     {
@@ -99,25 +99,45 @@ namespace PB.Logic
     */
     private struct NumHash : IComparable
     {
+      /**
+      * @brief  constuctor stores num and hash and convert hash to string
+      * @param  num (positive) integer number
+      * @param  hash a has value given as byte[]
+      */
       public NumHash(int num, byte[] hash)
       {
         Num = num;
-        Hash = "";
-        ConvertToString(hash);
+        Hash = ConvertToString(hash);
       }
 
-      public int Num { get; }
-      public string Hash { get; private set; }
-      public override string ToString() => $"({Num}, {Hash})";
+      public int Num { get; } /**< the number as integer */
+      public string Hash { get; } /**< the hash as string */
+      public override string ToString() => $"({Num}, {Hash})"; /**< provides the ToString function */
 
-      private void ConvertToString(byte[] hash)
+      /**
+      * @brief   convert to byte to string
+      * @details for each byte a string representative is found and added to the Hash variable
+      * @param   hash a has value given as byte[]
+      * @return  string representation of the hash
+      */
+      private static string ConvertToString(byte[] hash)
       {
+        string ret = "";
         foreach (var b in hash)
         {
-          Hash += b.ToString("X2");
+          ret += b.ToString("X2");
         }
+        return ret;
       }
 
+      /**
+      * @brief   provides the IComparable interface
+      * @details test if the ojects to compare have the right type
+      *          if no throw an error
+      *          if yes make a sting comparisment of the Hash
+      * @param   obj object which should be compared
+      * @return  integer output of string compare
+      */
       public int CompareTo(object obj)
       {
         if (this.GetType() != obj.GetType())
@@ -134,16 +154,16 @@ namespace PB.Logic
     }
 
     /**
-    * @brief get the pseudo dice number of a (page) number using a goupt of Range numbers sorted by hash
+    * @brief   get the pseudo dice number of a (page) number using a goupt of Range numbers sorted by hash
     * @details calculate the hash values of all number within the range between floor and ceil ofthe number mod Range
     *          sort the number acording to their hashs
     *          output the number at the original position of the page modulu 6 + 1
     *          Drawback it is not directly a one to one translation for page to dice number
     *          THe dice is only slightly loaded for the pages above number of total pages mod Range
     *          Advantage: the dice is onyl slightly loaded.
-    * @param Page positive integer number
-    * @param Range positive integer of the range should be an multiple of 6 should not be too high default is 24
-    * @return number 1 to 6 depending on the Page
+    * @param   Page positive integer number
+    * @param   Range positive integer of the range should be an multiple of 6 should not be too high default is 24
+    * @return  number 1 to 6 depending on the Page
     */
     static int UsingHashregions(int Page, int Range = 24)
     {

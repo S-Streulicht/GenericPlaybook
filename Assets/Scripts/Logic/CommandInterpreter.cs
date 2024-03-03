@@ -9,37 +9,53 @@ using PB.Attribute;
 
 namespace PB.Logic
 {
+  /**
+  *  @brief     Interprets a command string and execute the coresponding comand at the corect place
+  *  @details   the interpreter reseives all function which can be called via Serialized fields
+  *             the interpreter reseives from the parser the actual comand, the objct where it is tobe executt and an rgument list
+  */
   public class CommandInterpreter : MonoBehaviour
   {
     // search https://docs.unity3d.com/ScriptReference/SerializeReference.html
-    [SerializeField] GameObject AvailableAttributs;
+    [SerializeField] GameObject AvailableAttributs;  /**< A game object which contains all relevant scripts with implements IAttributeInterface*/
 
-    private SortedDictionary<string, IAttributeInterface> AttributPair = new SortedDictionary<string, IAttributeInterface>();
+    private SortedDictionary<string, IAttributeInterface> AttributPair = new SortedDictionary<string, IAttributeInterface>(); /**< Connects the classname with the asress of the class such that the interfacefunction can be called*/
+   
 
-    //private const SortedDictionary<string, string> AttributComand = new SortedDictionary<string, string>() { { "CHANGE", "CHANGE" }, { "IS", "IS" } };
-
-
-    /// <summary>
-    /// Start is called on the frame when a script is enabled just before
-    /// any of the Update methods is called the first time.
-    /// </summary>
+    /**
+    * @brief   initialize the commandinterpreter
+    * @details filles the Dictionarys with the availabl interfaces 
+    * @return  void
+    */
     void Start()
     {
       GetAllComponentsWithIAttributeInterface();
     }
 
+    /**
+    * @brief   execute a command string
+    * @details first pares the string then try to execute the function according to the dictionarys
+    * @param   CommandString the actual string which needs to be executed
+    * @return  void
+    */
     public void ExecuteCommand(string CommandString)
     {
       Command seperatedCommand = Parser.Parse(CommandString);
-      // ToDo stuff
+      // /todo stuff test if class is available
       AttributPair[seperatedCommand.Arguments[0]].Change(seperatedCommand.Arguments);
       //Debug.Log(AttributPair[seperatedCommand.Arguments[0]].Test("Change", seperatedCommand.Arguments));
     }
 
+    /**
+    * @brief   veryfies if a given condition is valide
+    * @details first pares the string then try to execute the test functionlity according to the dictionarys
+    * @param   CommandString the actual string which needs to be executed
+    * @return  bol true if condition is valide fals elsewise
+    */
     public bool TestCommand(string CommandString)
     {
       Command seperatedCommand = Parser.Parse(CommandString);
-      // ToDo stuff
+      // ToDo stuff test if class is available
       return AttributPair[seperatedCommand.Arguments[0]].Is(seperatedCommand.Arguments);
       //Debug.Log(AttributPair[seperatedCommand.Arguments[0]].Test("Change", seperatedCommand.Arguments));
     }

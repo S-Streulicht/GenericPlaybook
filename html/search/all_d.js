@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['update_36',['Update',['../class_p_b_1_1_u_i_1_1_filll_u_i.html#ae8fcda74da18d925d91284f304a2baa9',1,'PB::UI::FilllUI']]],
-  ['usinghash_37',['UsingHash',['../class_p_b_1_1_logic_1_1_dice_numbers.html#a044463dde18771ee9f6333541518bf93',1,'PB::Logic::DiceNumbers']]],
-  ['usinghashregions_38',['UsingHashregions',['../class_p_b_1_1_logic_1_1_dice_numbers.html#a8656bf972d7ffc2e108d3d29f5ccb024',1,'PB::Logic::DiceNumbers']]],
-  ['usingrandom_39',['UsingRandom',['../class_p_b_1_1_logic_1_1_dice_numbers.html#a73449a764a13452644e9bbb602c2189b',1,'PB::Logic::DiceNumbers']]]
+  ['setanswer_39',['SetAnswer',['../class_p_b_1_1_logic_1_1_director.html#a9188457b3ab257422cf59e7fd289952b',1,'PB::Logic::Director']]],
+  ['start_40',['Start',['../class_p_b_1_1_logic_1_1_command_interpreter.html#a03a41f7e63a11d884e18ce6f969070b7',1,'PB.Logic.CommandInterpreter.Start()'],['../class_p_b_1_1_logic_1_1_director.html#a802d5b74cd2945f6c32c27c7e54dd55b',1,'PB.Logic.Director.Start()']]],
+  ['stringreferences_41',['StringReferences',['../class_p_b_1_1_logic_1_1_string_references.html',1,'PB::Logic']]]
 ];

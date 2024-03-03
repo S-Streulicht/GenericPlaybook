@@ -113,12 +113,12 @@ $(document).ready(function(){initNavTree('_parser_8cs_source.html',''); initResi
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;      <span class="comment">// Split Comand from Arguments StartingArg is removed</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;      <span class="comment">// https://stackoverflow.com/questions/8928601/how-can-i-split-a-string-with-a-string-delimiter</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;      <span class="keywordtype">string</span>[] tokens = cleanString.Split(StartArg);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;      command.Com = tokens[0];</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;      command.<a class="code" href="struct_p_b_1_1_logic_1_1_command.html#a2f198be89d59defb06a31e84f8277714">Com</a> = tokens[0];</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;      <span class="comment">/*Debug.Log(command.Com);*/</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;      tokens[1] = RemoveStartEnd(tokens[1]);</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;      <span class="comment">/*Debug.Log(tokens[1]);*/</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;      <span class="comment">// Split the argumnents</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;      command.Arguments = tokens[1].Split(Delimiter).ToList();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;      command.<a class="code" href="struct_p_b_1_1_logic_1_1_command.html#aa69b29fd6d67f1a92b6bbb194c44f13f">Arguments</a> = tokens[1].Split(Delimiter).ToList();</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;      <span class="comment">/*foreach(string arg in command.Arguments)</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">      {</span></div>
@@ -141,8 +141,10 @@ $(document).ready(function(){initNavTree('_parser_8cs_source.html',''); initResi
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="anamespace_p_b_1_1_logic_html"><div class="ttname"><a href="namespace_p_b_1_1_logic.html">PB.Logic</a></div><div class="ttdef"><b>Definition:</b> <a href="_command_interpreter_8cs_source.html#l00010">CommandInterpreter.cs:10</a></div></div>
+<div class="ttc" id="astruct_p_b_1_1_logic_1_1_command_html_a2f198be89d59defb06a31e84f8277714"><div class="ttname"><a href="struct_p_b_1_1_logic_1_1_command.html#a2f198be89d59defb06a31e84f8277714">PB.Logic.Command.Com</a></div><div class="ttdeci">string Com</div><div class="ttdef"><b>Definition:</b> <a href="_command_8cs_source.html#l00013">Command.cs:13</a></div></div>
+<div class="ttc" id="astruct_p_b_1_1_logic_1_1_command_html_aa69b29fd6d67f1a92b6bbb194c44f13f"><div class="ttname"><a href="struct_p_b_1_1_logic_1_1_command.html#aa69b29fd6d67f1a92b6bbb194c44f13f">PB.Logic.Command.Arguments</a></div><div class="ttdeci">List&lt; string &gt; Arguments</div><div class="ttdef"><b>Definition:</b> <a href="_command_8cs_source.html#l00014">Command.cs:14</a></div></div>
 <div class="ttc" id="aclass_p_b_1_1_logic_1_1_parser_html"><div class="ttname"><a href="class_p_b_1_1_logic_1_1_parser.html">PB.Logic.Parser</a></div><div class="ttdef"><b>Definition:</b> <a href="_parser_8cs_source.html#l00008">Parser.cs:8</a></div></div>
-<div class="ttc" id="astruct_p_b_1_1_logic_1_1_command_html"><div class="ttname"><a href="struct_p_b_1_1_logic_1_1_command.html">PB.Logic.Command</a></div><div class="ttdef"><b>Definition:</b> <a href="_command_8cs_source.html#l00005">Command.cs:5</a></div></div>
+<div class="ttc" id="astruct_p_b_1_1_logic_1_1_command_html"><div class="ttname"><a href="struct_p_b_1_1_logic_1_1_command.html">PB.Logic.Command</a></div><div class="ttdoc">structure how the comands gets parsed</div><div class="ttdef"><b>Definition:</b> <a href="_command_8cs_source.html#l00011">Command.cs:11</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

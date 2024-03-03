@@ -1,4 +1,6 @@
 <map id="PB.Logic.Director.SetAnswer" name="PB.Logic.Director.SetAnswer">
-<area shape="rect" id="node1" title="Move to the linked text element." alt="" coords="5,13,196,39"/>
-<area shape="rect" id="node2" href="$class_p_b_1_1_logic_1_1_director.html#a7ee5a5800f9f11e642fea102d6c25680" title="get only valide JumpTos" alt="" coords="244,5,423,47"/>
+<area shape="rect" id="node1" title="Move to the linked text element." alt="" coords="5,46,196,73"/>
+<area shape="rect" id="node2" href="$class_p_b_1_1_logic_1_1_command_interpreter.html#a9d6638ecee519c9c46e29de807101954" title="execute a command string" alt="" coords="244,5,444,47"/>
+<area shape="rect" id="node3" href="$class_p_b_1_1_logic_1_1_director.html#a7ee5a5800f9f11e642fea102d6c25680" title="get only valide JumpTos" alt="" coords="255,71,433,112"/>
+<area shape="rect" id="node4" href="$class_p_b_1_1_logic_1_1_command_interpreter.html#acccea061abf61cf1edb0da698d9a5bdc" title="veryfies if a given condition is valide" alt="" coords="492,71,692,112"/>
 </map>

@@ -1,0 +1,4 @@
+<map id="PB.Logic.DiceNumbers.NumHash.NumHash" name="PB.Logic.DiceNumbers.NumHash.NumHash">
+<area shape="rect" id="node1" title="constuctor stores num and hash and convert hash to string" alt="" coords="5,5,193,47"/>
+<area shape="rect" id="node2" href="$struct_p_b_1_1_logic_1_1_dice_numbers_1_1_num_hash.html#a3530e11e48a4bd2856dc6dbd3adf1834" title="convert to byte to string" alt="" coords="241,5,429,47"/>
+</map>
