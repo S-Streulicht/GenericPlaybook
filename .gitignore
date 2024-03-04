@@ -63,9 +63,10 @@ crashlytics-build.properties
 TextMesh Pro.meta
 
 # Documnetation
-doxygen.exe
-doxyindexer.exe
-doxysearch.cgi.exe
-libclang.dll
-/graphviz-2.38/
+Docu/doxygen.exe
+Docu/doxyindexer.exe
+Docu/doxysearch.cgi.exe
+Docu/libclang.dll
+Docu/graphviz-2.38/
+Docu/html
 

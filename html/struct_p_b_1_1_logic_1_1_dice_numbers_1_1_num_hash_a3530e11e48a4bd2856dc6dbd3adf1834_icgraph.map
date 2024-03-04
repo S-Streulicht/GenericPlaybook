@@ -1,5 +1,0 @@
-<map id="PB.Logic.DiceNumbers.NumHash.ConvertToString" name="PB.Logic.DiceNumbers.NumHash.ConvertToString">
-<area shape="rect" id="node1" title="convert to byte to string" alt="" coords="477,5,665,47"/>
-<area shape="rect" id="node2" href="$struct_p_b_1_1_logic_1_1_dice_numbers_1_1_num_hash.html#ae31c4ab8b6e1b806aeb498066dd80fbf" title="constuctor stores num and hash and convert hash to string" alt="" coords="241,5,429,47"/>
-<area shape="rect" id="node3" href="$struct_p_b_1_1_logic_1_1_dice_numbers_1_1_num_hash.html#ac0c04f8152ea302526ddf418bf8f5b90" title="provides the IComparable interface" alt="" coords="5,5,193,47"/>
-</map>

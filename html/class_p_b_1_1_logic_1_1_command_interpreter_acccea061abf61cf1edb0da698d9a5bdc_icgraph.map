@@ -1,7 +1,0 @@
-<map id="PB.Logic.CommandInterpreter.TestCommand" name="PB.Logic.CommandInterpreter.TestCommand">
-<area shape="rect" id="node1" title="veryfies if a given condition is valide" alt="" coords="656,35,856,76"/>
-<area shape="rect" id="node2" href="$class_p_b_1_1_logic_1_1_director.html#a7ee5a5800f9f11e642fea102d6c25680" title="get only valide JumpTos" alt="" coords="429,35,608,76"/>
-<area shape="rect" id="node3" href="$class_p_b_1_1_logic_1_1_director.html#a7bc11f0522425bc806b43d1f550875c0" title="get only valid answers of the set of all answers of the current node" alt="" coords="193,5,379,47"/>
-<area shape="rect" id="node5" href="$class_p_b_1_1_logic_1_1_director.html#a9188457b3ab257422cf59e7fd289952b" title="Move to the linked text element." alt="" coords="191,71,381,98"/>
-<area shape="rect" id="node4" href="$class_p_b_1_1_u_i_1_1_filll_u_i.html#ae8fcda74da18d925d91284f304a2baa9" title=" " alt="" coords="5,13,143,39"/>
-</map>

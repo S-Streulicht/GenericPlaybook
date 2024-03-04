@@ -1,7 +1,0 @@
-<map id="PB.UI.FilllUI.Update" name="PB.UI.FilllUI.Update">
-<area shape="rect" id="node1" title=" " alt="" coords="5,35,143,61"/>
-<area shape="rect" id="node2" href="$class_p_b_1_1_logic_1_1_director.html#ab1987a1720d4fa5afee99a920b53bcb8" title="get the text of the currend node" alt="" coords="196,5,371,32"/>
-<area shape="rect" id="node3" href="$class_p_b_1_1_logic_1_1_director.html#a7bc11f0522425bc806b43d1f550875c0" title="get only valid answers of the set of all answers of the current node" alt="" coords="191,57,376,98"/>
-<area shape="rect" id="node4" href="$class_p_b_1_1_logic_1_1_director.html#a7ee5a5800f9f11e642fea102d6c25680" title="get only valide JumpTos" alt="" coords="424,57,603,98"/>
-<area shape="rect" id="node5" href="$class_p_b_1_1_logic_1_1_command_interpreter.html#acccea061abf61cf1edb0da698d9a5bdc" title="veryfies if a given condition is valide" alt="" coords="651,57,851,98"/>
-</map>

@@ -1,4 +1,0 @@
-<map id="PB.Logic.CommandInterpreter" name="PB.Logic.CommandInterpreter">
-<area shape="rect" id="node1" title="Interprets a command string and execute the coresponding comand at the corect place." alt="" coords="5,80,201,107"/>
-<area shape="rect" id="node2" title=" " alt="" coords="48,5,159,32"/>
-</map>
