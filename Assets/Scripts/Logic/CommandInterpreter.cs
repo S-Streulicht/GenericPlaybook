@@ -29,7 +29,7 @@ namespace PB.Logic
     */
     void Start()
     {
-      GetAllComponentsWithIAttributeInterface();
+      AttributPair = GetAllComponentsWithIn<IAttributeInterface>(AvailableAttributs);
     }
 
     /**
@@ -50,7 +50,7 @@ namespace PB.Logic
     * @brief   veryfies if a given condition is valide
     * @details first pares the string then try to execute the test functionlity according to the dictionarys
     * @param   CommandString the actual string which needs to be executed
-    * @return  bol true if condition is valide fals elsewise
+    * @return  bool true if condition is valide fals elsewise
     */
     public bool TestCommand(string CommandString)
     {
@@ -60,18 +60,27 @@ namespace PB.Logic
       //Debug.Log(AttributPair[seperatedCommand.Arguments[0]].Test("Change", seperatedCommand.Arguments));
     }
 
-
-    private void GetAllComponentsWithIAttributeInterface()
+    /**
+    * @brief   get all interfaces to a sortable dictionary
+    * @details get all components of the object wich a certain interface
+    *          get the class name of the interface scripts
+    *          add iti to the output
+    * @param   HeaderObject the game object containing the Interface scripts
+    * @return  a SortedDictionary with Class name and adress
+    */
+    private SortedDictionary<string, TInterface> GetAllComponentsWithIn<TInterface>(GameObject HeaderObject)
     {
-      IAttributeInterface[] attributes = AvailableAttributs.GetComponentsInChildren<IAttributeInterface>();
+      SortedDictionary<string, TInterface> ret = new SortedDictionary<string, TInterface>();
+      TInterface[] attributes = AvailableAttributs.GetComponentsInChildren<TInterface>();
 
       foreach (var attribut in attributes)
       {
         string fullQualifiedName = attribut.ToString();
         string actualClassname = fullQualifiedName.Split('.')[2];
         string pureClassname = actualClassname.Trim(')');
-        AttributPair.Add(pureClassname, attribut);
+        ret.Add(pureClassname, attribut);
       }
+      return ret;
     }
   }
 }
