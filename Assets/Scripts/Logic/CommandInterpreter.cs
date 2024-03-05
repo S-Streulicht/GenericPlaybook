@@ -20,7 +20,7 @@ namespace PB.Logic
     [SerializeField] GameObject AvailableAttributs;  /**< A game object which contains all relevant scripts with implements IAttributeInterface*/
 
     private SortedDictionary<string, IAttributeInterface> AttributPair = new SortedDictionary<string, IAttributeInterface>(); /**< Connects the classname with the asress of the class such that the interfacefunction can be called*/
-   
+
 
     /**
     * @brief   initialize the commandinterpreter
@@ -41,8 +41,11 @@ namespace PB.Logic
     public void ExecuteCommand(string CommandString)
     {
       Command seperatedCommand = Parser.Parse(CommandString);
-      // /todo stuff test if class is available
-      AttributPair[seperatedCommand.Arguments[0]].Change(seperatedCommand.Arguments);
+      if (seperatedCommand.Com == CommandRef.CHANGE_ATTRIBUTE)
+      {
+        // /todo stuff test if class is available
+        AttributPair[seperatedCommand.Arguments[0]].Change(seperatedCommand.Arguments);
+      }
       //Debug.Log(AttributPair[seperatedCommand.Arguments[0]].Test("Change", seperatedCommand.Arguments));
     }
 
@@ -55,9 +58,13 @@ namespace PB.Logic
     public bool TestCommand(string CommandString)
     {
       Command seperatedCommand = Parser.Parse(CommandString);
-      // ToDo stuff test if class is available
-      return AttributPair[seperatedCommand.Arguments[0]].Is(seperatedCommand.Arguments);
+      if (seperatedCommand.Com == CommandRef.IS_ATTRIBUTE)
+      {
+        // ToDo stuff test if class is available
+        return AttributPair[seperatedCommand.Arguments[0]].Is(seperatedCommand.Arguments);
+      }
       //Debug.Log(AttributPair[seperatedCommand.Arguments[0]].Test("Change", seperatedCommand.Arguments));
+      return false;
     }
 
     /**

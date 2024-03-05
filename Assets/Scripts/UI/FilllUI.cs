@@ -8,18 +8,30 @@ using PB.Logic;
 
 namespace PB.UI
 {
+  /**
+  *  @brief     Fill the GUI with content
+  *  @details   This is just a placeholder class providing a playable boog, but as a kind of tech demo.
+  *             /todo exchange the GUI for a more advanced display
+  */
   public class FilllUI : MonoBehaviour
   {
-    [SerializeField] TextMeshPro MainText;
-    [SerializeField] GameObject Answer1;
-    private TextMeshPro Answer1Text;
-    [SerializeField] GameObject Answer2;
-    private TextMeshPro Answer2Text;
-    [SerializeField] GameObject Answer3;
-    private TextMeshPro Answer3Text;
+    [SerializeField] TextMeshPro MainText; /**< Place of the main text, filled from the Unity GUI */
+    [SerializeField] GameObject Answer1;   /**< Place of the first answer need to contain a TextMashPro text element relevant for dis (en) abeling the the answer, filled from the Unity GUI */
+    private TextMeshPro Answer1Text;       /**< actual element containign the text of the first answer, autofilled from the corespondign GameObject */
+    [SerializeField] GameObject Answer2;   /**< Place of the second answer need to contain a TextMashPro text element relevant for dis (en) abeling the the answer, filled from the Unity GUI */
+    private TextMeshPro Answer2Text;       /**< actual element containign the text of the second answer, autofilled from the corespondign GameObject */
+    [SerializeField] GameObject Answer3;   /**< Place of the thired answer need to contain a TextMashPro text element relevant for dis (en) abeling the the answer, filled from the Unity GUI */
+    private TextMeshPro Answer3Text;       /**< actual element containign the text of the thired answer, autofilled from the corespondign GameObject */
 
-    private Director Director;
-    // Start is called before the first frame update
+    private Director Director;             /**< Link to the director filled in the start by searching the game object "Director" */
+
+    /**
+    * @brief setup the FillUI
+    * @details Just initialisation no prefilling with information
+    *          find the Director component
+    *          get the actual text component of the Gameobhect Answer[x]
+    * @return void
+    */
     void Start()
     {
       Director = GameObject.Find("Director").GetComponent<Director>();
@@ -28,7 +40,15 @@ namespace PB.UI
       Answer3Text = Answer3.GetComponentsInChildren<TextMeshPro>()[0];
     }
 
-    // Update is called once per frame
+    /**
+    * @brief   every frame the gui element is fileld with information
+    * @details getting the actual main text from the director
+    *          getting the all valide answers
+    *          setting the answerfiled, if answer is not valid : deactivate the game object
+    *          if valide: activate the object and display answer
+    *          /todo this is highly inefficent -> move to is changed
+    * @return  void
+    */
     void Update()
     {
       MainText.text = Director.GetText();
@@ -66,6 +86,14 @@ namespace PB.UI
       }
     }
 
+    /**
+    * @brief   callback for the clickevent on the GUI
+    * @details The callback is set in the Unit GUI by an On mouse down event script
+    *          In the GUI the actual number of the answer is also set for each Gui element
+    *          Base on the event the Director is called toset the answer 
+    * @param   numberOfAnswer the actual number of the Answer set in the GUI
+    * @return void
+    */
     public void OnAnswerClickEvent(int numberOfAnswer)
     {
       Director.SetAnswer(numberOfAnswer);
