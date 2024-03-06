@@ -1,3 +1,3 @@
 doxygen.exe
-del out.zip
+del docu.zip
 tar.exe -cf docu.zip ./html
