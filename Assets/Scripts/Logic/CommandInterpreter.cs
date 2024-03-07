@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEditor;
 using PB.Attribute;
@@ -43,8 +44,11 @@ namespace PB.Logic
       Command seperatedCommand = Parser.Parse(CommandString);
       if (seperatedCommand.Com == CommandRef.CHANGE_ATTRIBUTE)
       {
-        // /todo stuff test if class is available
-        AttributPair[seperatedCommand.Arguments[0]].Change(seperatedCommand.Arguments);
+        string classToCall = seperatedCommand.Arguments[0];
+        if (AttributPair.ContainsKey(classToCall))
+        {
+          AttributPair[classToCall].Change(seperatedCommand.Arguments);
+        }
       }
       //Debug.Log(AttributPair[seperatedCommand.Arguments[0]].Test("Change", seperatedCommand.Arguments));
     }
@@ -60,10 +64,13 @@ namespace PB.Logic
       Command seperatedCommand = Parser.Parse(CommandString);
       if (seperatedCommand.Com == CommandRef.IS_ATTRIBUTE)
       {
-        // ToDo stuff test if class is available
-        return AttributPair[seperatedCommand.Arguments[0]].Is(seperatedCommand.Arguments);
+        string classToCall = seperatedCommand.Arguments[0];
+        if (AttributPair.ContainsKey(classToCall))
+        {
+          return AttributPair[classToCall].Is(seperatedCommand.Arguments);
+        }
       }
-      //Debug.Log(AttributPair[seperatedCommand.Arguments[0]].Test("Change", seperatedCommand.Arguments));
+      //Debug.Log(AttributPair[seperatedCommand.Arguments[0]].Test("Is", seperatedCommand.Arguments));
       return false;
     }
 
@@ -82,12 +89,21 @@ namespace PB.Logic
 
       foreach (var attribut in attributes)
       {
-        string fullQualifiedName = attribut.ToString();
-        string actualClassname = fullQualifiedName.Split('.')[2];
-        string pureClassname = actualClassname.Trim(')');
+        string pureClassname = getClassname(attribut.ToString());
         ret.Add(pureClassname, attribut);
       }
       return ret;
+    }
+
+    /**
+    * @brief   get and trim the actual name of the class
+    * @param   fullQualifiesName the full name of the class
+    * @return  string the actual class name
+    */
+    private string getClassname(string fullQualifiedName)
+    {
+      string actualClassname = fullQualifiedName.Split('.').Last();
+      return actualClassname.Trim(')');
     }
   }
 }

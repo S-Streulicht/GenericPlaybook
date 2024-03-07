@@ -84,12 +84,16 @@ namespace PB.Logic
       {
         if (element.name == jumpTos[number].referenceId)
         {
-          /// \todo evaluate the comand of the Jumpto and the Node
+          foreach(string commandString in jumpTos[number].comands)
+          {
+            Interpreter.ExecuteCommand(commandString);
+          }
+          
           CurrentNode = element;
           break;
         }
       }
-      /// \todo Execute Command of new Text
+
       foreach (string commandString in CurrentNode.Comands)
       {
         Interpreter.ExecuteCommand(commandString);

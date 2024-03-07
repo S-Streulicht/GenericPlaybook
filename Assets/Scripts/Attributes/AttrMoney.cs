@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace PB.Attribute
@@ -99,21 +100,17 @@ namespace PB.Attribute
       case "Change":
         if (arg.Count != 3) return false;
         ret &= isCorrectClass(arg[0]);
-        bool isArgFunctionName = false;
-        foreach (var funct in ChangeFunction)
-        {
-          isArgFunctionName |= funct.Key == arg[1];
-        }
-        ret &= isArgFunctionName;
+        ret &= ChangeFunction.ContainsKey(arg[1]);
         ret &= int.TryParse(arg[2], out _);
         break;
       case "Is":
         if (arg.Count != 3) return false;
         ret &= isCorrectClass(arg[0]);
+        ret &= Isfunction.ContainsKey(arg[1]);
         ret &= int.TryParse(arg[2], out _);
         break;
       default:
-        Debug.Log("Wrong interface (" + Interface + ") to be testerd in AttrMonney");
+        Debug.Log("Wrong interface (" + Interface + ") to be tested in " + getClassname());
         ret = false;
         break;
     }
@@ -141,7 +138,7 @@ namespace PB.Attribute
   private string getClassname()
   {
     string fullQualifiedName = this.ToString();
-    string actualClassname = fullQualifiedName.Split('.')[2];
+    string actualClassname = fullQualifiedName.Split('.').Last();
     return actualClassname.Trim(')');
   }
   #endregion

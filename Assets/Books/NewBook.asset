@@ -213,7 +213,9 @@ MonoBehaviour:
   - text: getting to 6
     referenceId: 12434914-7aa0-45ce-82ef-0dc64fcf5d78
     conditions: []
-    comands: []
+    comands:
+    - CHANGE(AttrMoney, SUB, 1)
+    - CHANGE(AttrMoney, SUB, 1)
   area:
     serializedVersion: 2
     x: 326
