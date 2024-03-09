@@ -42,7 +42,7 @@ namespace PB.Logic
 
     /**
     * @brief get the text of the currend node
-    * @return void
+    * @return string of the current text
     */
     public string GetText()
     {
@@ -52,14 +52,32 @@ namespace PB.Logic
     /**
     * @brief get only valid answers of the set of all answers of the current node
     * @details exctract all jumpToos which are valide
-    *          get the text of all the jumpToos
+    *          get the text of all the jumpTos
     *          return the text
-    * @return returns a lit of answers. Remak the order matters in the feedback to choos the answwers
+    * @return returns a list of answers. Remak the order matters in the feedback to choose the answwers
     */
     public List<String> GetValideAnswers()
     {
       List<string> ret = new List<string>();
-      List<JumpTo> jumpTos = GetValidJumps();
+      List<JumpTo> jumpTos = GetJumpsBasedOn(true);
+      foreach (JumpTo jump in jumpTos)
+      {
+        ret.Add(jump.text);
+      }
+      return ret;
+    }
+
+    /**
+    * @brief get only invalid answers of the set of all answers of the current node
+    * @details exctract all jumpToos which are invalide
+    *          get the text of all the jumpTos
+    *          return the text
+    * @return returns a list of answers. Remak invalide answers can't be choosen
+    */
+    public List<String> GetInValideAnswers()
+    {
+      List<string> ret = new List<string>();
+      List<JumpTo> jumpTos = GetJumpsBasedOn(false);
       foreach (JumpTo jump in jumpTos)
       {
         ret.Add(jump.text);
@@ -78,17 +96,17 @@ namespace PB.Logic
     */
     public void SetAnswer(int number)
     {
-      List<JumpTo> jumpTos = GetValidJumps();
+      List<JumpTo> jumpTos = GetJumpsBasedOn(true);
       var allChildren = Book.GetAllChildren(CurrentNode);
       foreach (TextElements element in allChildren)
       {
         if (element.name == jumpTos[number].referenceId)
         {
-          foreach(string commandString in jumpTos[number].comands)
+          foreach (string commandString in jumpTos[number].comands)
           {
             Interpreter.ExecuteCommand(commandString);
           }
-          
+
           CurrentNode = element;
           break;
         }
@@ -101,15 +119,15 @@ namespace PB.Logic
     }
 
     /**
-    * @brief get only valide JumpTos
-    * @details get all Jumptoos of the curend node
+    * @brief get JumpTos wich are either valide or not valide
+    * @details get all JumpTos of the curend node
     *          test each condition of the jump to
-    *          if fullfileld add it to the list of valit jumpTos
-    *          redturn the list
-    * @param number the actual number of the valid answers
-    * @return void
+    *          if the sum of the conditons corresponds to the isValide param add it to the returned jumpTos
+    *          return the list
+    * @param isValide if true return only valide jumpTos if false return only invalide jumpTos
+    * @return The rist of jumptos based on the isValide parameter
     */
-    private List<JumpTo> GetValidJumps()
+    private List<JumpTo> GetJumpsBasedOn(bool isValide)
     {
       List<JumpTo> ret = new List<JumpTo>();
       List<JumpTo> jumpTos = CurrentNode.JumpTos;
@@ -120,7 +138,7 @@ namespace PB.Logic
         {
           cond &= Interpreter.TestCommand(condition);
         }
-        if (cond == true)
+        if (cond == isValide)
         {
           ret.Add(jump);
         }

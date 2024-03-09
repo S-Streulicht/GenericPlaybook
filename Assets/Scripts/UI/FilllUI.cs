@@ -17,73 +17,113 @@ namespace PB.UI
   {
     [SerializeField] TextMeshPro MainText; /**< Place of the main text, filled from the Unity GUI */
     [SerializeField] GameObject Answer1;   /**< Place of the first answer need to contain a TextMashPro text element relevant for dis (en) abeling the the answer, filled from the Unity GUI */
-    private TextMeshPro Answer1Text;       /**< actual element containign the text of the first answer, autofilled from the corespondign GameObject */
     [SerializeField] GameObject Answer2;   /**< Place of the second answer need to contain a TextMashPro text element relevant for dis (en) abeling the the answer, filled from the Unity GUI */
-    private TextMeshPro Answer2Text;       /**< actual element containign the text of the second answer, autofilled from the corespondign GameObject */
     [SerializeField] GameObject Answer3;   /**< Place of the thired answer need to contain a TextMashPro text element relevant for dis (en) abeling the the answer, filled from the Unity GUI */
-    private TextMeshPro Answer3Text;       /**< actual element containign the text of the thired answer, autofilled from the corespondign GameObject */
 
     private Director Director;             /**< Link to the director filled in the start by searching the game object "Director" */
+
+    private TAnswer[] Answers = { };       /**< chached array of text components */
+
+    /**
+    *  @brief   provides a pair to cantain a gameobect and its coresponding text field
+    */
+    private struct TAnswer
+    {
+      /**
+      * @brief  structure to combine the gameobject of the answerfield with its text element and the click ability
+      * @param  obj the game object
+      * @param  text the text element
+      * @param  click the ability to click on the answer
+      * @param  renderer the actual renderer of the object
+      */
+      public TAnswer(GameObject obj, TextMeshPro text, OnMouseDownScript click, Renderer renderer)
+      {
+        AnswerObject = obj;
+        AnswerText = text;
+        AnswerClick = click;
+        AnswerRenderer = renderer;
+      }
+
+      public GameObject AnswerObject { get; }        /**< The game Object of the answer field */
+      public TextMeshPro AnswerText { get; }         /**< The actual Textelement of the Answer field */
+      public OnMouseDownScript AnswerClick { get; }  /**< The actual Mouseevent script to (dis) enable clicking */
+      public Renderer AnswerRenderer { get; }        /**< The actual render of the object */
+      public override string ToString() => $"({AnswerObject}: {AnswerText})"; /**< provides the ToString function */
+
+    }
 
     /**
     * @brief setup the FillUI
     * @details Just initialisation no prefilling with information
     *          find the Director component
-    *          get the actual text component of the Gameobhect Answer[x]
+    *          fill the answers object by finding the individual component of the Answers
     * @return void
     */
     void Start()
     {
       Director = GameObject.Find("Director").GetComponent<Director>();
-      Answer1Text = Answer1.GetComponentsInChildren<TextMeshPro>()[0];
-      Answer2Text = Answer2.GetComponentsInChildren<TextMeshPro>()[0];
-      Answer3Text = Answer3.GetComponentsInChildren<TextMeshPro>()[0];
+      Answers = new TAnswer[3];
+      Answers[0] = new TAnswer(Answer1,
+                               Answer1.GetComponentsInChildren<TextMeshPro>()[0],
+                               Answer1.GetComponent<OnMouseDownScript>(),
+                               Answer1.GetComponent<Renderer>());
+      Answers[1] = new TAnswer(Answer2,
+                               Answer2.GetComponentsInChildren<TextMeshPro>()[0],
+                               Answer2.GetComponent<OnMouseDownScript>(),
+                               Answer2.GetComponent<Renderer>());
+      Answers[2] = new TAnswer(Answer3,
+                               Answer3.GetComponentsInChildren<TextMeshPro>()[0],
+                               Answer3.GetComponent<OnMouseDownScript>(),
+                               Answer3.GetComponent<Renderer>());
     }
 
     /**
-    * @brief   every frame the gui element is fileld with information
+    * @brief   every frame the gui element is filled with information
     * @details getting the actual main text from the director
-    *          getting the all valide answers
-    *          setting the answerfiled, if answer is not valid : deactivate the game object
-    *          if valide: activate the object and display answer
+    *          deactiavte all answers
+    *          getting all valide answers
+    *            setting the answer field,
+    *            activate the object and display answer
+    *          get all invalide answers
+    *            setting the answer filed,
+    *            activate the object but disable clicking
     *          /todo this is highly inefficent -> move to is changed
     * @return  void
     */
     void Update()
     {
       MainText.text = Director.GetText();
+
+      foreach (TAnswer answer in Answers)
+      {
+        answer.AnswerObject.SetActive(false);
+        answer.AnswerText.text = "";
+        answer.AnswerClick.enable = false;
+        answer.AnswerRenderer.material.color = Color.green;
+      }
+
       List<string> valideAnswers = Director.GetValideAnswers();
-      if (valideAnswers != null && valideAnswers.Count > 0)
+      if (valideAnswers != null)
       {
-        Answer1.SetActive(true);
-        Answer1Text.text = Director.GetValideAnswers()[0];
+        for (int i = 0; i < valideAnswers.Count; i++)
+        {
+          Answers[i].AnswerObject.SetActive(true);
+          Answers[i].AnswerText.text = valideAnswers[i];
+          Answers[i].AnswerClick.enable = true;
+        }
       }
-      else
+
+      List<string> inValideAnswers = Director.GetInValideAnswers();
+      if (inValideAnswers != null)
       {
-        Answer1.SetActive(false);
-        Answer1Text.text = "";
-        ///ToDo get systemstate may be we are done
+        for (int i = valideAnswers.Count; i < valideAnswers.Count + inValideAnswers.Count; i++)
+        {
+          Answers[i].AnswerObject.SetActive(true);
+          Answers[i].AnswerRenderer.material.color = Color.yellow;
+          Answers[i].AnswerText.text = inValideAnswers[i - valideAnswers.Count];
+        }
       }
-      if (valideAnswers.Count > 1)
-      {
-        Answer2.SetActive(true);
-        Answer2Text.text = Director.GetValideAnswers()[1];
-      }
-      else
-      {
-        Answer2.SetActive(false);
-        Answer2Text.text = "";
-      }
-      if (valideAnswers.Count > 2)
-      {
-        Answer3.SetActive(true);
-        Answer3Text.text = Director.GetValideAnswers()[2];
-      }
-      else
-      {
-        Answer3.SetActive(false);
-        Answer3Text.text = "";
-      }
+
     }
 
     /**

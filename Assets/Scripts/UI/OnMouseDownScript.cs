@@ -11,7 +11,8 @@ namespace PB.UI
   */
   public class OnMouseDownScript : MonoBehaviour
   {
-    [SerializeField] private UnityEvent ue; /**< GUI element to set the actual callback */
+    [SerializeField] private UnityEvent ue;  /**< GUI element to set the actual callback */
+    public bool enable { get; set; } = true; /**< Enables and disables the capability of clicking */
 
     /**
     * @brief   entry for the callback for the clickevent on the GUI
@@ -20,7 +21,7 @@ namespace PB.UI
     */
     void OnMouseDown()
     {
-      ue.Invoke();
+      if (enable) { ue.Invoke(); }
     }
   }
 }

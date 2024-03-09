@@ -204,7 +204,8 @@ MonoBehaviour:
     feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui
     blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.    '
   comands:
-  - CHANGE(AttrMoney, ADD, 10)
+  - CHANGE(AttrMoney, ADD, 4)
+  - CHANGE(AttrMoney, ADD, 6)
   jumpTos:
   - text: getting to 3
     referenceId: 67963ae1-cc41-4625-b378-003d9e54157b

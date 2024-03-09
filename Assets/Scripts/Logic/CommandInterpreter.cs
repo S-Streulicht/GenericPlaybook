@@ -97,7 +97,7 @@ namespace PB.Logic
 
     /**
     * @brief   get and trim the actual name of the class
-    * @param   fullQualifiesName the full name of the class
+    * @param   fullQualifiedName the full name of the class
     * @return  string the actual class name
     */
     private string getClassname(string fullQualifiedName)
