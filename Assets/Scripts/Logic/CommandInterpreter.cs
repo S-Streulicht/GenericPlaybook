@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEditor;
 using PB.Attribute;
+using PB.ExtraUI;
 
 // interesting stuff about do stuff for every thing of type ... (abstract class)
 // https://stackoverflow.com/questions/49329764/get-all-components-with-a-specific-interface-in-unity
@@ -19,8 +20,10 @@ namespace PB.Logic
   {
     // search https://docs.unity3d.com/ScriptReference/SerializeReference.html
     [SerializeField] GameObject AvailableAttributs;  /**< A game object which contains all relevant scripts with implements IAttributeInterface*/
+    [SerializeField] GameObject AvailableExtraUis;  /**< A game object which contains all relevant scripts with implements IExtraUIInterface*/
 
     private SortedDictionary<string, IAttributeInterface> AttributPair = new SortedDictionary<string, IAttributeInterface>(); /**< Connects the classname with the asress of the class such that the interfacefunction can be called*/
+    private SortedDictionary<string, IExtraUiInterface> ExtraUIPair = new SortedDictionary<string, IExtraUiInterface>(); /**< Connects the classname with the asress of the class such that the interfacefunction can be called*/
 
 
     /**
@@ -31,25 +34,35 @@ namespace PB.Logic
     void Start()
     {
       AttributPair = GetAllComponentsWithIn<IAttributeInterface>(AvailableAttributs);
+      ExtraUIPair = GetAllComponentsWithIn<IExtraUiInterface>(AvailableExtraUis);
     }
 
     /**
     * @brief   execute a command string
-    * @details first pares the string then try to execute the function according to the dictionarys
+    * @details first parse the string then try to execute the function according to the dictionarys
     * @param   CommandString the actual string which needs to be executed
     * @return  void
     */
     public void ExecuteCommand(string CommandString)
     {
       Command seperatedCommand = Parser.Parse(CommandString);
-      if (seperatedCommand.Com == CommandRef.CHANGE_ATTRIBUTE)
+      string classToCall = seperatedCommand.Arguments[0];
+      switch (seperatedCommand.Com)
       {
-        string classToCall = seperatedCommand.Arguments[0];
-        if (AttributPair.ContainsKey(classToCall))
-        {
-          AttributPair[classToCall].Change(seperatedCommand.Arguments);
-        }
+        case CommandRef.CHANGE_ATTRIBUTE:
+          if (AttributPair.ContainsKey(classToCall))
+          {
+            AttributPair[classToCall].Change(seperatedCommand.Arguments);
+          }
+          break;
+        case CommandRef.SET_EXTRAUI:
+          if (ExtraUIPair.ContainsKey(classToCall))
+          {
+            ExtraUIPair[classToCall].Set(seperatedCommand.Arguments);
+          }
+          break;
       }
+
       //Debug.Log(AttributPair[seperatedCommand.Arguments[0]].Test("Change", seperatedCommand.Arguments));
     }
 
@@ -85,12 +98,12 @@ namespace PB.Logic
     private SortedDictionary<string, TInterface> GetAllComponentsWithIn<TInterface>(GameObject HeaderObject)
     {
       SortedDictionary<string, TInterface> ret = new SortedDictionary<string, TInterface>();
-      TInterface[] attributes = AvailableAttributs.GetComponentsInChildren<TInterface>();
+      TInterface[] interfaces = HeaderObject.GetComponentsInChildren<TInterface>();
 
-      foreach (var attribut in attributes)
+      foreach (var interfaceVar in interfaces)
       {
-        string pureClassname = getClassname(attribut.ToString());
-        ret.Add(pureClassname, attribut);
+        string pureClassname = getClassname(interfaceVar.ToString());
+        ret.Add(pureClassname, interfaceVar);
       }
       return ret;
     }

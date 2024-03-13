@@ -8,11 +8,11 @@ namespace PB.Attribute
 {
   /**
   *  @brief   Handles the attribut "money" 
-  *  @details Besides the state f the money the class heritates from th IAttributeInterface functionality and tets are handled by this.
+  *  @details Besides the state for the money the class heritates from the IAttributeInterface functionality and tetss are handled by this.
   */
   public class AttrMoney : MonoBehaviour, IAttributeInterface
   {
-    [SerializeField] int Money; /**< the actual state of the atribut, can beset by the GUI */
+    [SerializeField] int Money; /**< the actual state of the attribut, can be set by the GUI */
 
     private readonly SortedDictionary<string, Action<int>> ChangeFunction = new SortedDictionary<string, Action<int>>(); /**< groups the fubctionality (change command) set by string requets to the actual action to modify the state. */
     private readonly SortedDictionary<string, Func<int, bool>> Isfunction = new SortedDictionary<string, Func<int, bool>>(); /**< groups the fubctionality (is command) set by string requets to the actual action to modify the state. */
@@ -83,64 +83,64 @@ namespace PB.Attribute
       return false;
     }
 
-  /**
-  * @brief   implementation of the interface test used to tests the argument list
-  * @details test theargument list of the other interfaces
-  *          can be used as stand alone or as part of the other interfaces
-  * parme    Interface which interface to test "change" or "is"
-  * param    arg List: arg[0] is the classname, arg[1] is element of <, > and == arg[2] is an integer
-  * @return  true if the args meet the actual needs.
-  */
-  bool IAttributeInterface.Test(string Interface, List<string> arg)
-  {
-    bool ret = true;
-
-    switch (Interface)
+    /**
+    * @brief   implementation of the interface test used to tests the argument list
+    * @details test the argument list of the other interfaces
+    *          can be used as stand alone or as part of the other interfaces
+    * parme    Interface which interface to test "Change" or "Is"
+    * param    arg List: arg[0] is the classname, arg[1] is element of <, > and == arg[2] is an integer
+    * @return  true if the args meet the actual needs.
+    */
+    bool IAttributeInterface.Test(string Interface, List<string> arg)
     {
-      case "Change":
-        if (arg.Count != 3) return false;
-        ret &= isCorrectClass(arg[0]);
-        ret &= ChangeFunction.ContainsKey(arg[1]);
-        ret &= int.TryParse(arg[2], out _);
-        break;
-      case "Is":
-        if (arg.Count != 3) return false;
-        ret &= isCorrectClass(arg[0]);
-        ret &= Isfunction.ContainsKey(arg[1]);
-        ret &= int.TryParse(arg[2], out _);
-        break;
-      default:
-        Debug.Log("Wrong interface (" + Interface + ") to be tested in " + getClassname());
-        ret = false;
-        break;
+      bool ret = true;
+
+      switch (Interface)
+      {
+        case "Change":
+          if (arg.Count != 3) return false;
+          ret &= isCorrectClass(arg[0]);
+          ret &= ChangeFunction.ContainsKey(arg[1]);
+          ret &= int.TryParse(arg[2], out _);
+          break;
+        case "Is":
+          if (arg.Count != 3) return false;
+          ret &= isCorrectClass(arg[0]);
+          ret &= Isfunction.ContainsKey(arg[1]);
+          ret &= int.TryParse(arg[2], out _);
+          break;
+        default:
+          Debug.Log("Wrong interface (" + Interface + ") to be tested in " + getClassname());
+          ret = false;
+          break;
+      }
+
+      return ret;
+    }
+    #endregion
+
+    #region HelperClass
+    /**
+    * @brief   test if the inputstring is the class name
+    * @details the function is using the shortend name, not the full qualified one.
+    * parme    className the name to be tests
+    * @return  true if the input is equal to the actual classe
+    */
+    private bool isCorrectClass(string className)
+    {
+      return getClassname() == className;
     }
 
-    return ret;
+    /**
+    * @brief   get and trim the actual name of the class
+    * @return  string the actual class name
+    */
+    private string getClassname()
+    {
+      string fullQualifiedName = this.ToString();
+      string actualClassname = fullQualifiedName.Split('.').Last();
+      return actualClassname.Trim(')');
+    }
+    #endregion
   }
-  #endregion
-
-  #region HelperClass
-  /**
-  * @brief   test if the inputstring is the class name
-  * @details the function is using the shortend name, not the full qualified one.
-  * parme    className the name to be tests
-  * @return  true if the input is equal to the actual classe
-  */
-  private bool isCorrectClass(string className)
-  {
-    return getClassname() == className;
-  }
-
-  /**
-  * @brief   get and trim the actual name of the class
-  * @return  string the actual class name
-  */
-  private string getClassname()
-  {
-    string fullQualifiedName = this.ToString();
-    string actualClassname = fullQualifiedName.Split('.').Last();
-    return actualClassname.Trim(')');
-  }
-  #endregion
-}
 }
