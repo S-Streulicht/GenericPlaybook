@@ -67,24 +67,34 @@ namespace PB.Logic
     }
 
     /**
-    * @brief   veryfies if a given condition is valide
-    * @details first pares the string then try to execute the test functionlity according to the dictionarys
+    * @brief   all script comanfdswhcih have one feedback should be in here
+    * @details first parse the string then try to execute the functionlity according to the dictionarys
     * @param   CommandString the actual string which needs to be executed
-    * @return  bool true if condition is valide fals elsewise
+    * @return  returns the answere of the Comand
     */
-    public bool TestCommand(string CommandString)
+    public TType ReturnCommand<TType>(string CommandString)
     {
       Command seperatedCommand = Parser.Parse(CommandString);
+      string classToCall = seperatedCommand.Arguments[0];
       if (seperatedCommand.Com == CommandRef.IS_ATTRIBUTE)
       {
-        string classToCall = seperatedCommand.Arguments[0];
+
         if (AttributPair.ContainsKey(classToCall))
         {
-          return AttributPair[classToCall].Is(seperatedCommand.Arguments);
+          var answer = AttributPair[classToCall].Is(seperatedCommand.Arguments);
+          return (TType)System.Convert.ChangeType(answer, typeof(TType));
+        }
+      }
+      if (seperatedCommand.Com == CommandRef.GET_INFO)
+      {
+        if (ExtraUIPair.ContainsKey(classToCall))
+        {
+          var answer = ExtraUIPair[classToCall].GetInfo<string>();
+          return (TType)System.Convert.ChangeType(answer, typeof(TType));
         }
       }
       //Debug.Log(AttributPair[seperatedCommand.Arguments[0]].Test("Is", seperatedCommand.Arguments));
-      return false;
+      return default(TType);
     }
 
     /**

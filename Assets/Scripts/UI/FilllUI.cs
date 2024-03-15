@@ -19,10 +19,11 @@ namespace PB.UI
     [SerializeField] GameObject Answer1;   /**< Place of the first answer need to contain a TextMashPro text element relevant for dis (en) abeling the the answer, filled from the Unity GUI */
     [SerializeField] GameObject Answer2;   /**< Place of the second answer need to contain a TextMashPro text element relevant for dis (en) abeling the the answer, filled from the Unity GUI */
     [SerializeField] GameObject Answer3;   /**< Place of the thired answer need to contain a TextMashPro text element relevant for dis (en) abeling the the answer, filled from the Unity GUI */
-
+    [SerializeField] GameObject GameState; /**< The place to display if the game ended */
     private Director Director;             /**< Link to the director filled in the start by searching the game object "Director" */
 
     private TAnswer[] Answers = { };       /**< chached array of text components */
+    private TextMeshPro StateText;         /**< the actual text of the state */
 
     /**
     *  @brief   provides a pair to cantain a gameobect and its coresponding text field
@@ -57,6 +58,7 @@ namespace PB.UI
     * @details Just initialisation no prefilling with information
     *          find the Director component
     *          fill the answers object by finding the individual component of the Answers
+    *          cache the text of the state object
     * @return void
     */
     void Start()
@@ -75,6 +77,7 @@ namespace PB.UI
                                Answer3.GetComponentsInChildren<TextMeshPro>()[0],
                                Answer3.GetComponent<OnMouseDownScript>(),
                                Answer3.GetComponent<Renderer>());
+      StateText = GameState.GetComponentsInChildren<TextMeshPro>()[0];
     }
 
     /**
@@ -87,6 +90,8 @@ namespace PB.UI
     *          get all invalide answers
     *            setting the answer filed,
     *            activate the object but disable clicking
+    *          get the state of the game
+    *            if in default dont display the gameobject els display with actual information
     *          /todo this is highly inefficent -> move to is changed
     * @return  void
     */
@@ -124,6 +129,17 @@ namespace PB.UI
         }
       }
 
+      string state = Director.GetGameState();
+      StateText.text = state;
+      Debug.Log(state);
+      if (state == "Default")
+      {
+        GameState.SetActive(false);
+      }
+      else
+      {
+        GameState.SetActive(true);
+      }
     }
 
     /**

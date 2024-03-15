@@ -23,7 +23,8 @@ MonoBehaviour:
     erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren,
     kasd magna no rebum. sanctus sea sed takimata ut vero voluptua. est Lorem ipsum
     dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-  comands: []
+  comands:
+  - SET(ExtraUIGameState, Lose)
   jumpTos: []
   area:
     serializedVersion: 2
@@ -151,7 +152,8 @@ MonoBehaviour:
   textNumber: 7
   text: '7 Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie
     consequat, vel illum dolore eu feugiat nulla facilisis.   '
-  comands: []
+  comands:
+  - SET(ExtraUIGameState, Win)
   jumpTos: []
   area:
     serializedVersion: 2
