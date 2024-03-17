@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using PB.Helper;
 
 namespace PB.Attribute
 {
@@ -14,8 +15,18 @@ namespace PB.Attribute
   {
     [SerializeField] int Money; /**< the actual state of the attribut, can be set by the GUI */
 
+    private readonly ClassManager<AttrMoney> classManager; /**< containing acces to the Helper Class: Class Manager */
+
     private readonly SortedDictionary<string, Action<int>> ChangeFunction = new SortedDictionary<string, Action<int>>(); /**< groups the fubctionality (change command) set by string requets to the actual action to modify the state. */
     private readonly SortedDictionary<string, Func<int, bool>> Isfunction = new SortedDictionary<string, Func<int, bool>>(); /**< groups the fubctionality (is command) set by string requets to the actual action to modify the state. */
+
+    /**
+    * @brief   constructor initialises the helper classes 
+    */
+    public AttrMoney()
+    {
+      classManager = new ClassManager<AttrMoney>(this);
+    }
 
     /**
     * @brief   setup the instance
@@ -53,7 +64,7 @@ namespace PB.Attribute
       }
       else
       {
-        Debug.Log("Unknown function " + arg[1] + " in " + getClassname() + " is called in Change");
+        Debug.Log("Unknown function " + arg[1] + " in " + classManager.getClassname() + " is called in Change");
       }
 
     }
@@ -77,7 +88,7 @@ namespace PB.Attribute
       }
       else
       {
-        Debug.Log("Unknown function " + arg[1] + " in " + getClassname() + " is called in Is");
+        Debug.Log("Unknown function " + arg[1] + " in " + classManager.getClassname() + " is called in Is");
       }
 
       return false;
@@ -99,47 +110,23 @@ namespace PB.Attribute
       {
         case "Change":
           if (arg.Count != 3) return false;
-          ret &= isCorrectClass(arg[0]);
+          ret &= classManager.isCorrectClass(arg[0]);
           ret &= ChangeFunction.ContainsKey(arg[1]);
           ret &= int.TryParse(arg[2], out _);
           break;
         case "Is":
           if (arg.Count != 3) return false;
-          ret &= isCorrectClass(arg[0]);
+          ret &= classManager.isCorrectClass(arg[0]);
           ret &= Isfunction.ContainsKey(arg[1]);
           ret &= int.TryParse(arg[2], out _);
           break;
         default:
-          Debug.Log("Wrong interface (" + Interface + ") to be tested in " + getClassname());
+          Debug.Log("Wrong interface (" + Interface + ") to be tested in " + classManager.getClassname());
           ret = false;
           break;
       }
 
       return ret;
-    }
-    #endregion
-
-    #region HelperClass
-    /**
-    * @brief   test if the inputstring is the class name
-    * @details the function is using the shortend name, not the full qualified one.
-    * parme    className the name to be tests
-    * @return  true if the input is equal to the actual classe
-    */
-    private bool isCorrectClass(string className)
-    {
-      return getClassname() == className;
-    }
-
-    /**
-    * @brief   get and trim the actual name of the class
-    * @return  string the actual class name
-    */
-    private string getClassname()
-    {
-      string fullQualifiedName = this.ToString();
-      string actualClassname = fullQualifiedName.Split('.').Last();
-      return actualClassname.Trim(')');
     }
     #endregion
   }

@@ -43,5 +43,16 @@ namespace PB.Helper
       string actualClassname = fullQualifiedName.Split('.').Last();
       return actualClassname.Trim(')');
     }
+
+    /**
+    * @brief   get and trim the actual name of the class
+    * @param   fullQualifiedName the full name of the class
+    * @return  string the actual class name
+    */
+    public string getClassnameByString(string fullQualifiedName)
+    {
+      string actualClassname = fullQualifiedName.Split('.').Last();
+      return actualClassname.Trim(')');
+    }
   }
 }

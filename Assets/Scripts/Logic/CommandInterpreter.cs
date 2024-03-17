@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEditor;
 using PB.Attribute;
 using PB.ExtraUI;
+using PB.Helper;
 
 // interesting stuff about do stuff for every thing of type ... (abstract class)
 // https://stackoverflow.com/questions/49329764/get-all-components-with-a-specific-interface-in-unity
@@ -20,11 +21,20 @@ namespace PB.Logic
   {
     // search https://docs.unity3d.com/ScriptReference/SerializeReference.html
     [SerializeField] GameObject AvailableAttributs;  /**< A game object which contains all relevant scripts with implements IAttributeInterface*/
-    [SerializeField] GameObject AvailableExtraUis;  /**< A game object which contains all relevant scripts with implements IExtraUIInterface*/
+    [SerializeField] GameObject AvailableExtraUis;   /**< A game object which contains all relevant scripts with implements IExtraUIInterface*/
+
+    private readonly ClassManager<CommandInterpreter> classManager; /**< containing acces to the Helper Class: Class Manager */
 
     private SortedDictionary<string, IAttributeInterface> AttributPair = new SortedDictionary<string, IAttributeInterface>(); /**< Connects the classname with the asress of the class such that the interfacefunction can be called*/
-    private SortedDictionary<string, IExtraUiInterface> ExtraUIPair = new SortedDictionary<string, IExtraUiInterface>(); /**< Connects the classname with the asress of the class such that the interfacefunction can be called*/
+    private SortedDictionary<string, IExtraUiInterface> ExtraUIPair = new SortedDictionary<string, IExtraUiInterface>();      /**< Connects the classname with the asress of the class such that the interfacefunction can be called*/
 
+    /**
+    * @brief   constructor initialises the helper classes 
+    */
+    public CommandInterpreter()
+    {
+      classManager = new ClassManager<CommandInterpreter>(this);
+    }
 
     /**
     * @brief   initialize the commandinterpreter
@@ -112,21 +122,10 @@ namespace PB.Logic
 
       foreach (var interfaceVar in interfaces)
       {
-        string pureClassname = getClassname(interfaceVar.ToString());
+        string pureClassname = classManager.getClassnameByString(interfaceVar.ToString());
         ret.Add(pureClassname, interfaceVar);
       }
       return ret;
-    }
-
-    /**
-    * @brief   get and trim the actual name of the class
-    * @param   fullQualifiedName the full name of the class
-    * @return  string the actual class name
-    */
-    private string getClassname(string fullQualifiedName)
-    {
-      string actualClassname = fullQualifiedName.Split('.').Last();
-      return actualClassname.Trim(')');
     }
   }
 }
