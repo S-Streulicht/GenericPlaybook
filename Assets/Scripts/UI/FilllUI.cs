@@ -131,7 +131,6 @@ namespace PB.UI
 
       string state = Director.GetGameState();
       StateText.text = state;
-      Debug.Log(state);
       if (state == "Default")
       {
         GameState.SetActive(false);

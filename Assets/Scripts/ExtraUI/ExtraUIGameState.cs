@@ -3,18 +3,28 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using PB.Helper;
 
 namespace PB.ExtraUI
 {
   /**
-*  @brief   Handles the extra UI "GameState" 
-*  @details Besides the state for the gamestate the class heritates from the IExtraUiInterface functionality and tests are handled by this.
-*/
+  *  @brief   Handles the extra UI "GameState" 
+  *  @details Besides the state for the gamestate the class heritates from the IExtraUiInterface functionality and tests are handled by this.
+  */
   public class ExtraUIGameState : MonoBehaviour, IExtraUiInterface
   {
-   
+    private readonly ClassManager<ExtraUIGameState> classManager; /**< containing acces to the Helper Class: Class Manager */
+
     readonly List<string> GameState = new List<string>() { "Default", "Win", "Lose" };  /**< the potential game state: Default, Win, Lose" */
     [SerializeField] string State = "Default"; /**< the actual game state can be set by the GUI */
+
+    /**
+    * @brief   constructor initialises the helper classes 
+    */
+    public ExtraUIGameState()
+    {
+      classManager = new ClassManager<ExtraUIGameState>(this);
+    }
 
     /**
     * @brief   set the state to the one of the script.
@@ -64,7 +74,7 @@ namespace PB.ExtraUI
       {
         case "Set":
           if (arg.Count != 2) return false;
-          ret &= isCorrectClass(arg[0]);
+          ret &= classManager.isCorrectClass(arg[0]);
           ret &= GameState.Contains(arg[1]);
           break;
         case "UnSet":
@@ -74,36 +84,12 @@ namespace PB.ExtraUI
           // no parameters are needed
           break;
         default:
-          Debug.Log("Wrong interface (" + Interface + ") to be tested in " + getClassname());
+          Debug.Log("Wrong interface (" + Interface + ") to be tested in " + classManager.getClassname());
           ret = false;
           break;
       }
 
       return ret;
     }
-
-    #region HelperClass
-    /**
-    * @brief   test if the inputstring is the class name
-    * @details the function is using the shortend name, not the full qualified one.
-    * param    className the name to be tests
-    * @return  true if the input is equal to the actual classe
-    */
-    private bool isCorrectClass(string className)
-    {
-      return getClassname() == className;
-    }
-
-    /**
-    * @brief   get and trim the actual name of the class
-    * @return  string the actual class name
-    */
-    private string getClassname()
-    {
-      string fullQualifiedName = this.ToString();
-      string actualClassname = fullQualifiedName.Split('.').Last();
-      return actualClassname.Trim(')');
-    }
-    #endregion
   }
 }
