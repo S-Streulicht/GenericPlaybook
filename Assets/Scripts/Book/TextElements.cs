@@ -5,7 +5,7 @@ using UnityEditor;
 namespace PB.Book
 {
   /**
-  *  @brief     The actiol text on each page
+  *  @brief     The actual text on each page
   *  @details   the stoy is toled by individuel elements presented by this class
   */
   public class TextElements : ScriptableObject

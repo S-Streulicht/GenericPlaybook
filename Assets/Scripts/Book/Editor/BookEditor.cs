@@ -12,41 +12,59 @@ using UnityEngine;
 
 namespace PB.Book.BookEditor
 {
+  /**
+  *  @brief     THe editor to modify a book
+  *  @details   only used in the editor time. by the placement in the Editor folder it does not get compiled into the final game. 
+  */
   public class BookEditor : EditorWindow
   {
     #region Variables
-                    Text selectedBook = null;
-    [NonSerialized] private GUIStyle nodeStyle;
-    [NonSerialized] private TextElements dragginNode = null;
-    [NonSerialized] private Vector2 dragStart;
-    [NonSerialized] private TextElements creationNode = null;
-    [NonSerialized] private TextElements deletionNode = null;
-    [NonSerialized] private TextElements linkingParentNode = null;
+                    Text selectedBook = null;                              /**< stores the reference to the book wich needs to be modified */
+    [NonSerialized] private GUIStyle nodeStyle;                            /**< the style the nodes are looking */
+    [NonSerialized] private TextElements dragginNode = null;               /**< information if the editor is in dragging mode */
+    [NonSerialized] private Vector2 dragStart;                             /**< the starting point of an dragg event */
+    [NonSerialized] private TextElements creationNode = null;              /**< the mode to be created */
+    [NonSerialized] private TextElements deletionNode = null;              /**< the node to be deleted */
+    [NonSerialized] private TextElements linkingParentNode = null;         /**< to whcih parent does the link process link */
 
-                    Vector2 scrollPosition;
-    [NonSerialized] private Vector2 draggingCanvasOffset;
-    [NonSerialized] private bool draggingCanvas = false;
-    [NonSerialized] private Vector2 CanvasSize = new Vector2(4000, 4000);
+                    Vector2 scrollPosition;                                /**< scroll position of the canvas, not the zoom level */
+    [NonSerialized] private Vector2 draggingCanvasOffset;                  /**< from wich position is the canvas moved */
+    [NonSerialized] private bool draggingCanvas = false;                   /**< is the canvas currently in the draggin state */
+    [NonSerialized] private Vector2 CanvasSize = new Vector2(4000, 4000);  /**< total size of the canvas */
 
     #endregion
     
     #region Editor Handels    
     [MenuItem("Window/Book Editor")]
+    /**
+    *  @brief   opens the book editor
+    *  @details set also an entry in the menue
+    */
     public static void ShowEditorWindow()
     {
       GetWindow(typeof(BookEditor), false, "Book Editor");
 
     }
 
+    /**
+    *  @brief   sets the GIU to be flaged as changes.
+    *  @details used as an callback
+    */
     static void UndoRedoAction()
     {
       GUI.changed = true;
     }
 
-    /// <summary>
-    /// OnGUI is called for rendering and handling GUI events.
-    /// This function can be called multiple times per frame (one call per event).
-    /// </summary>
+    /**
+    *  @brief   Defines what to do if the GUI is changed
+    *  @details OnGUI is called for rendering and handling GUI events. \n 
+    *           This function can be called multiple times per frame (one call per event). \n 
+    *           If no book is conected -> mentione it else \n 
+    *           Andle the same event \n 
+    *           Draw the elements of the Book, \n 
+    *           The nodes (text elements) and the links \n
+    *           create / delete an node after it is previously seleted
+    */
     private void OnGUI()
     {
       if (null == selectedBook)
@@ -95,6 +113,16 @@ namespace PB.Book.BookEditor
       }
     }
 
+    /**
+    *  @brief   handles events from the GUI interaction
+    *  @details enables the undo action \n 
+    *           5 cases with 2 supcases hare handled \n 
+    *           If mous is down and a node is draged -> 2 cases if click is on node emter dragmode if not enter scrolling mode \n 
+    *           if in dragging canvas and mose drag event -> update canvas position \n 
+    *           If in draggin node and mause drag event update node position \n 
+    *           If mouse is released and in node drag -> leave mode \n 
+    *           If mouse is released and in canvas drag -> leave mode
+    */
     private void ProcessEvents()
     {
       Undo.undoRedoPerformed += UndoRedoAction;
@@ -135,6 +163,12 @@ namespace PB.Book.BookEditor
       }
     }
 
+    /**
+    *  @brief   drawing a node in the canvas
+    *  @details using the nodeStyle layout: Plot the number and the text.
+    *           Get a horizontal layout for node deletion linkt button and node creation
+    *  @param   node the node to be drawn
+    */
     private void DrawNode(TextElements node)
     {
       GUILayout.BeginArea(node.Area, nodeStyle);
@@ -160,6 +194,14 @@ namespace PB.Book.BookEditor
       GUILayout.EndArea();
     }
 
+    /**
+    *  @brief   draw the button of a node element
+    *  @details The button has differnd stated and hence different lables. The states can be entered by kliking on the the button: \n
+    *           default lable link: ready to link something. \n 
+    *           when clicked on the buton the current node gets the cancel lable while th others get
+    *           unlink if it islinked to the node and child if the node is not already linked.
+    *  @param   node the node to be handled
+    */
     private void DrawLinkButtons(TextElements node)
     {
       if (linkingParentNode == null)
@@ -197,6 +239,12 @@ namespace PB.Book.BookEditor
       }
     }
 
+    /**
+    *  @brief   draw the conections between between the nodes
+    *  @details for each linked element, defined by the getAllchildren function of the book
+    *           a bezier cover if is dran from the right centero to the let center of the child
+    *  @param   parent the node from which the link emerge
+    */
     private void DrawConnections(TextElements parent)
     {
       Vector3 startPosition = new Vector2(parent.Area.xMax, parent.Area.center.y);
@@ -211,6 +259,12 @@ namespace PB.Book.BookEditor
       }
     }
 
+    /**
+    *  @brief   helper function to figure out if an event is on a node or not.
+    *  @details for each node test if te point is within the area of the node
+    *  @param   point the 2D point in cancas coordinates (including the current scroll position)
+    *  @return  if the position is on a node return the node if not return null
+    */
     private TextElements GetNodeAtPointer(Vector2 point)
     {
       foreach (TextElements node in selectedBook.GetAllNodes())
@@ -223,9 +277,10 @@ namespace PB.Book.BookEditor
       return null;
     }
 
-    /// <summary>
-    /// This function is called when the object becomes enabled and active.
-    /// </summary>
+    /**
+    *  @brief   set the node style and link the OnSelectionChange (differnd book loaded) callback
+    *  @details this function is called when the object becomes enabled and active.
+    */
     private void OnEnable()
     {
       SetNodeStyle();
@@ -234,6 +289,10 @@ namespace PB.Book.BookEditor
       OnSelectionChanges();
     }
 
+    /**
+    *  @brief   Sets the global node style
+    *  @details some setting which could be optimised, see code
+    */
     private void SetNodeStyle()
     {
       nodeStyle = new GUIStyle();
@@ -244,6 +303,10 @@ namespace PB.Book.BookEditor
     #endregion
 
     #region Callbacks 
+    /**
+    *  @brief   first time a book is loaded
+    *  @details if an book can be instanciated the editor is shown
+    */
     [OnOpenAssetAttribute(1)]
     public static bool OnOpenAsset(int instanceID, int line)
     {
@@ -256,6 +319,10 @@ namespace PB.Book.BookEditor
       return false;
     }
 
+    /**
+    *  @brief   callback when a new book is selected to be edited
+    *  @details if the selection can be linked to an book than update the global ariable seleced Book and repaing the editor
+    */
     private void OnSelectionChanges()
     {
       Text newBook = Selection.activeObject as Text;
