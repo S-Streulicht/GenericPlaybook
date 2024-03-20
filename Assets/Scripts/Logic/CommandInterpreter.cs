@@ -71,6 +71,12 @@ namespace PB.Logic
             ExtraUIPair[classToCall].Set(seperatedCommand.Arguments);
           }
           break;
+        case CommandRef.UNSET_EXTRAUI:
+          if (ExtraUIPair.ContainsKey(classToCall))
+          {
+            ExtraUIPair[classToCall].UnSet();
+          }
+          break;
       }
 
       //Debug.Log(AttributPair[seperatedCommand.Arguments[0]].Test("Change", seperatedCommand.Arguments));
