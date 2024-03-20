@@ -38,10 +38,10 @@ namespace PB.Logic
 
     /**
     * @brief   initialize the commandinterpreter
-    * @details filles the Dictionarys with the availabl interfaces 
+    * @details filles the Dictionarys with the available interfaces. It is in awake to limit race conditions.
     * @return  void
     */
-    void Start()
+    void Awake()
     {
       AttributPair = GetAllComponentsWithIn<IAttributeInterface>(AvailableAttributs);
       ExtraUIPair = GetAllComponentsWithIn<IExtraUiInterface>(AvailableExtraUis);

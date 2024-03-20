@@ -38,6 +38,8 @@ namespace PB.Logic
         return;
       }
       CurrentNode = Book.GetRootNode();
+
+      ExecuteNodeCommands();
     }
 
     #region Normal play text
@@ -113,6 +115,15 @@ namespace PB.Logic
         }
       }
 
+      ExecuteNodeCommands();
+    }
+
+    /**
+    * @brief   execute the comands of the text element
+    * @details loop through all comands and call the interpreter
+    */
+    private void ExecuteNodeCommands()
+    {
       foreach (string commandString in CurrentNode.Comands)
       {
         Interpreter.ExecuteCommand(commandString);
