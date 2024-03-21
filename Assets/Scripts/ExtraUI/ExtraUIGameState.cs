@@ -48,14 +48,12 @@ namespace PB.ExtraUI
 
     /**
     * @brief   returns the actual state of the GameState as string
-    * @details if TType is a string the actual state is returned else he default of the actual type.
+    * @details if TType is a string the actual state is returned else the default of the actual type.
     * @return  the actual game state
     */
     Ttype IExtraUiInterface.GetInfo<Ttype>()
     {
-      Ttype ret = default(Ttype);
-      if (typeof(Ttype) == typeof(string)) return (Ttype)Convert.ChangeType(State, typeof(Ttype));
-      return ret;
+      return State is Ttype value ? value : default(Ttype);
     }
 
     /**

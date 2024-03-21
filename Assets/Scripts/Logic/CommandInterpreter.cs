@@ -94,7 +94,6 @@ namespace PB.Logic
       string classToCall = seperatedCommand.Arguments[0];
       if (seperatedCommand.Com == CommandRef.IS_ATTRIBUTE)
       {
-
         if (AttributPair.ContainsKey(classToCall))
         {
           var answer = AttributPair[classToCall].Is(seperatedCommand.Arguments);
@@ -105,7 +104,7 @@ namespace PB.Logic
       {
         if (ExtraUIPair.ContainsKey(classToCall))
         {
-          var answer = ExtraUIPair[classToCall].GetInfo<string>();
+          var answer = ExtraUIPair[classToCall].GetInfo<TType>();
           return (TType)System.Convert.ChangeType(answer, typeof(TType));
         }
       }

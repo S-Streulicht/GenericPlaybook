@@ -162,12 +162,21 @@ namespace PB.Logic
 
     /**
     * @brief   returns the game state
-    * @details getthe information by calling the interpreter requesting infor from GameState object
+    * @details get the information by calling the interpreter requesting infor from GameState object
     * @return  The actual state
     */
     public string GetGameState()
     {
       return Interpreter.ReturnCommand<string>("GET(ExtraUIGameState)");
+    }
+
+    /**
+    * @brief   returns A texture set by a script
+    * @return  Texture set by script
+    */
+    public Texture2D GetTexture()
+    {
+      return Interpreter.ReturnCommand<Texture2D>("GET(ExtraUIPicture)");
     }
   }
 }

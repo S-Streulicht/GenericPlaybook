@@ -53,9 +53,7 @@ namespace PB.ExtraUI
     */
     Ttype IExtraUiInterface.GetInfo<Ttype>()
     {
-      Ttype ret = default(Ttype);
-      if (typeof(Ttype) == typeof(string)) return (Ttype)Convert.ChangeType(Picture, typeof(Ttype));
-      return ret;
+      return Picture is Ttype value ? value : default(Ttype);
     }
 
     /**
