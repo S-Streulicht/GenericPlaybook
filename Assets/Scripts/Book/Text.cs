@@ -14,7 +14,7 @@ namespace PB.Book
   *           Besides the actual text part it provides some information for the Book editod:
   *           when to store hand a (revers) lsit of the nodes.
   */
-  public class Text : ScriptableObject, ISerializationCallbackReceiver
+  public class Text : ScriptableObject, ISerializationCallbackReceiver, IBookInterface
   {
     [SerializeField] List<TextElements> nodes = new List<TextElements>();                 /**< containing the individual pages of the book */
     List<TextElements> reverseNodes = new List<TextElements>();                           /**< inverse list for faster usage */
@@ -165,15 +165,6 @@ namespace PB.Book
     }
 
     /**
-    *  @brief   returns the first node
-    *  @return  only the first node
-    */
-    public TextElements GetRootNode()
-    {
-      return nodes.First();
-    }
-
-    /**
     *  @brief   returns the reverse node list
     *  @return  all nodes in revers order
     */
@@ -202,12 +193,21 @@ namespace PB.Book
     }
 
     /**
+    *  @brief   returns the first node
+    *  @return  only the first node
+    */
+    TextElements IBookInterface.GetRootNode()
+    {
+      return nodes.First();
+    }
+
+    /**
     *  @brief   get the node with the described by the reference ID
     *  @details find the node in the lookuptable and sets return it
     *  @param   referenceId the reference ID of the node to find
     *  @return  node withthe coresponding ID or null
     */
-    public TextElements GetNodeByRefId(string referenceId)
+    TextElements IBookInterface.GetNodeByRefId(string referenceId)
     {
       if (nodeLookup.ContainsKey(referenceId))
       {

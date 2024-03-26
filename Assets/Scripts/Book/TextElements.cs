@@ -8,7 +8,7 @@ namespace PB.Book
   *  @brief     The actual text on each page
   *  @details   the story is toled by individuel elements presented by this class
   */
-  public class TextElements : ScriptableObject
+  public class TextElements : ScriptableObject, ITextNodeInterface
   {
     [SerializeField] private int textNumber = 1;                        /**< The actual number of the text  could be the page number*/
     [SerializeField] private string text;                               /**< The actual storry text */

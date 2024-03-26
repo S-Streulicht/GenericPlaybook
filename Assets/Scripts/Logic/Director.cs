@@ -17,13 +17,15 @@ namespace PB.Logic
   public class Director : MonoBehaviour
   {
     [SerializeField] Text Book;             /**< contains the actual book to be played \todo better way of setting the book */
+    IBookInterface _book;                   /**< internaly used to refere to the interface of the book. Unfurtunately the interface is not serializable hence it cant be used directly */
 
-    private TextElements CurrentNode;       /**< contains the currend node of a play book*/
+    private ITextNodeInterface CurrentNode; /**< contains the currend node of a play book*/
     private CommandInterpreter Interpreter; /**< contains the Comantlineinterpreter gest filled at Start*/
 
     /**
     * @brief   setup the instance get
     * @details Start is called before the first frame update
+    *          sets the internal book variable to use only the interface
     *          Get the commandInterpreter instance
     *          test if a Book is loaded
     *          initialise the CurrnetNode to the root of the loaded node
@@ -31,13 +33,14 @@ namespace PB.Logic
     */
     void Start()
     {
+      _book = Book as IBookInterface;
       Interpreter = GetComponent<CommandInterpreter>();
       if (null == Book)
       {
         Debug.Log("Forgot to set the book");
         return;
       }
-      CurrentNode = Book.GetRootNode();
+      CurrentNode = _book.GetRootNode();
 
       ExecuteNodeCommands();
     }
@@ -100,7 +103,7 @@ namespace PB.Logic
     public void SetAnswer(int number)
     {
       List<JumpTo> jumpTos = GetJumpsBasedOn(true);
-      TextElements newNode = Book.GetNodeByRefId(jumpTos[number].referenceId);
+      TextElements newNode = _book.GetNodeByRefId(jumpTos[number].referenceId);
 
       if (null != newNode)
       {
