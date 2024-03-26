@@ -6,7 +6,7 @@ namespace PB.Book
 {
   /**
   *  @brief     The actual text on each page
-  *  @details   the stoy is toled by individuel elements presented by this class
+  *  @details   the story is toled by individuel elements presented by this class
   */
   public class TextElements : ScriptableObject
   {

@@ -91,7 +91,7 @@ namespace PB.Logic
     /**
     * @brief   Move to the linked text element
     * @details choose the numbers element of all valid answers
-    *          execute the Comands of the given Jumpto
+    *          execute the comands of the given Jumpto
     *          Move to the new node given by the jumpTo
     *          execute the commands of the new node
     * @param   number the actual number of the valid answers
@@ -100,19 +100,16 @@ namespace PB.Logic
     public void SetAnswer(int number)
     {
       List<JumpTo> jumpTos = GetJumpsBasedOn(true);
-      var allChildren = Book.GetAllChildren(CurrentNode);
-      foreach (TextElements element in allChildren)
-      {
-        if (element.name == jumpTos[number].referenceId)
-        {
-          foreach (string commandString in jumpTos[number].comands)
-          {
-            Interpreter.ExecuteCommand(commandString);
-          }
+      TextElements newNode = Book.GetNodeByRefId(jumpTos[number].referenceId);
 
-          CurrentNode = element;
-          break;
+      if (null != newNode)
+      {
+        foreach (string commandString in jumpTos[number].comands)
+        {
+          Interpreter.ExecuteCommand(commandString);
         }
+
+        CurrentNode = newNode;
       }
 
       ExecuteNodeCommands();

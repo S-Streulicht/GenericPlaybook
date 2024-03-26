@@ -45,7 +45,7 @@ namespace PB.Book
     }
 #endif
 
-#region  EditorRelated stuff
+    #region  EditorRelated stuff
 #if UNITY_EDITOR
     /**
     *  @brief   creation of a new TextElemen as a node of the book
@@ -122,7 +122,7 @@ namespace PB.Book
       Undo.DestroyObjectImmediate(nodeToDelete);
     }
 #endif
-#endregion
+    #endregion
 
     /**
     *  @brief   gets the biggest number of the text elements
@@ -130,9 +130,9 @@ namespace PB.Book
     private int getBiggestTextNum()
     {
       int ret = 0;
-      foreach(TextElements node in nodes)
+      foreach (TextElements node in nodes)
       {
-        if(node.TextNumber > ret) {ret = node.TextNumber;}
+        if (node.TextNumber > ret) { ret = node.TextNumber; }
       }
       return ret;
     }
@@ -191,14 +191,29 @@ namespace PB.Book
     */
     public IEnumerable<TextElements> GetAllChildren(TextElements parentNode)
     {
-      foreach(JumpTo jumps in parentNode.JumpTos)
+      foreach (JumpTo jumps in parentNode.JumpTos)
       {
         //yield return nodes.Find( x => jumps.referenceId == x.uniqueID);
-        if( nodeLookup.ContainsKey(jumps.referenceId) )
+        if (nodeLookup.ContainsKey(jumps.referenceId))
         {
           yield return nodeLookup[jumps.referenceId];
         }
       }
+    }
+
+    /**
+    *  @brief   get the node with the described by the reference ID
+    *  @details find the node in the lookuptable and sets return it
+    *  @param   referenceId the reference ID of the node to find
+    *  @return  node withthe coresponding ID or null
+    */
+    public TextElements GetNodeByRefId(string referenceId)
+    {
+      if (nodeLookup.ContainsKey(referenceId))
+      {
+        return nodeLookup[referenceId];
+      }
+      return null;
     }
 
     /**
@@ -214,11 +229,7 @@ namespace PB.Book
       if(onSerialiseIsActive == false)
       {
         onSerialiseIsActive = true;
-        if (0 == nodes.Count())
-        {
-          TextElements child = MakeNode(null);
-          AddNode(child);
-        }
+        CreateRootIfEmpty();
 
         if (AssetDatabase.GetAssetPath(this) != "" )
         {
@@ -238,6 +249,18 @@ namespace PB.Book
     /**
     *  @brief   unused need only by interface ISerializationCallbackReceiver
     */
-    public void OnAfterDeserialize() {}
+    public void OnAfterDeserialize() { }
+
+    /**
+    *  @brief  if the book is empty, create a root node
+    */
+    private void CreateRootIfEmpty()
+    {
+      if (0 == nodes.Count())
+      {
+        TextElements child = MakeNode(null);
+        AddNode(child);
+      }
+    }
   }
 }
