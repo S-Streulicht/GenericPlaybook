@@ -20,13 +20,15 @@ namespace PB.Logic
     IBookInterface _book;                   /**< internaly used to refere to the interface of the book. Unfurtunately the interface is not serializable hence it cant be used directly */
 
     private ITextNodeInterface CurrentNode; /**< contains the currend node of a play book*/
-    private CommandInterpreter Interpreter; /**< contains the Comantlineinterpreter gest filled at Start*/
+    private CommandInterpreter Interpreter; /**< contains the Comantlineinterpreter get filled at Start*/
+    private TextEval           textEval;    /**< contains the Textecvaluation component. Get filled during initalisation*/
 
     /**
     * @brief   setup the instance get
     * @details Start is called before the first frame update
     *          sets the internal book variable to use only the interface
     *          Get the commandInterpreter instance
+    *          Get the textEval instance
     *          test if a Book is loaded
     *          initialise the CurrnetNode to the root of the loaded node
     * @return  void
@@ -35,6 +37,7 @@ namespace PB.Logic
     {
       _book = Book as IBookInterface;
       Interpreter = GetComponent<CommandInterpreter>();
+      textEval = GetComponent<TextEval>();
       if (null == Book)
       {
         Debug.Log("Forgot to set the book");
@@ -47,12 +50,12 @@ namespace PB.Logic
 
     #region Normal play text
     /**
-    * @brief  get the text of the currend node
+    * @brief  get the text of the currend node befor returning all Comands are evaluated.
     * @return string of the current text
     */
     public string GetText()
     {
-      return CurrentNode.Text;
+      return textEval.Replace(CurrentNode.Text);
     }
 
     /**
