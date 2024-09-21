@@ -12,5 +12,6 @@ namespace PB.Logic
   {
     public string Com;             /**< the Commmand to call*/
     public List<string> Arguments; /**< the arguments of the command*/
+    public string Result;          /**< the place to store the result of the operation*/
   }
 }

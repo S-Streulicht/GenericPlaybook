@@ -16,13 +16,15 @@ namespace PB.Logic
     private const char Delimiter = ','; /**< delimiter of the arguments */
     private const char StartArg = '('; /**< start the arument list */
     private const char EndArg = ')'; /**< ends the argument list */
+    private const string Target = "->"; /**< starting of the comand result*/
 
     /**
     * @brief   Parsing of the command
     * @details frist cleaning the string from whitespaces
-    *          than plit the comand into command and rest
-    *          than removing the parenthesis
-    *          than plitting the arguments
+    *          than split the comand into command, arguments and target
+    *          than removing the parenthesis from the argument token
+    *          than splitting the arguments
+    *          remove the Target indicator string from the target token.
     *          Some further things to read:
     *          https://code-maze.com/replace-whitespaces-string-csharp/
     *          https://stackoverflow.com/questions/8928601/how-can-i-split-a-string-with-a-string-delimiter
@@ -33,11 +35,16 @@ namespace PB.Logic
     {
       Command command = new Command();
       string cleanString = RemoveWhitespaces(CommandString);
-      string[] tokens = cleanString.Split(StartArg);
+      char[] splitPoints = {StartArg, EndArg};
+      string[] tokens = cleanString.Split(splitPoints);
+
       command.Com = tokens[0];
+      
       tokens[1] = RemoveStartEnd(tokens[1]);
       command.Arguments = tokens[1].Split(Delimiter).ToList();
-
+      
+      if(tokens.Count() > 2) {command.Result = RemoveTargetIndicator(tokens[2]);}
+      
       return command;
     }
 
@@ -51,6 +58,17 @@ namespace PB.Logic
     private static string RemoveWhitespaces(string source)
     {
       return new string(source.Where(c => !char.IsWhiteSpace(c)).ToArray());
+    }
+
+    /**
+    * @brief   Remove the target indicator
+    * @details Rreplace the indicator given with "Target" with an empty string
+    * @param   source the string with needs to be striped
+    * @return  the striped string
+    */
+    private static string RemoveTargetIndicator(string source)
+    {
+      return new string(source.Replace(Target, ""));
     }
 
     /**
