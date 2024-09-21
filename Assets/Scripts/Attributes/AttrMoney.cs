@@ -32,7 +32,6 @@ namespace PB.Attribute
     * @brief   setup the instance
     * @details Start is called before the first frame update
     *          initialisation of the dictionaries
-    * @return  void
     */
     void Start()
     {

@@ -6,7 +6,9 @@ Inspired on the Books by Jackson, Steve / Livingstone, Ian, like the "Duell der 
 * Content of the actual Playbook (second private repositry)
 * Non public third party librarys (third private repositry)
 ## Documentation
-Download Doxygen; copy to main folder (same than the Doxfile)
-Download graphviz-2.38; extract to main folder
-execute doygen
-results in html/index.html
+Download Doxygen version 1.12; copy to main\Docu folder (same than the Doxfile)
+https://www.doxygen.nl/download.html
+Download graphviz-2.38; extract to main\Docu folder
+https://www.graphviz.org/download/
+execute createDocu.bat this will call doxygen which itselve creates a html documentation.
+This documentation will be ziped to docu.zip wich becomes than an official part of the repository

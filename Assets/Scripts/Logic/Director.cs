@@ -31,7 +31,6 @@ namespace PB.Logic
     *          Get the textEval instance
     *          test if a Book is loaded
     *          initialise the CurrnetNode to the root of the loaded node
-    * @return  void
     */
     void Start()
     {
@@ -101,7 +100,6 @@ namespace PB.Logic
     *          Move to the new node given by the jumpTo
     *          execute the commands of the new node
     * @param   number the actual number of the valid answers
-    * @return  void
     */
     public void SetAnswer(int number)
     {

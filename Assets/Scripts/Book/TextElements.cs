@@ -100,7 +100,6 @@ namespace PB.Book
     *          create a new jumpTo add the coresponding reference ID given by childID
     *          add the jumpTo to the lsit of JumpTos
     * @param   childID the actual ID of the linked text element 
-    * @return  void
     */
     public void CreateLink(string childID)
     {
@@ -116,7 +115,6 @@ namespace PB.Book
     * @details it handles the undo event
     *          it removes the elemnt for the JummpTos
     * @param   childID the actual ID of the linked text element 
-    * @return  void
     */
     public void DeleteLink(string childID)
     {

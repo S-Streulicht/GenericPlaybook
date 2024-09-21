@@ -21,7 +21,6 @@ namespace PB.Logic
     * @brief   setup the instance
     * @details Start is called before the first frame update
     *          Get the commandInterpreter instance
-    * @return  void
     */
     void Start()
     {

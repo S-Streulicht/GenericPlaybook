@@ -17,7 +17,6 @@ namespace PB.UI
     /**
     * @brief   entry for the callback for the clickevent on the GUI
     * @details Just invokes the function set in the GUI
-    * @return void
     */
     void OnMouseDown()
     {

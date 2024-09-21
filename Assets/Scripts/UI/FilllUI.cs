@@ -62,7 +62,6 @@ namespace PB.UI
     *          fill the answers object by finding the individual component of the Answers
     *          cache the text of the state object
     *          cache the renderer of the Picture game object
-    * @return void
     */
     void Start()
     {
@@ -97,7 +96,6 @@ namespace PB.UI
     *          get the state of the game
     *            if in default dont display the gameobject els display with actual information
     *          /todo this is highly inefficent -> move to is changed
-    * @return  void
     */
     void Update()
     {
@@ -154,7 +152,6 @@ namespace PB.UI
     *          In the GUI the actual number of the answer is also set for each Gui element
     *          Base on the event the Director is called toset the answer 
     * @param   numberOfAnswer the actual number of the Answer set in the GUI
-    * @return void
     */
     public void OnAnswerClickEvent(int numberOfAnswer)
     {

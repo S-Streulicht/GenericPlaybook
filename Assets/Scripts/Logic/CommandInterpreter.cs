@@ -39,7 +39,6 @@ namespace PB.Logic
     /**
     * @brief   initialize the commandinterpreter
     * @details filles the Dictionarys with the available interfaces. It is in awake to limit race conditions.
-    * @return  void
     */
     void Awake()
     {
@@ -51,7 +50,6 @@ namespace PB.Logic
     * @brief   execute a command string
     * @details first parse the string then try to execute the function according to the dictionarys
     * @param   CommandString the actual string which needs to be executed
-    * @return  void
     */
     public void ExecuteCommand(string CommandString)
     {
