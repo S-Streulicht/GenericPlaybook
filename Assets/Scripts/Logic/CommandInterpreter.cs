@@ -19,10 +19,18 @@ namespace PB.Logic
   */
   public class CommandInterpreter : MonoBehaviour
   {
-    // search https://docs.unity3d.com/ScriptReference/SerializeReference.html
-    [SerializeField] GameObject AvailableAttributs;  /**< A game object which contains all relevant scripts with implements IAttributeInterface*/
-    [SerializeField] GameObject AvailableExtraUis;   /**< A game object which contains all relevant scripts with implements IExtraUIInterface*/
+    /**
+    *  @brief   Serialised Dictionar for the string string key / attribute pair
+    *  @details Unity cannot serialize standard dictionaries. A subclass of type <string, string> is created. Derived from the general class.
+    */
+    [System.Serializable]
+    public class StringStringDictionary : SerializableDictionary<string, string> {}
 
+    // search https://docs.unity3d.com/ScriptReference/SerializeReference.html
+    [SerializeField] GameObject AvailableAttributs;        /**< A game object which contains all relevant scripts with implements IAttributeInterface*/
+    [SerializeField] GameObject AvailableExtraUis;         /**< A game object which contains all relevant scripts with implements IExtraUIInterface*/
+    [SerializeField] StringStringDictionary AttributeList; /**< Atributs with are acessabel from comands. They don't have to show up in the character sheed.*/
+    
     private readonly ClassManager<CommandInterpreter> classManager; /**< containing acces to the Helper Class: Class Manager */
 
     private SortedDictionary<string, IAttributeInterface> AttributPair = new SortedDictionary<string, IAttributeInterface>(); /**< Connects the classname with the asress of the class such that the interfacefunction can be called*/

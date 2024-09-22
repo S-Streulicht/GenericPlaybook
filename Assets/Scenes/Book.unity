@@ -1332,7 +1332,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AvailableAttributs: {fileID: 536853254}
   AvailableExtraUis: {fileID: 1660199435}
-  Variables: []
+  AttributeList:
+    m_keys:
+    - Health
+    - Money
+    - CombatantHealth
+    m_values:
+    - 5
+    - 100
+    - 4
 --- !u!114 &1407584354
 MonoBehaviour:
   m_ObjectHideFlags: 0
