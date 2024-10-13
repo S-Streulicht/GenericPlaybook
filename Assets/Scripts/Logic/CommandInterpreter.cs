@@ -36,6 +36,9 @@ namespace PB.Logic
     private SortedDictionary<string, IAttributeInterface> AttributPair = new SortedDictionary<string, IAttributeInterface>(); /**< Connects the classname with the asress of the class such that the interfacefunction can be called*/
     private SortedDictionary<string, IExtraUiInterface> ExtraUIPair = new SortedDictionary<string, IExtraUiInterface>();      /**< Connects the classname with the asress of the class such that the interfacefunction can be called*/
 
+    private const string       GetGameStateVariable = "GET() -> ExtraUIGameState";
+    private const string       GetGamePictureVariable = "GET() -> ExtraUIPicture";
+
     /**
     * @brief   constructor initialises the helper classes 
     */
@@ -116,6 +119,26 @@ namespace PB.Logic
       }
       //Debug.Log(AttributPair[seperatedCommand.Arguments[0]].Test("Is", seperatedCommand.Arguments));
       return default(TType);
+    }
+
+    /**
+    * @brief   returns the game state
+    * @details get the information by executing the string comand from the game object
+    * @return  The actual state
+    */
+    public string GetGameState()
+    {
+      return ReturnCommand<string>(GetGameStateVariable);
+    }
+
+    /**
+    * @brief   returns a texture set by a script
+    * @details get the information by executing the string comand from the game object
+    * @return  Texture set by script
+    */
+    public Texture2D GetTexture()
+    {
+      return ReturnCommand<Texture2D>(GetGamePictureVariable);
     }
 
     /**
