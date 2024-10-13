@@ -24,7 +24,7 @@ MonoBehaviour:
     kasd magna no rebum. sanctus sea sed takimata ut vero voluptua. est Lorem ipsum
     dolor sit amet. Lorem ipsum dolor sit amet, consetetur
   comands:
-  - SET(ExtraUIGameState, Lose)
+  - SET(Lose) -> ExtraUIGameState
   jumpTos: []
   area:
     serializedVersion: 2
@@ -54,7 +54,7 @@ MonoBehaviour:
     At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
     no sea takimata sanctus est Lorem ipsum dolor sit amet.
   comands:
-  - SET(ExtraUIPicture, Start) -> Money
+  - SET(Start) -> ExtraUIPicture
   jumpTos:
   - text: jump to the 4
     referenceId: 4cc6da8b-cf2f-433b-a4a4-945fee9b7453
@@ -68,7 +68,8 @@ MonoBehaviour:
     - UNSET(ExtraUIPicture)
   - text: jumpto the 7
     referenceId: 8fdd8638-294c-47f3-81ac-ed927e7ffcd4
-    conditions: []
+    conditions:
+    - IS(>, 111) -> AttrMoney
     comands:
     - UNSET(ExtraUIPicture)
   area:
@@ -110,7 +111,7 @@ MonoBehaviour:
   - text: Get to 7
     referenceId: 8fdd8638-294c-47f3-81ac-ed927e7ffcd4
     conditions:
-    - IS(AttrMoney, >, 111)
+    - IS(>, 111) -> AttrMoney
     comands: []
   - text: Get To 4
     referenceId: 4cc6da8b-cf2f-433b-a4a4-945fee9b7453
@@ -157,7 +158,7 @@ MonoBehaviour:
   text: '7 Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie
     consequat, vel illum dolore eu feugiat nulla facilisis.   '
   comands:
-  - SET(ExtraUIGameState, Win)
+  - SET(Win) -> ExtraUIGameState
   jumpTos: []
   area:
     serializedVersion: 2
@@ -184,7 +185,7 @@ MonoBehaviour:
     dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud
     exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.   '
   comands:
-  - SET(ExtraUIPicture, Smile)
+  - SET(Smile) -> ExtraUIPicture
   jumpTos: []
   area:
     serializedVersion: 2
@@ -211,8 +212,8 @@ MonoBehaviour:
     feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui
     blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.    '
   comands:
-  - CHANGE(AttrMoney, ADD, 4)
-  - CHANGE(AttrMoney, ADD, 6)
+  - CHANGE(ADD, 4) -> AttrMoney
+  - CHANGE(ADD, 6) -> AttrMoney
   jumpTos:
   - text: getting to 3
     referenceId: 67963ae1-cc41-4625-b378-003d9e54157b
@@ -222,8 +223,8 @@ MonoBehaviour:
     referenceId: 12434914-7aa0-45ce-82ef-0dc64fcf5d78
     conditions: []
     comands:
-    - CHANGE(AttrMoney, SUB, 1)
-    - CHANGE(AttrMoney, SUB, 1)
+    - CHANGE( SUB, 1) -> AttrMoney
+    - CHANGE( SUB, 1) -> AttrMoney
   area:
     serializedVersion: 2
     x: 325

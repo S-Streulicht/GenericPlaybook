@@ -49,21 +49,21 @@ namespace PB.Attribute
     * @details test if the arguments are valide
     *          parses the second argument 
     *          continue if onyl the arg[1] exists as a key in the Change dictionary
-    * param    arg List: arg[0] is the classname, arg[1] is element of SET SUB or ADD, arg[2] is an integer
+    * param    arg List: arg[0] is element of SET SUB or ADD, arg[1] is an integer
     * @return void
     */
     void IAttributeInterface.Change(List<string> arg)
     {
       if (!((IAttributeInterface)this).Test("Change", arg)) return;
 
-      int val = Int32.Parse(arg[2]);
-      if (ChangeFunction.ContainsKey(arg[1]))
+      int val = Int32.Parse(arg[1]);
+      if (ChangeFunction.ContainsKey(arg[0]))
       {
-        ChangeFunction[arg[1]](val);
+        ChangeFunction[arg[0]](val);
       }
       else
       {
-        Debug.Log("Unknown function " + arg[1] + " in " + classManager.getClassname() + " is called in Change");
+        Debug.Log("Unknown function " + arg[0] + " in " + classManager.getClassname() + " is called in Change");
       }
 
     }
@@ -73,21 +73,21 @@ namespace PB.Attribute
     * @details test if the arguments are valide
     *          parses the second argument
     *          continue if onyl the arg[1] exists as a key in the Is dictionary
-    * param    arg List: arg[0] is the classname, arg[1] is element of <, > and == arg[2] is an integer
+    * param    arg List: arg[0] is element of <, > and == arg[1] is an integer
     * @return  true if the condition is meet, false other wise
     */
     bool IAttributeInterface.Is(List<string> arg)
     {
       if (!((IAttributeInterface)this).Test("Is", arg)) return false;
 
-      int val = Int32.Parse(arg[2]);
-      if (Isfunction.ContainsKey(arg[1]))
+      int val = Int32.Parse(arg[1]);
+      if (Isfunction.ContainsKey(arg[0]))
       {
-        return Isfunction[arg[1]](val);
+        return Isfunction[arg[0]](val);
       }
       else
       {
-        Debug.Log("Unknown function " + arg[1] + " in " + classManager.getClassname() + " is called in Is");
+        Debug.Log("Unknown function " + arg[0] + " in " + classManager.getClassname() + " is called in Is");
       }
 
       return false;
@@ -98,7 +98,7 @@ namespace PB.Attribute
     * @details test the argument list of the other interfaces
     *          can be used as stand alone or as part of the other interfaces
     * parme    Interface which interface to test "Change" or "Is"
-    * param    arg List: arg[0] is the classname, arg[1] is element of <, > and == arg[2] is an integer
+    * param    arg List: arg[1] is element of <, > and == arg[2] is an integer
     * @return  true if the args meet the actual needs.
     */
     bool IAttributeInterface.Test(string Interface, List<string> arg)
@@ -108,16 +108,14 @@ namespace PB.Attribute
       switch (Interface)
       {
         case "Change":
-          if (arg.Count != 3) return false;
-          ret &= classManager.isCorrectClass(arg[0]);
-          ret &= ChangeFunction.ContainsKey(arg[1]);
-          ret &= int.TryParse(arg[2], out _);
+          if (arg.Count != 2) return false;
+          ret &= ChangeFunction.ContainsKey(arg[0]);
+          ret &= int.TryParse(arg[1], out _);
           break;
         case "Is":
-          if (arg.Count != 3) return false;
-          ret &= classManager.isCorrectClass(arg[0]);
-          ret &= Isfunction.ContainsKey(arg[1]);
-          ret &= int.TryParse(arg[2], out _);
+          if (arg.Count != 2) return false;
+          ret &= Isfunction.ContainsKey(arg[0]);
+          ret &= int.TryParse(arg[1], out _);
           break;
         default:
           Debug.Log("Wrong interface (" + Interface + ") to be tested in " + classManager.getClassname());

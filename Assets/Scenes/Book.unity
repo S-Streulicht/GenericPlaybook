@@ -1337,10 +1337,12 @@ MonoBehaviour:
     - Health
     - Money
     - CombatantHealth
+    - Inventory
     m_values:
     - 5
     - 100
     - 4
+    - Swort Dagger Potion Belt
 --- !u!114 &1407584354
 MonoBehaviour:
   m_ObjectHideFlags: 0

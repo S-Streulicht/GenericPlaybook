@@ -29,12 +29,12 @@ namespace PB.ExtraUI
     /**
     * @brief   set the state to the one of the script.
     * @details the first element of the GameState member
-    * @param   arg List: arg[0] is the class name and arg[1] the actual stat.
+    * @param   arg List: arg[0] the actual stat.
     */
     void IExtraUiInterface.Set(List<string> arg)
     {
       if (!((IExtraUiInterface)this).Test("Set", arg)) return;
-      State = arg[1];
+      State = arg[0];
     }
 
     /**
@@ -71,9 +71,8 @@ namespace PB.ExtraUI
       switch (Interface)
       {
         case "Set":
-          if (arg.Count != 2) return false;
-          ret &= classManager.isCorrectClass(arg[0]);
-          ret &= GameState.Contains(arg[1]);
+          if (arg.Count != 1) return false;
+          ret &= GameState.Contains(arg[0]);
           break;
         case "UnSet":
           // no parameters are needed

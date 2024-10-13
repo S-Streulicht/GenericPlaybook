@@ -28,13 +28,13 @@ namespace PB.ExtraUI
     /**
     * @brief   Load a picture from the resorces
     * @details the picture is given sa second argument without an extention
-    * @param   arg List: arg[0] is the class name and arg[1] the the picture referenced by name.
+    * @param   arg List: arg[0] the the picture referenced by name.
     */
     void IExtraUiInterface.Set(List<string> arg)
     {
       if (!((IExtraUiInterface)this).Test("Set", arg)) return;
 
-      Picture = Resources.Load(arg[1]) as Texture2D;
+      Picture = Resources.Load(arg[0]) as Texture2D;
     }
 
     /**
@@ -71,8 +71,7 @@ namespace PB.ExtraUI
       switch (Interface)
       {
         case "Set":
-          if (arg.Count != 2) return false;
-          ret &= classManager.isCorrectClass(arg[0]);
+          if (arg.Count != 1) return false;
           // no further tests done since the texture is anyhow referenced by string
           break;
         case "UnSet":

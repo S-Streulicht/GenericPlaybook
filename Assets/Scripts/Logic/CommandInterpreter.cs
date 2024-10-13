@@ -62,7 +62,7 @@ namespace PB.Logic
     public void ExecuteCommand(string CommandString)
     {
       Command seperatedCommand = Parser.Parse(CommandString);
-      string classToCall = seperatedCommand.Arguments[0];
+      string classToCall = seperatedCommand.Result;
       switch (seperatedCommand.Com)
       {
         case CommandRef.CHANGE_ATTRIBUTE:
@@ -97,7 +97,7 @@ namespace PB.Logic
     public TType ReturnCommand<TType>(string CommandString)
     {
       Command seperatedCommand = Parser.Parse(CommandString);
-      string classToCall = seperatedCommand.Arguments[0];
+      string classToCall = seperatedCommand.Result;
       if (seperatedCommand.Com == CommandRef.IS_ATTRIBUTE)
       {
         if (AttributPair.ContainsKey(classToCall))

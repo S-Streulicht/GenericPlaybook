@@ -22,6 +22,8 @@ namespace PB.Logic
     private ITextNodeInterface CurrentNode; /**< contains the currend node of a play book*/
     private CommandInterpreter Interpreter; /**< contains the Comantlineinterpreter get filled at Start*/
     private TextEval           textEval;    /**< contains the Textecvaluation component. Get filled during initalisation*/
+    private const String       GetGameStateVariable = "GET() -> ExtraUIGameState";
+    private const String       GetGamePictureVariable = "GET() -> ExtraUIPicture";
 
     /**
     * @brief   setup the instance get
@@ -168,7 +170,7 @@ namespace PB.Logic
     */
     public string GetGameState()
     {
-      return Interpreter.ReturnCommand<string>("GET(ExtraUIGameState)");
+      return Interpreter.ReturnCommand<string>(GetGameStateVariable);
     }
 
     /**
@@ -177,7 +179,7 @@ namespace PB.Logic
     */
     public Texture2D GetTexture()
     {
-      return Interpreter.ReturnCommand<Texture2D>("GET(ExtraUIPicture)");
+      return Interpreter.ReturnCommand<Texture2D>(GetGamePictureVariable);
     }
   }
 }
