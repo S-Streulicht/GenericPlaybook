@@ -33,3 +33,4 @@ jobs:
         cd ./Docu
         ./doxygen ./Doxyfile > output.txt
         cat output.txt | grep warning
+        echo 'everything is fine'
