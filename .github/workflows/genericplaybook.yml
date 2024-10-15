@@ -31,6 +31,5 @@ jobs:
     - name: Generate documentation
       run: |
         cd ./Docu
-        ./doxygen ./Doxyfile > output.txt
-        cat output.txt | grep warning
+        ./doxygen ./Doxyfile 
         echo 'everything is fine'
