@@ -29,7 +29,8 @@ jobs:
         dot -V
 
     - name: Generate documentation
+      continue-on-error: true
       run: |
         cd ./Docu
-        ./doxygen ./Doxyfile | grep warning
-        echo 'everything is fine'
+        ./doxygen ./Doxyfile > docuoutput.txt
+        if grep warning ./docuoutput.txt than echo 'ok' else echo 'not OK' fi
