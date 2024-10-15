@@ -31,4 +31,6 @@ jobs:
     - name: Generate documentation
       run: |
         cd ./Docu
-        ./doxygen ./Doxyfile
+        ./doxygen ./Doxyfile > output.txt
+        cat output.txt
+        grep warning
