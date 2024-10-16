@@ -28,17 +28,19 @@ jobs:
         ./Docu/doxygen -v
         dot -V
 
-    - name: Generate documentation
-      continue-on-error: true
+    - name: Generate documentation and test
       run: |
         cd ./Docu
-        ./doxygen ./Doxyfile > docuoutput.txt
-        echo "------- start output -----------"
+        ./doxygen ./Doxyfile > docuoutput.txt 2> docuerror.txt
+        echo "------- start output stdout -----------"
         cat docuoutput.txt
-        echo "------- end of output ----------"
-        if grep -q "warning" docuoutput.txt; then
-          echo "String 'warning' was found, failing the workflow."
+        echo "------- end of output stdout ----------"
+        echo "------- start output stderr -----------"
+        cat docuerror.txt
+        echo "------- end of output stderr ----------" 
+        if [ -s docuerror.txt ]; then
+          echo "Doxygen contained erroror warnings"
           exit 1
         else
-          echo "String 'warning' not found, passing the workflow."
+          echo "Doxygen did not found error or warnings"
         fi
