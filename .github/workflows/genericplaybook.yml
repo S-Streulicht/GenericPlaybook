@@ -21,7 +21,7 @@ jobs:
         cp ./temp/doxygen-1.12.0/bin/doxygen ./Docu/
         chmod +x ./Docu/doxygen
         echo 'get graphviz'
-        sudo apt-get -qq install -y graphviz
+        sudo apt-get -q install -y graphviz
     
     - name: Get Versions
       run: |
