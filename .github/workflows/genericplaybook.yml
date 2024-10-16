@@ -33,9 +33,10 @@ jobs:
       run: |
         cd ./Docu
         ./doxygen ./Doxyfile > docuoutput.txt
-        if grep -q "warning" docuoutput.txt; then
-          echo "String found, failing the workflow."
+        cat docuoutput.txt
+        if grep -q "warning:" docuoutput.txt; then
+          echo "String 'Warning' was found, failing the workflow."
           exit 1
         else
-          echo "String not found, passing the workflow."
+          echo "String 'Warning' not found, passing the workflow."
         fi

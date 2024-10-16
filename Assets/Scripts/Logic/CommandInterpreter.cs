@@ -34,7 +34,7 @@ namespace PB.Logic
     private readonly ClassManager<CommandInterpreter> classManager; /**< containing acces to the Helper Class: Class Manager */
 
     private SortedDictionary<string, IAttributeInterface> AttributPair = new SortedDictionary<string, IAttributeInterface>(); /**< Connects the classname with the asress of the class such that the interfacefunction can be called*/
-    private SortedDictionary<string, IExtraUiInterface> ExtraUIPair = new SortedDictionary<string, IExtraUiInterface>();      /**< Connects the classname with the asress of the class such that the interfacefunction can be called*/
+    private SortedDictionary<string, IExtraUiInterface> ExtraUIPair = new SortedDictionary<string, IExtraUiInterface>();      
 
     private const string       GetGameStateVariable = "GET() -> ExtraUIGameState";  /**< The actual script command to reseive the gama state*/
     private const string       GetGamePictureVariable = "GET() -> ExtraUIPicture";  /**< The actual script command to reseive the UI picture*/
