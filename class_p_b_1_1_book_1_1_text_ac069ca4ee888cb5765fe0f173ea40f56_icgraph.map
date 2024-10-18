@@ -1,0 +1,16 @@
+<map id="PB.Book.Text.OnValidate" name="PB.Book.Text.OnValidate">
+<area shape="rect" id="Node000001" title="updates the reverse node list and the nodeLookup table" alt="" coords="759,95,941,121"/>
+<area shape="rect" id="Node000002" href="$class_p_b_1_1_book_1_1_text.html#afa6b14b86a64ae6736ee36e39a241719" title="adding a newly created node to the nodelists" alt="" coords="531,70,702,95"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="744,99,702,95,703,89,745,94"/>
+<area shape="rect" id="Node000007" href="$class_p_b_1_1_book_1_1_text.html#a599d23adc310b4bdffe0ac92b3ba460c" title="removing of a node" alt="" coords="523,119,711,145"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="745,121,711,125,711,120,744,116"/>
+<area shape="rect" id="Node000003" href="$class_p_b_1_1_book_1_1_text.html#adf7451ba997c7cf74fbc430e7d77270b" title="creation of a new TextElemen as a node of the book" alt="" coords="284,70,472,95"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="517,85,472,85,472,80,517,80"/>
+<area shape="rect" id="Node000005" href="$class_p_b_1_1_book_1_1_text.html#adee51af1001033dc1499737670d5f0f8" title="if the book is empty, create a root node" alt="" coords="281,5,475,45"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="549,69,461,48,462,43,551,64"/>
+<area shape="rect" id="Node000004" href="$class_p_b_1_1_book_1_1_book_editor_1_1_book_editor.html#a7fe5414e620960976d3c515a918709be" title="Defines what to do if the GUI is changed." alt="" coords="5,88,233,128"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="271,96,234,99,233,94,270,91"/>
+<area shape="rect" id="Node000006" href="$class_p_b_1_1_book_1_1_text.html#a34f2f499c773197d48861c74ea9bfd80" title="handles the storage of the book." alt="" coords="5,13,233,38"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="267,28,234,28,234,23,267,23"/>
+<area shape="poly" id="edge7_Node000007_Node000004" title=" " alt="" coords="508,129,234,116,234,111,509,124"/>
+</map>

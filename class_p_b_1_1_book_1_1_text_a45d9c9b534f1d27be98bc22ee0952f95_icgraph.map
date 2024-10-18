@@ -1,0 +1,11 @@
+<map id="PB.Book.Text.MakeNode" name="PB.Book.Text.MakeNode">
+<area shape="rect" id="Node000001" title="generates a new node and sets the base settings" alt="" coords="523,42,703,67"/>
+<area shape="rect" id="Node000002" href="$class_p_b_1_1_book_1_1_text.html#adf7451ba997c7cf74fbc430e7d77270b" title="creation of a new TextElemen as a node of the book" alt="" coords="284,13,472,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="508,44,472,40,473,34,509,39"/>
+<area shape="rect" id="Node000004" href="$class_p_b_1_1_book_1_1_text.html#adee51af1001033dc1499737670d5f0f8" title="if the book is empty, create a root node" alt="" coords="281,63,475,103"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="509,70,475,74,474,69,509,64"/>
+<area shape="rect" id="Node000003" href="$class_p_b_1_1_book_1_1_book_editor_1_1_book_editor.html#a7fe5414e620960976d3c515a918709be" title="Defines what to do if the GUI is changed." alt="" coords="5,5,233,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="270,28,234,28,234,23,270,23"/>
+<area shape="rect" id="Node000005" href="$class_p_b_1_1_book_1_1_text.html#a34f2f499c773197d48861c74ea9bfd80" title="handles the storage of the book." alt="" coords="5,70,233,95"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="267,85,234,85,234,80,267,80"/>
+</map>

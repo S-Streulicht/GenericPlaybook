@@ -1,0 +1,5 @@
+<map id="PB.Book.Text.CreateNode" name="PB.Book.Text.CreateNode">
+<area shape="rect" id="Node000001" title="creation of a new TextElemen as a node of the book" alt="" coords="281,13,469,38"/>
+<area shape="rect" id="Node000002" href="$class_p_b_1_1_book_1_1_book_editor_1_1_book_editor.html#a7fe5414e620960976d3c515a918709be" title="Defines what to do if the GUI is changed." alt="" coords="5,5,233,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="267,28,233,28,233,23,267,23"/>
+</map>

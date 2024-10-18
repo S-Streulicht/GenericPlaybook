@@ -1,0 +1,10 @@
+<map id="PB.Book.Text.DeleteNode" name="PB.Book.Text.DeleteNode">
+<area shape="rect" id="Node000001" title="removing of a node" alt="" coords="5,56,193,81"/>
+<area shape="rect" id="Node000002" href="$class_p_b_1_1_book_1_1_text_elements.html#a556d60954cf0d7a842d237fd8508b63b" title="handles the unlinking of two text elements at editor time" alt="" coords="241,5,484,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="166,53,282,31,283,36,167,59"/>
+<area shape="rect" id="Node000003" href="$class_p_b_1_1_book_1_1_text.html#a9adb8ad65f55769ef228ca48e2a61196" title="returns the node list" alt="" coords="532,81,724,107"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="194,70,518,86,518,91,193,76"/>
+<area shape="rect" id="Node000004" href="$class_p_b_1_1_book_1_1_text.html#ac069ca4ee888cb5765fe0f173ea40f56" title="updates the reverse node list and the nodeLookup table" alt="" coords="271,107,454,132"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="167,79,283,101,282,107,166,84"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="454,108,518,102,518,107,454,113"/>
+</map>

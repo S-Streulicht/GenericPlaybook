@@ -1,0 +1,5 @@
+<map id="PB.Book.Text.CreateRootIfEmpty" name="PB.Book.Text.CreateRootIfEmpty">
+<area shape="rect" id="Node000001" title="if the book is empty, create a root node" alt="" coords="281,5,475,45"/>
+<area shape="rect" id="Node000002" href="$class_p_b_1_1_book_1_1_text.html#a34f2f499c773197d48861c74ea9bfd80" title="handles the storage of the book." alt="" coords="5,13,233,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="267,28,234,28,234,23,267,23"/>
+</map>

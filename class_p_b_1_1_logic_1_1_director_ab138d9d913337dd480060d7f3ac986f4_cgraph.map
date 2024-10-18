@@ -1,0 +1,13 @@
+<map id="PB.Logic.Director.ExecuteNodeCommands" name="PB.Logic.Director.ExecuteNodeCommands">
+<area shape="rect" id="Node000001" title="execute the comands of the text element" alt="" coords="5,55,192,95"/>
+<area shape="rect" id="Node000002" href="$class_p_b_1_1_logic_1_1_command_interpreter.html#a9d6638ecee519c9c46e29de807101954" title="execute a command string" alt="" coords="240,55,460,95"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="192,73,226,73,226,78,192,78"/>
+<area shape="rect" id="Node000003" href="$class_p_b_1_1_logic_1_1_parser.html#a3fc8803102d6afb61c2036327e6ee3e6" title="Parsing of the command." alt="" coords="508,63,667,88"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="460,73,494,73,494,78,460,78"/>
+<area shape="rect" id="Node000004" href="$class_p_b_1_1_logic_1_1_parser.html#a6695949ea26cc26b984c0eea34a13bbf" title="REmove start and end parenthesis." alt="" coords="729,5,962,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="636,60,714,41,762,31,763,36,715,46,637,65"/>
+<area shape="rect" id="Node000005" href="$class_p_b_1_1_logic_1_1_parser.html#af573c58c6272577cf660407670ab657d" title="Remove the target indicator." alt="" coords="736,55,955,95"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="667,73,722,73,722,78,667,78"/>
+<area shape="rect" id="Node000006" href="$class_p_b_1_1_logic_1_1_parser.html#a9c58137805c6023eb398ac8ab82a9018" title="Remove the whitespaces." alt="" coords="715,120,976,145"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="637,86,715,105,763,115,762,120,714,110,636,91"/>
+</map>

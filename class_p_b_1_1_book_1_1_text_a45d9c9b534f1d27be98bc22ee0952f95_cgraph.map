@@ -1,0 +1,7 @@
+<map id="PB.Book.Text.MakeNode" name="PB.Book.Text.MakeNode">
+<area shape="rect" id="Node000001" title="generates a new node and sets the base settings" alt="" coords="5,31,185,56"/>
+<area shape="rect" id="Node000002" href="$class_p_b_1_1_book_1_1_text_elements.html#a01a5c047599730f86a980f793de39006" title="handles the linking of two text elements at editor time" alt="" coords="233,5,476,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="185,32,219,29,220,34,186,37"/>
+<area shape="rect" id="Node000003" href="$class_p_b_1_1_book_1_1_text.html#a5f1bc1e83a852de284cffa7cc4a3dd80" title="gets the biggest number of the text elements" alt="" coords="235,55,474,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="186,49,222,52,222,58,185,54"/>
+</map>

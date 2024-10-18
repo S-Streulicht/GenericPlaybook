@@ -1,0 +1,42 @@
+<map id="PB.Book.BookEditor.BookEditor.OnGUI" name="PB.Book.BookEditor.BookEditor.OnGUI">
+<area shape="rect" id="Node000001" title="Defines what to do if the GUI is changed." alt="" coords="5,191,233,231"/>
+<area shape="rect" id="Node000002" href="$class_p_b_1_1_book_1_1_text.html#adf7451ba997c7cf74fbc430e7d77270b" title="creation of a new TextElemen as a node of the book" alt="" coords="301,55,489,80"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="140,189,200,139,239,113,280,90,303,81,305,86,282,95,242,117,203,144,143,193"/>
+<area shape="rect" id="Node000009" href="$class_p_b_1_1_book_1_1_text.html#a599d23adc310b4bdffe0ac92b3ba460c" title="removing of a node" alt="" coords="577,169,765,195"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="234,203,563,185,564,190,234,208"/>
+<area shape="rect" id="Node000011" href="$class_p_b_1_1_book_1_1_book_editor_1_1_book_editor.html#a9453dcb87cbc4dabf96f531d3733bd90" title="draw the conections between between the nodes" alt="" coords="281,283,509,323"/>
+<area shape="poly" id="edge12_Node000001_Node000011" title=" " alt="" coords="172,229,282,269,307,277,306,282,280,274,170,234"/>
+<area shape="rect" id="Node000013" href="$class_p_b_1_1_book_1_1_book_editor_1_1_book_editor.html#a202f088bb9363dbbb1000e6dc9192b8a" title="drawing a node in the canvas" alt="" coords="281,105,509,145"/>
+<area shape="poly" id="edge14_Node000001_Node000013" title=" " alt="" coords="183,189,317,146,319,151,185,194"/>
+<area shape="rect" id="Node000015" href="$class_p_b_1_1_book_1_1_text.html#ad70982d78a828dc8527b32b15b2b9313" title="returns the reverse node list" alt="" coords="299,347,491,387"/>
+<area shape="poly" id="edge18_Node000001_Node000015" title=" " alt="" coords="143,229,203,281,241,309,283,333,298,340,296,345,280,338,239,313,200,285,139,233"/>
+<area shape="rect" id="Node000016" href="$class_p_b_1_1_book_1_1_book_editor_1_1_book_editor.html#a7ff7705b5686628a8df98a3ab4b0b450" title="handles events from the GUI interaction" alt="" coords="281,219,509,259"/>
+<area shape="poly" id="edge19_Node000001_Node000016" title=" " alt="" coords="234,220,268,224,267,229,233,226"/>
+<area shape="rect" id="Node000003" href="$class_p_b_1_1_book_1_1_text.html#afa6b14b86a64ae6736ee36e39a241719" title="adding a newly created node to the nodelists" alt="" coords="586,55,757,80"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="490,65,572,65,572,70,490,70"/>
+<area shape="rect" id="Node000006" href="$class_p_b_1_1_book_1_1_text.html#a45d9c9b534f1d27be98bc22ee0952f95" title="generates a new node and sets the base settings" alt="" coords="581,5,761,31"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="467,52,586,31,587,36,468,57"/>
+<area shape="rect" id="Node000004" href="$class_p_b_1_1_book_1_1_text.html#ac069ca4ee888cb5765fe0f173ea40f56" title="updates the reverse node list and the nodeLookup table" alt="" coords="863,116,1046,141"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="731,77,882,110,881,116,730,83"/>
+<area shape="rect" id="Node000005" href="$class_p_b_1_1_book_1_1_text.html#a9adb8ad65f55769ef228ca48e2a61196" title="returns the node list" alt="" coords="1124,216,1316,241"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="1037,139,1077,150,1138,177,1189,206,1186,211,1135,182,1075,155,1036,144"/>
+<area shape="rect" id="Node000007" href="$class_p_b_1_1_book_1_1_text_elements.html#a01a5c047599730f86a980f793de39006" title="handles the linking of two text elements at editor time" alt="" coords="833,63,1076,88"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="735,28,878,57,877,63,734,33"/>
+<area shape="rect" id="Node000008" href="$class_p_b_1_1_book_1_1_text.html#a5f1bc1e83a852de284cffa7cc4a3dd80" title="gets the biggest number of the text elements" alt="" coords="835,5,1074,31"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="761,15,822,15,822,21,761,21"/>
+<area shape="poly" id="edge11_Node000009_Node000004" title=" " alt="" coords="739,167,873,141,874,147,740,172"/>
+<area shape="poly" id="edge10_Node000009_Node000005" title=" " alt="" coords="766,192,834,199,1111,220,1110,225,833,205,765,197"/>
+<area shape="rect" id="Node000010" href="$class_p_b_1_1_book_1_1_text_elements.html#a556d60954cf0d7a842d237fd8508b63b" title="handles the unlinking of two text elements at editor time" alt="" coords="833,165,1076,191"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="765,178,820,177,820,183,765,183"/>
+<area shape="rect" id="Node000012" href="$class_p_b_1_1_book_1_1_text.html#a4d648527dc41f59f8da934ab82f576c1" title="get all linked children of a node" alt="" coords="569,335,774,360"/>
+<area shape="poly" id="edge13_Node000011_Node000012" title=" " alt="" coords="510,319,578,330,577,335,509,324"/>
+<area shape="rect" id="Node000014" href="$class_p_b_1_1_book_1_1_book_editor_1_1_book_editor.html#a6b5c095b97abab0144e825355e65d401" title="draw the button of a node element" alt="" coords="557,105,785,145"/>
+<area shape="poly" id="edge15_Node000013_Node000014" title=" " alt="" coords="509,122,544,122,544,127,509,127"/>
+<area shape="poly" id="edge16_Node000014_Node000007" title=" " alt="" coords="785,102,867,88,868,93,786,107"/>
+<area shape="poly" id="edge17_Node000014_Node000010" title=" " alt="" coords="778,142,874,160,873,165,777,147"/>
+<area shape="rect" id="Node000017" href="$class_p_b_1_1_book_1_1_book_editor_1_1_book_editor.html#a61bdf26026ef67f4bba08491685fc88c" title="helper function to figure out if an event is on a node or not." alt="" coords="841,269,1069,309"/>
+<area shape="poly" id="edge20_Node000016_Node000017" title=" " alt="" coords="485,257,558,269,696,280,827,285,826,291,696,286,557,274,484,262"/>
+<area shape="rect" id="Node000018" href="$class_p_b_1_1_book_1_1_book_editor_1_1_book_editor.html#aa301699510adb6bd131baae0f874a2be" title="sets the GIU to be flaged as changes." alt="" coords="557,219,785,259"/>
+<area shape="poly" id="edge22_Node000016_Node000018" title=" " alt="" coords="509,237,544,237,544,242,509,242"/>
+<area shape="poly" id="edge21_Node000017_Node000005" title=" " alt="" coords="1043,266,1149,242,1151,247,1044,271"/>
+</map>

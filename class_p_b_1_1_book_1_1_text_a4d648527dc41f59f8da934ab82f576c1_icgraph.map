@@ -1,0 +1,7 @@
+<map id="PB.Book.Text.GetAllChildren" name="PB.Book.Text.GetAllChildren">
+<area shape="rect" id="Node000001" title="get all linked children of a node" alt="" coords="557,13,763,38"/>
+<area shape="rect" id="Node000002" href="$class_p_b_1_1_book_1_1_book_editor_1_1_book_editor.html#a9453dcb87cbc4dabf96f531d3733bd90" title="draw the conections between between the nodes" alt="" coords="281,5,509,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="543,28,510,28,510,23,543,23"/>
+<area shape="rect" id="Node000003" href="$class_p_b_1_1_book_1_1_book_editor_1_1_book_editor.html#a7fe5414e620960976d3c515a918709be" title="Defines what to do if the GUI is changed." alt="" coords="5,5,233,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="268,28,234,28,234,23,268,23"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="PB.Book.BookEditor.BookEditor.DrawNode" name="PB.Book.BookEditor.BookEditor.DrawNode">
+<area shape="rect" id="Node000001" title="drawing a node in the canvas" alt="" coords="5,23,233,63"/>
+<area shape="rect" id="Node000002" href="$class_p_b_1_1_book_1_1_book_editor_1_1_book_editor.html#a6b5c095b97abab0144e825355e65d401" title="draw the button of a node element" alt="" coords="281,23,509,63"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="233,41,268,41,268,46,233,46"/>
+<area shape="rect" id="Node000003" href="$class_p_b_1_1_book_1_1_text_elements.html#a01a5c047599730f86a980f793de39006" title="handles the linking of two text elements at editor time" alt="" coords="557,5,800,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="509,30,544,27,544,33,510,36"/>
+<area shape="rect" id="Node000004" href="$class_p_b_1_1_book_1_1_text_elements.html#a556d60954cf0d7a842d237fd8508b63b" title="handles the unlinking of two text elements at editor time" alt="" coords="557,55,800,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="510,50,544,53,544,59,509,56"/>
+</map>

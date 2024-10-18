@@ -1,0 +1,5 @@
+<map id="PB.Book.BookEditor.BookEditor.OnOpenAsset" name="PB.Book.BookEditor.BookEditor.OnOpenAsset">
+<area shape="rect" id="Node000001" title="first time a book is loaded" alt="" coords="5,5,233,45"/>
+<area shape="rect" id="Node000002" href="$class_p_b_1_1_book_1_1_book_editor_1_1_book_editor.html#ae58e80b1d74dac6cc4ee9321a16282bd" title="opens the book editor" alt="" coords="281,5,509,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="233,23,268,23,268,28,233,28"/>
+</map>

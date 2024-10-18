@@ -1,0 +1,5 @@
+<map id="PB.Logic.Director.GetValideAnswers" name="PB.Logic.Director.GetValideAnswers">
+<area shape="rect" id="Node000001" title="get only valid answers of the set of all answers of the current node" alt="" coords="5,5,204,45"/>
+<area shape="rect" id="Node000002" href="$class_p_b_1_1_logic_1_1_director.html#ad27253b27c15d37ef0462d0a018c1a87" title="get JumpTos wich are either valide or not valide" alt="" coords="252,5,451,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="204,23,238,23,238,28,204,28"/>
+</map>

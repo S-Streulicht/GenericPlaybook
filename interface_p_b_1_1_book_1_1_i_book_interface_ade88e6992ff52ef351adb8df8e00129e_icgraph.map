@@ -1,0 +1,7 @@
+<map id="PB.Book.IBookInterface.GetNodeByRefId" name="PB.Book.IBookInterface.GetNodeByRefId">
+<area shape="rect" id="Node000001" title=" " alt="" coords="507,5,709,45"/>
+<area shape="rect" id="Node000002" href="$class_p_b_1_1_logic_1_1_director.html#a9188457b3ab257422cf59e7fd289952b" title="Move to the linked text element." alt="" coords="253,13,459,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="493,28,459,28,459,23,493,23"/>
+<area shape="rect" id="Node000003" href="$class_p_b_1_1_u_i_1_1_filll_u_i.html#a8ebaf85e52c68ea7ec1797e022f16ef3" title="callback for the clickevent on the GUI" alt="" coords="5,5,205,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="239,28,206,28,206,23,239,23"/>
+</map>

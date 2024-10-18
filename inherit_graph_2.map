@@ -1,0 +1,26 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$interface_p_b_1_1_attribute_1_1_i_attribute_interface.html" title="Interface for the attributes." alt="" coords="5,5,228,31"/>
+<area shape="rect" id="Node000001" href="$class_p_b_1_1_attribute_1_1_attr_money.html" title="Handles the attribut &quot;money&quot;." alt="" coords="299,5,471,31"/>
+<area shape="poly" id="edge3_Node000000_Node000001" title=" " alt="" coords="242,15,299,15,299,21,242,21"/>
+<area shape="rect" id="Node000004" href="$interface_p_b_1_1_extra_u_i_1_1_i_extra_ui_interface.html" title="Interface for th exra UIs." alt="" coords="14,79,219,104"/>
+<area shape="rect" id="Node000003" href="$class_p_b_1_1_extra_u_i_1_1_extra_u_i_game_state.html" title="Handles the extra UI &quot;GameState&quot;." alt="" coords="277,104,493,129"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="233,100,277,104,276,109,232,105"/>
+<area shape="rect" id="Node000005" href="$class_p_b_1_1_extra_u_i_1_1_extra_u_i_picture.html" title="Handles the extra UI &quot;Picture&quot;." alt="" coords="291,55,479,80"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="232,78,290,73,291,78,233,84"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="55,203,179,228"/>
+<area shape="poly" id="edge6_Node000002_Node000001" title=" " alt="" coords="143,192,184,157,226,114,239,93,247,75,256,57,274,40,297,28,300,33,278,44,261,60,252,77,244,96,230,117,188,161,147,196"/>
+<area shape="poly" id="edge7_Node000002_Node000003" title=" " alt="" coords="152,194,209,166,275,139,319,127,320,132,277,145,211,171,155,199"/>
+<area shape="poly" id="edge8_Node000002_Node000005" title=" " alt="" coords="138,191,197,139,234,112,275,89,306,77,308,83,277,94,237,116,200,143,142,195"/>
+<area shape="rect" id="Node000006" href="$class_p_b_1_1_logic_1_1_command_interpreter.html" title="Interprets a command string and execute the coresponding comand at the corect place." alt="" coords="276,301,493,327"/>
+<area shape="poly" id="edge9_Node000002_Node000006" title=" " alt="" coords="154,232,211,260,277,287,316,299,315,304,275,293,209,265,152,237"/>
+<area shape="rect" id="Node000007" href="$class_p_b_1_1_logic_1_1_director.html" title="Provides content for the GUI." alt="" coords="318,351,451,376"/>
+<area shape="poly" id="edge10_Node000002_Node000007" title=" " alt="" coords="142,236,200,287,237,314,277,337,319,351,317,356,275,342,234,319,197,292,138,240"/>
+<area shape="rect" id="Node000008" href="$class_p_b_1_1_logic_1_1_parser.html" title="Parsing the comandstring." alt="" coords="324,400,445,425"/>
+<area shape="poly" id="edge11_Node000002_Node000008" title=" " alt="" coords="135,238,159,272,191,313,232,353,277,386,300,397,324,403,323,409,298,402,275,391,228,357,188,316,155,275,131,241"/>
+<area shape="rect" id="Node000009" href="$class_p_b_1_1_logic_1_1_text_eval.html" title="Evales a patter in a text." alt="" coords="317,153,453,179"/>
+<area shape="poly" id="edge12_Node000002_Node000009" title=" " alt="" coords="192,199,316,176,317,181,193,204"/>
+<area shape="rect" id="Node000010" href="$class_p_b_1_1_u_i_1_1_filll_u_i.html" title="Fill the GUI with content." alt="" coords="335,203,434,228"/>
+<area shape="poly" id="edge13_Node000002_Node000010" title=" " alt="" coords="193,213,335,213,335,218,193,218"/>
+<area shape="rect" id="Node000011" href="$class_p_b_1_1_u_i_1_1_on_mouse_down_script.html" title="Simple script to evaluate the Mous down event." alt="" coords="287,252,483,277"/>
+<area shape="poly" id="edge14_Node000002_Node000011" title=" " alt="" coords="193,226,315,249,314,255,192,232"/>
+</map>

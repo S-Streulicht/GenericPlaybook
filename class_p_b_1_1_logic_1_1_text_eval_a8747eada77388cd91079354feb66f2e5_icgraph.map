@@ -1,0 +1,7 @@
+<map id="PB.Logic.TextEval.Replace" name="PB.Logic.TextEval.Replace">
+<area shape="rect" id="Node000001" title="Find and replace the Pattern." alt="" coords="437,5,629,31"/>
+<area shape="rect" id="Node000002" href="$class_p_b_1_1_logic_1_1_director.html#ab1987a1720d4fa5afee99a920b53bcb8" title="get the text of the currend node befor returning all Comands are evaluated." alt="" coords="203,5,389,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="424,21,389,21,389,15,424,15"/>
+<area shape="rect" id="Node000003" href="$class_p_b_1_1_u_i_1_1_filll_u_i.html#ae8fcda74da18d925d91284f304a2baa9" title="every frame the gui element is filled with information" alt="" coords="5,5,155,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="189,21,155,21,155,15,189,15"/>
+</map>

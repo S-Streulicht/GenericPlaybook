@@ -1,0 +1,18 @@
+<map id="PB.Book.Text.OnBeforeSerialize" name="PB.Book.Text.OnBeforeSerialize">
+<area shape="rect" id="Node000001" title="handles the storage of the book." alt="" coords="5,127,233,152"/>
+<area shape="rect" id="Node000002" href="$class_p_b_1_1_book_1_1_text.html#adee51af1001033dc1499737670d5f0f8" title="if the book is empty, create a root node" alt="" coords="281,69,475,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="185,124,267,108,268,113,186,129"/>
+<area shape="rect" id="Node000005" href="$class_p_b_1_1_book_1_1_text.html#a9adb8ad65f55769ef228ca48e2a61196" title="returns the node list" alt="" coords="1041,80,1233,105"/>
+<area shape="poly" id="edge8_Node000001_Node000005" title=" " alt="" coords="234,149,385,161,575,167,784,162,890,153,993,139,1047,126,1095,108,1097,113,1048,131,994,145,890,159,785,167,575,172,385,166,233,154"/>
+<area shape="rect" id="Node000003" href="$class_p_b_1_1_book_1_1_text.html#afa6b14b86a64ae6736ee36e39a241719" title="adding a newly created node to the nodelists" alt="" coords="527,16,698,41"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="457,66,549,42,550,47,458,71"/>
+<area shape="rect" id="Node000006" href="$class_p_b_1_1_book_1_1_text.html#a45d9c9b534f1d27be98bc22ee0952f95" title="generates a new node and sets the base settings" alt="" coords="523,76,703,101"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="475,86,509,86,509,91,475,91"/>
+<area shape="rect" id="Node000004" href="$class_p_b_1_1_book_1_1_text.html#ac069ca4ee888cb5765fe0f173ea40f56" title="updates the reverse node list and the nodeLookup table" alt="" coords="781,5,963,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="698,23,767,20,767,25,698,28"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="946,28,994,39,1092,73,1091,78,993,45,945,33"/>
+<area shape="rect" id="Node000007" href="$class_p_b_1_1_book_1_1_text_elements.html#a01a5c047599730f86a980f793de39006" title="handles the linking of two text elements at editor time" alt="" coords="751,55,993,80"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="702,79,737,76,737,81,703,84"/>
+<area shape="rect" id="Node000008" href="$class_p_b_1_1_book_1_1_text.html#a5f1bc1e83a852de284cffa7cc4a3dd80" title="gets the biggest number of the text elements" alt="" coords="753,104,991,129"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="703,96,741,100,741,105,702,101"/>
+</map>

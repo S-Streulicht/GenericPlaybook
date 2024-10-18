@@ -1,0 +1,5 @@
+<map id="PB.Book.BookEditor.BookEditor.DrawConnections" name="PB.Book.BookEditor.BookEditor.DrawConnections">
+<area shape="rect" id="Node000001" title="draw the conections between between the nodes" alt="" coords="5,5,233,45"/>
+<area shape="rect" id="Node000002" href="$class_p_b_1_1_book_1_1_text.html#a4d648527dc41f59f8da934ab82f576c1" title="get all linked children of a node" alt="" coords="281,13,487,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="234,23,268,23,268,28,234,28"/>
+</map>

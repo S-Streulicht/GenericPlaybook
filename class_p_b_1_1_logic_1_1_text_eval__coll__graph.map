@@ -1,0 +1,14 @@
+<map id="PB.Logic.TextEval" name="PB.Logic.TextEval">
+<area shape="rect" id="Node000001" title="Evales a patter in a text." alt="" coords="948,28,1084,53"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="281,5,405,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="419,16,645,21,924,31,948,33,948,38,924,37,645,26,419,22"/>
+<area shape="rect" id="Node000003" href="$class_p_b_1_1_logic_1_1_command_interpreter.html" title="Interprets a command string and execute the coresponding comand at the corect place." alt="" coords="609,61,827,87"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="420,27,633,59,632,64,419,32"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="840,58,947,46,948,51,840,63"/>
+<area shape="rect" id="Node000004" href="$class_p_b_1_1_logic_1_1_command_interpreter_1_1_string_string_dictionary.html" title="Serialised Dictionar for the string string key / attribute pair." alt="" coords="233,61,453,101"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="467,80,585,79,609,78,609,84,585,85,467,86"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="5,61,171,101"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="184,78,233,78,233,83,184,83"/>
+<area shape="rect" id="Node000006" href="$class_p_b_1_1_helper_1_1_class_manager.html" title=" " alt="" coords="220,125,467,165"/>
+<area shape="poly" id="edge6_Node000003_Node000006" title=" " alt="" coords="475,120,585,99,659,84,660,89,586,105,476,125"/>
+</map>

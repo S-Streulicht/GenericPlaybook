@@ -1,0 +1,12 @@
+<map id="PB.Book.TextElements.DeleteLink" name="PB.Book.TextElements.DeleteLink">
+<area shape="rect" id="Node000001" title="handles the unlinking of two text elements at editor time" alt="" coords="833,35,1076,60"/>
+<area shape="rect" id="Node000002" href="$class_p_b_1_1_book_1_1_text.html#a599d23adc310b4bdffe0ac92b3ba460c" title="removing of a node" alt="" coords="301,5,489,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="820,43,489,26,490,20,820,38"/>
+<area shape="rect" id="Node000004" href="$class_p_b_1_1_book_1_1_book_editor_1_1_book_editor.html#a6b5c095b97abab0144e825355e65d401" title="draw the button of a node element" alt="" coords="557,55,785,95"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="820,63,786,67,785,61,819,58"/>
+<area shape="rect" id="Node000003" href="$class_p_b_1_1_book_1_1_book_editor_1_1_book_editor.html#a7fe5414e620960976d3c515a918709be" title="Defines what to do if the GUI is changed." alt="" coords="5,27,233,67"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="288,32,234,38,233,33,287,27"/>
+<area shape="rect" id="Node000005" href="$class_p_b_1_1_book_1_1_book_editor_1_1_book_editor.html#a202f088bb9363dbbb1000e6dc9192b8a" title="drawing a node in the canvas" alt="" coords="281,55,509,95"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="544,78,510,78,510,73,544,73"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="268,65,233,62,234,56,268,60"/>
+</map>

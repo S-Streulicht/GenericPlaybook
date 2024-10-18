@@ -1,0 +1,5 @@
+<map id="PB.Book.BookEditor.BookEditor.SetNodeStyle" name="PB.Book.BookEditor.BookEditor.SetNodeStyle">
+<area shape="rect" id="Node000001" title="Sets the global node style." alt="" coords="281,5,509,45"/>
+<area shape="rect" id="Node000002" href="$class_p_b_1_1_book_1_1_book_editor_1_1_book_editor.html#a87f62b55de4df16be4a82413ceddfcd6" title="set the node style and link the OnSelectionChange (differnd book loaded) callback" alt="" coords="5,5,233,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="268,28,234,28,234,23,268,23"/>
+</map>

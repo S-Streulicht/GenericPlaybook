@@ -1,0 +1,7 @@
+<map id="PB.Book.BookEditor.BookEditor.UndoRedoAction" name="PB.Book.BookEditor.BookEditor.UndoRedoAction">
+<area shape="rect" id="Node000001" title="sets the GIU to be flaged as changes." alt="" coords="557,5,785,45"/>
+<area shape="rect" id="Node000002" href="$class_p_b_1_1_book_1_1_book_editor_1_1_book_editor.html#a7ff7705b5686628a8df98a3ab4b0b450" title="handles events from the GUI interaction" alt="" coords="281,5,509,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="544,28,510,28,510,23,544,23"/>
+<area shape="rect" id="Node000003" href="$class_p_b_1_1_book_1_1_book_editor_1_1_book_editor.html#a7fe5414e620960976d3c515a918709be" title="Defines what to do if the GUI is changed." alt="" coords="5,5,233,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="268,28,234,28,234,23,268,23"/>
+</map>

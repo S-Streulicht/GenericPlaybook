@@ -1,0 +1,35 @@
+<map id="PB.UI.FilllUI" name="PB.UI.FilllUI">
+<area shape="rect" id="Node000001" title="Fill the GUI with content." alt="" coords="1553,143,1652,169"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="281,77,405,102"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="390,70,454,49,535,27,625,10,718,3,1368,3,1406,7,1442,19,1477,37,1508,58,1560,104,1593,141,1589,145,1556,108,1505,63,1474,42,1440,24,1405,12,1368,8,718,8,626,15,536,32,455,54,392,75"/>
+<area shape="rect" id="Node000003" href="$class_p_b_1_1_logic_1_1_director.html" title="Provides content for the GUI." alt="" coords="1300,143,1433,169"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="419,81,556,72,739,66,945,67,1154,79,1210,85,1265,100,1309,120,1346,141,1344,145,1307,125,1263,105,1209,90,1153,84,945,72,739,72,557,78,420,86"/>
+<area shape="rect" id="Node000010" href="$class_p_b_1_1_logic_1_1_command_interpreter.html" title="Interprets a command string and execute the coresponding comand at the corect place." alt="" coords="611,193,828,218"/>
+<area shape="poly" id="edge11_Node000010_Node000002" title=" " alt="" coords="399,104,678,190,676,195,398,109"/>
+<area shape="rect" id="Node000014" href="$class_p_b_1_1_logic_1_1_text_eval.html" title="Evales a patter in a text." alt="" coords="984,193,1120,218"/>
+<area shape="poly" id="edge16_Node000014_Node000002" title=" " alt="" coords="419,99,984,192,983,197,418,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="1447,153,1553,153,1553,159,1447,159"/>
+<area shape="rect" id="Node000004" href="$class_p_b_1_1_book_1_1_text.html" title="This class handles the actual book." alt="" coords="999,313,1105,338"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="1119,330,1156,329,1194,323,1231,310,1262,289,1272,276,1276,264,1274,237,1273,209,1276,194,1286,180,1303,167,1306,171,1290,183,1281,196,1278,209,1280,237,1281,265,1276,279,1266,293,1233,315,1195,328,1156,334,1119,335"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="655,319,784,345"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="798,328,999,324,999,329,798,333"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="609,369,829,394"/>
+<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="808,364,998,332,999,337,809,369"/>
+<area shape="rect" id="Node000007" href="$interface_p_b_1_1_book_1_1_i_book_interface.html" title="This defines the bare minumum of functions used to get through a book." alt="" coords="661,270,778,295"/>
+<area shape="poly" id="edge7_Node000004_Node000007" title=" " alt="" coords="792,289,999,316,998,321,791,295"/>
+<area shape="rect" id="Node000008" href="$interface_p_b_1_1_book_1_1_i_book_interface.html" title="This defines the bare minumum of functions used to get through a book." alt="" coords="965,143,1139,169"/>
+<area shape="poly" id="edge8_Node000003_Node000008" title=" " alt="" coords="1153,153,1300,153,1300,159,1153,159"/>
+<area shape="rect" id="Node000009" href="$interface_p_b_1_1_book_1_1_i_text_node_interface.html" title="This defines the bare minumum of functions an text element should have to be usable by the Director." alt="" coords="951,94,1153,119"/>
+<area shape="poly" id="edge9_Node000003_Node000009" title=" " alt="" coords="1167,119,1264,133,1304,141,1303,146,1264,139,1166,124"/>
+<area shape="poly" id="edge10_Node000003_Node000010" title=" " alt="" coords="778,219,853,236,947,250,1050,254,1102,251,1153,243,1185,233,1209,221,1263,191,1287,179,1322,166,1324,171,1289,184,1265,196,1211,226,1187,238,1154,248,1103,256,1050,260,947,255,852,241,777,224"/>
+<area shape="poly" id="edge17_Node000014_Node000010" title=" " alt="" coords="842,203,984,203,984,208,842,208"/>
+<area shape="rect" id="Node000011" href="$class_p_b_1_1_logic_1_1_command_interpreter_1_1_string_string_dictionary.html" title="Serialised Dictionar for the string string key / attribute pair." alt="" coords="233,172,453,212"/>
+<area shape="poly" id="edge12_Node000010_Node000011" title=" " alt="" coords="467,194,610,199,610,204,467,199"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="5,172,171,212"/>
+<area shape="poly" id="edge13_Node000011_Node000012" title=" " alt="" coords="184,189,233,189,233,195,184,195"/>
+<area shape="rect" id="Node000013" href="$class_p_b_1_1_helper_1_1_class_manager.html" title=" " alt="" coords="220,236,467,276"/>
+<area shape="poly" id="edge14_Node000010_Node000013" title=" " alt="" coords="480,235,624,215,625,221,481,240"/>
+<area shape="poly" id="edge15_Node000003_Node000014" title=" " alt="" coords="1134,193,1264,173,1303,166,1304,171,1264,179,1134,198"/>
+<area shape="rect" id="Node000015" href="$struct_p_b_1_1_u_i_1_1_filll_u_i_1_1_t_answer.html" title="provides a pair to cantain a gameobect and its coresponding text field" alt="" coords="1288,193,1445,218"/>
+<area shape="poly" id="edge18_Node000001_Node000015" title=" " alt="" coords="1458,188,1529,173,1557,166,1559,171,1530,179,1459,193"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="PB.Book.Text.OnValidate" name="PB.Book.Text.OnValidate">
+<area shape="rect" id="Node000001" title="updates the reverse node list and the nodeLookup table" alt="" coords="5,5,188,31"/>
+<area shape="rect" id="Node000002" href="$class_p_b_1_1_book_1_1_text.html#a9adb8ad65f55769ef228ca48e2a61196" title="returns the node list" alt="" coords="236,5,428,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="189,15,222,15,222,21,189,21"/>
+</map>

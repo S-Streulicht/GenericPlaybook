@@ -1,0 +1,9 @@
+<map id="PB.Logic.Parser.Parse" name="PB.Logic.Parser.Parse">
+<area shape="rect" id="Node000001" title="Parsing of the command." alt="" coords="5,63,164,88"/>
+<area shape="rect" id="Node000002" href="$class_p_b_1_1_logic_1_1_parser.html#a6695949ea26cc26b984c0eea34a13bbf" title="REmove start and end parenthesis." alt="" coords="226,5,459,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="133,60,211,41,259,31,260,36,213,46,134,65"/>
+<area shape="rect" id="Node000003" href="$class_p_b_1_1_logic_1_1_parser.html#af573c58c6272577cf660407670ab657d" title="Remove the target indicator." alt="" coords="233,55,452,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="164,73,219,73,219,78,164,78"/>
+<area shape="rect" id="Node000004" href="$class_p_b_1_1_logic_1_1_parser.html#a9c58137805c6023eb398ac8ab82a9018" title="Remove the whitespaces." alt="" coords="212,120,473,145"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="134,86,213,105,260,115,259,120,211,110,133,91"/>
+</map>

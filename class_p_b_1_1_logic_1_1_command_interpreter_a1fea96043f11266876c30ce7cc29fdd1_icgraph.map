@@ -1,0 +1,7 @@
+<map id="PB.Logic.CommandInterpreter.GetTexture" name="PB.Logic.CommandInterpreter.GetTexture">
+<area shape="rect" id="Node000001" title="returns a texture set by a script" alt="" coords="457,5,677,45"/>
+<area shape="rect" id="Node000002" href="$class_p_b_1_1_logic_1_1_director.html#a3f31fa7fb6fc81a810a6bbe5f0073604" title="returns a texture set by a script" alt="" coords="203,13,409,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="444,28,410,28,410,23,444,23"/>
+<area shape="rect" id="Node000003" href="$class_p_b_1_1_u_i_1_1_filll_u_i.html#ae8fcda74da18d925d91284f304a2baa9" title="every frame the gui element is filled with information" alt="" coords="5,13,155,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="189,28,155,28,155,23,189,23"/>
+</map>

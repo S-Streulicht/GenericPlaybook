@@ -1,0 +1,9 @@
+<map id="PB.Logic.Director.ExecuteNodeCommands" name="PB.Logic.Director.ExecuteNodeCommands">
+<area shape="rect" id="Node000001" title="execute the comands of the text element" alt="" coords="507,31,693,71"/>
+<area shape="rect" id="Node000002" href="$class_p_b_1_1_logic_1_1_director.html#a9188457b3ab257422cf59e7fd289952b" title="Move to the linked text element." alt="" coords="253,13,459,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="493,42,459,39,459,33,493,37"/>
+<area shape="rect" id="Node000004" href="$class_p_b_1_1_logic_1_1_director.html#a802d5b74cd2945f6c32c27c7e54dd55b" title="setup the instance get" alt="" coords="273,62,439,87"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="493,64,440,69,439,64,493,59"/>
+<area shape="rect" id="Node000003" href="$class_p_b_1_1_u_i_1_1_filll_u_i.html#a8ebaf85e52c68ea7ec1797e022f16ef3" title="callback for the clickevent on the GUI" alt="" coords="5,5,205,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="239,28,206,28,206,23,239,23"/>
+</map>

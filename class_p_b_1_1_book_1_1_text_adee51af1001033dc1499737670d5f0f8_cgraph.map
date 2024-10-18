@@ -1,0 +1,15 @@
+<map id="PB.Book.Text.CreateRootIfEmpty" name="PB.Book.Text.CreateRootIfEmpty">
+<area shape="rect" id="Node000001" title="if the book is empty, create a root node" alt="" coords="5,23,199,63"/>
+<area shape="rect" id="Node000002" href="$class_p_b_1_1_book_1_1_text.html#afa6b14b86a64ae6736ee36e39a241719" title="adding a newly created node to the nodelists" alt="" coords="251,5,422,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="198,30,237,26,238,31,199,36"/>
+<area shape="rect" id="Node000005" href="$class_p_b_1_1_book_1_1_text.html#a45d9c9b534f1d27be98bc22ee0952f95" title="generates a new node and sets the base settings" alt="" coords="247,55,427,80"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="199,51,233,54,233,59,198,56"/>
+<area shape="rect" id="Node000003" href="$class_p_b_1_1_book_1_1_text.html#ac069ca4ee888cb5765fe0f173ea40f56" title="updates the reverse node list and the nodeLookup table" alt="" coords="505,5,687,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="422,15,490,15,490,21,422,21"/>
+<area shape="rect" id="Node000004" href="$class_p_b_1_1_book_1_1_text.html#a9adb8ad65f55769ef228ca48e2a61196" title="returns the node list" alt="" coords="765,5,957,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="687,15,751,15,751,21,687,21"/>
+<area shape="rect" id="Node000006" href="$class_p_b_1_1_book_1_1_text_elements.html#a01a5c047599730f86a980f793de39006" title="handles the linking of two text elements at editor time" alt="" coords="475,55,717,80"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="427,65,461,65,461,70,427,70"/>
+<area shape="rect" id="Node000007" href="$class_p_b_1_1_book_1_1_text.html#a5f1bc1e83a852de284cffa7cc4a3dd80" title="gets the biggest number of the text elements" alt="" coords="477,104,715,129"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="405,77,516,99,515,104,404,83"/>
+</map>

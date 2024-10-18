@@ -1,0 +1,7 @@
+<map id="PB.Attribute.AttrMoney" name="PB.Attribute.AttrMoney">
+<area shape="rect" id="Node000001" title="Handles the attribut &quot;money&quot;." alt="" coords="60,79,232,104"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,129,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="92,38,135,76,131,80,88,42"/>
+<area shape="rect" id="Node000003" href="$interface_p_b_1_1_attribute_1_1_i_attribute_interface.html" title="Interface for the attributes." alt="" coords="154,5,295,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="204,42,161,80,157,76,200,38"/>
+</map>
