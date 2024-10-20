@@ -36,9 +36,3 @@ jobs:
         else
           echo "Doxygen did not found error or warnings"
         fi
-
-    - name: Deploy
-      uses: peaceiris/actions-gh-pages@v4
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./Docu/html
