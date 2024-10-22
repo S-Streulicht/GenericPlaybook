@@ -1,4 +1,4 @@
-﻿name: genericplaybook
+﻿name: DocuUpdate
 on:
   push:
     branches:
