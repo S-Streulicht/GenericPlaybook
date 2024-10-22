@@ -36,8 +36,8 @@ namespace PB.Logic
     private SortedDictionary<string, IAttributeInterface> AttributPair = new SortedDictionary<string, IAttributeInterface>(); /**< Connects the classname with the asress of the class such that the interfacefunction can be called*/
     private SortedDictionary<string, IExtraUiInterface> ExtraUIPair = new SortedDictionary<string, IExtraUiInterface>();      /**< Connects the classname with the asress of the class such that the interfacefunction can be called*/
 
-    private const string       GetGameStateVariable = "GET() -> ExtraUIGameState";
-    private const string       GetGamePictureVariable = "GET() -> ExtraUIPicture";
+    private const string       GetGameStateVariable = "GET() -> ExtraUIGameState";  /**< The actual script command to reseive the gama state*/
+    private const string       GetGamePictureVariable = "GET() -> ExtraUIPicture";  /**< The actual script command to reseive the UI picture*/
 
     /**
     * @brief   constructor initialises the helper classes 

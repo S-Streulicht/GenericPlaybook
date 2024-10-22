@@ -1,0 +1,29 @@
+﻿name: DocuUpdate
+on:
+  push:
+    branches:
+      - 'main'
+  pull_request:
+    branches:
+      - 'main'
+jobs:
+  test-documentation:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Install Doxygen
+      uses: ./.github/actions/prepare-doxygen
+
+    - name: Generate documentation and test
+      run: |
+        cd ./Docu
+        ./doxygen ./Doxyfile > docuoutput.txt 2> docuerror.txt
+
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v4
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./Docu/html
