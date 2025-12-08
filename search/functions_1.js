@@ -5,7 +5,9 @@ var searchData=
   ['commandinterpreter_2',['CommandInterpreter',['../class_p_b_1_1_logic_1_1_command_interpreter.html#af80f88cd4ae0a94ad6b82a8e926484cd',1,'PB::Logic::CommandInterpreter']]],
   ['compareto_3',['CompareTo',['../struct_p_b_1_1_logic_1_1_dice_numbers_1_1_num_hash.html#ac0c04f8152ea302526ddf418bf8f5b90',1,'PB::Logic::DiceNumbers::NumHash']]],
   ['converttostring_4',['ConvertToString',['../struct_p_b_1_1_logic_1_1_dice_numbers_1_1_num_hash.html#a3530e11e48a4bd2856dc6dbd3adf1834',1,'PB::Logic::DiceNumbers::NumHash']]],
-  ['createlink_5',['CreateLink',['../class_p_b_1_1_book_1_1_text_elements.html#a01a5c047599730f86a980f793de39006',1,'PB::Book::TextElements']]],
-  ['createnode_6',['CreateNode',['../class_p_b_1_1_book_1_1_text.html#adf7451ba997c7cf74fbc430e7d77270b',1,'PB::Book::Text']]],
-  ['createrootifempty_7',['CreateRootIfEmpty',['../class_p_b_1_1_book_1_1_text.html#adee51af1001033dc1499737670d5f0f8',1,'PB::Book::Text']]]
+  ['createemptynode_5',['createEmptyNode',['../class_p_b_1_1_book_1_1_fight_story_teller.html#a37e2d71ce919570beb776c96ba496614',1,'PB::Book::FightStoryTeller']]],
+  ['createlink_6',['CreateLink',['../class_p_b_1_1_book_1_1_text_elements.html#a01a5c047599730f86a980f793de39006',1,'PB::Book::TextElements']]],
+  ['createnode_7',['CreateNode',['../class_p_b_1_1_book_1_1_text.html#adf7451ba997c7cf74fbc430e7d77270b',1,'PB::Book::Text']]],
+  ['createrootifempty_8',['CreateRootIfEmpty',['../class_p_b_1_1_book_1_1_text.html#adee51af1001033dc1499737670d5f0f8',1,'PB::Book::Text']]],
+  ['creatfirstnode_9',['creatFirstNode',['../class_p_b_1_1_book_1_1_fight_story_teller.html#a47a6831291e4d2a85b249b44430e5f8f',1,'PB::Book::FightStoryTeller']]]
 ];

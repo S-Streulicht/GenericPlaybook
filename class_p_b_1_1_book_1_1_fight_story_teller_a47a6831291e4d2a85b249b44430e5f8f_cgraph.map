@@ -1,0 +1,5 @@
+<map id="PB.Book.FightStoryTeller.creatFirstNode" name="PB.Book.FightStoryTeller.creatFirstNode">
+<area shape="rect" id="Node000001" title="fills the node wit dummy information" alt="" coords="5,5,223,45"/>
+<area shape="rect" id="Node000002" href="$class_p_b_1_1_book_1_1_fight_story_teller.html#a37e2d71ce919570beb776c96ba496614" title="creats an empty node ready to be filled" alt="" coords="271,5,496,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="223,23,257,23,257,28,223,28"/>
+</map>

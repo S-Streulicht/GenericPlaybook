@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['removestartend_0',['RemoveStartEnd',['../class_p_b_1_1_logic_1_1_parser.html#a6695949ea26cc26b984c0eea34a13bbf',1,'PB::Logic::Parser']]],
-  ['removetargetindicator_1',['RemoveTargetIndicator',['../class_p_b_1_1_logic_1_1_parser.html#af573c58c6272577cf660407670ab657d',1,'PB::Logic::Parser']]],
-  ['removewhitespaces_2',['RemoveWhitespaces',['../class_p_b_1_1_logic_1_1_parser.html#a9c58137805c6023eb398ac8ab82a9018',1,'PB::Logic::Parser']]],
-  ['replace_3',['Replace',['../class_p_b_1_1_logic_1_1_text_eval.html#a8747eada77388cd91079354feb66f2e5',1,'PB::Logic::TextEval']]],
-  ['returncommand_3c_20ttype_20_3e_4',['ReturnCommand&lt; TType &gt;',['../class_p_b_1_1_logic_1_1_command_interpreter.html#a00693b8bd6b091f626476f4089be4560',1,'PB::Logic::CommandInterpreter']]]
+  ['parse_0',['Parse',['../class_p_b_1_1_logic_1_1_parser.html#a3fc8803102d6afb61c2036327e6ee3e6',1,'PB::Logic::Parser']]],
+  ['processevents_1',['ProcessEvents',['../class_p_b_1_1_book_1_1_book_editor_1_1_book_editor.html#a7ff7705b5686628a8df98a3ab4b0b450',1,'PB::Book::BookEditor::BookEditor']]],
+  ['processingfinishedevent_2',['ProcessingFinishedEvent',['../namespace_p_b_1_1_logic.html#a6a817d5ef0862cb798191f4113a45e48',1,'PB::Logic']]],
+  ['processingstartedevent_3',['ProcessingStartedEvent',['../namespace_p_b_1_1_logic.html#a67dcdf1dfca00b2602b3156175ee4bd9',1,'PB::Logic']]],
+  ['publish_3c_20t_20_3e_4',['Publish&lt; T &gt;',['../class_p_b_1_1_logic_1_1_event_aggregator.html#a4e89fb362edb94c929be10ec30604352',1,'PB.Logic.EventAggregator.Publish&lt; T &gt;()'],['../interface_p_b_1_1_logic_1_1_i_event_aggregator.html#a6bc9214ca330cf6587432b23daa096c5',1,'PB.Logic.IEventAggregator.Publish&lt; T &gt;()']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['makenode_0',['MakeNode',['../class_p_b_1_1_book_1_1_text.html#a45d9c9b534f1d27be98bc22ee0952f95',1,'PB::Book::Text']]]
+  ['load_0',['Load',['../class_p_b_1_1_book_1_1_fight_story_teller.html#a409dcf30a58448737706d1bcf94d1555',1,'PB.Book.FightStoryTeller.Load()'],['../interface_p_b_1_1_book_1_1_i_script_book_interface.html#a1e63f6a251bd5e5c38b6a1d92e0c8179',1,'PB.Book.IScriptBookInterface.Load()']]]
 ];

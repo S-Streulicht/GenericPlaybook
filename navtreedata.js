@@ -27,14 +27,18 @@ var NAVTREE =
   [ "GenericPlaybook", "index.html", [
     [ "Todo List", "todo.html", null ],
     [ "Namespaces", "namespaces.html", [
-      [ "Namespace List", "namespaces.html", "namespaces_dup" ]
+      [ "Namespace List", "namespaces.html", "namespaces_dup" ],
+      [ "Namespace Members", "namespacemembers.html", [
+        [ "All", "namespacemembers.html", null ],
+        [ "Functions", "namespacemembers_func.html", null ]
+      ] ]
     ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Class Members", "functions.html", [
-        [ "All", "functions.html", null ],
+        [ "All", "functions.html", "functions_dup" ],
         [ "Functions", "functions_func.html", null ],
         [ "Variables", "functions_vars.html", null ],
         [ "Properties", "functions_prop.html", null ]
@@ -49,7 +53,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_attr_money_8cs_source.html",
-"class_p_b_1_1_logic_1_1_dice_numbers.html#a044463dde18771ee9f6333541518bf93"
+"class_p_b_1_1_logic_1_1_command_interpreter.html#abd29f1efd1ff00a9e96b12eb8f077be6",
+"namespace_system_1_1_runtime.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

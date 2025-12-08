@@ -179,7 +179,7 @@ Static Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   29</span>      <span class="comment">//return UsingRandom(Page);</span></div>
 <div class="line"><span class="lineno">   30</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="#a8656bf972d7ffc2e108d3d29f5ccb024">UsingHashregions</a>(Page, 24);</div>
 <div class="line"><span class="lineno">   31</span>    }</div>
-<div class="ttc" id="aclass_p_b_1_1_logic_1_1_dice_numbers_html_a8656bf972d7ffc2e108d3d29f5ccb024"><div class="ttname"><a href="#a8656bf972d7ffc2e108d3d29f5ccb024">PB.Logic.DiceNumbers.UsingHashregions</a></div><div class="ttdeci">static int UsingHashregions(int Page, int Range=24)</div><div class="ttdoc">get the pseudo dice number of a (page) number using a goupt of Range numbers sorted by hash</div><div class="ttdef"><b>Definition</b> <a href="_dice_numbers_8cs_source.html#l00168">DiceNumbers.cs:168</a></div></div>
+<div class="ttc" id="aclass_p_b_1_1_logic_1_1_dice_numbers_html_a8656bf972d7ffc2e108d3d29f5ccb024"><div class="ttname"><a href="#a8656bf972d7ffc2e108d3d29f5ccb024">PB.Logic.DiceNumbers.UsingHashregions</a></div><div class="ttdeci">static int UsingHashregions(int Page, int Range=24)</div><div class="ttdoc">get the pseudo dice number of a (page) number using a goupt of Range numbers sorted by hash</div><div class="ttdef"><b>Definition</b> <a href="_dice_numbers_8cs_source.html#l00169">DiceNumbers.cs:169</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -286,27 +286,27 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>number 1 to 6 depending on the Page </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_dice_numbers_8cs_source.html#l00168">168</a> of file <a class="el" href="_dice_numbers_8cs_source.html">DiceNumbers.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  169</span>    {</div>
-<div class="line"><span class="lineno">  170</span>      <span class="keyword">using</span> (HashAlgorithm algorithm = SHA256.Create())</div>
-<div class="line"><span class="lineno">  171</span>      {</div>
-<div class="line"><span class="lineno">  172</span>        <span class="keywordtype">int</span> LowerLimit = (int)(Math.Floor(((<span class="keywordtype">float</span>)Page + 0.5f) / (<span class="keywordtype">float</span>)Range) * (<span class="keywordtype">float</span>)Range);</div>
-<div class="line"><span class="lineno">  173</span>        <span class="keywordtype">int</span> UpperLimit = (int)(Math.Ceiling(((<span class="keywordtype">float</span>)Page + 0.5f) / (<span class="keywordtype">float</span>)Range) * (<span class="keywordtype">float</span>)Range);</div>
-<div class="line"><span class="lineno">  174</span>        NumHash[] numHash = <span class="keyword">new</span> NumHash[Range];</div>
-<div class="line"><span class="lineno">  175</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = LowerLimit; i &lt; UpperLimit; i++)</div>
-<div class="line"><span class="lineno">  176</span>        {</div>
-<div class="line"><span class="lineno">  177</span>          numHash[i % Range] = <span class="keyword">new</span> NumHash(i, algorithm.ComputeHash(Encoding.UTF8.GetBytes(i.ToString())));</div>
-<div class="line"><span class="lineno">  178</span>          <span class="comment">//Debug.Log(numHash[i % Range]);</span></div>
-<div class="line"><span class="lineno">  179</span>        }</div>
-<div class="line"><span class="lineno">  180</span>        Array.Sort(numHash);</div>
-<div class="line"><span class="lineno">  181</span>        <span class="comment">/*for (int i = 0; i &lt; Range; i++)</span></div>
-<div class="line"><span class="lineno">  182</span><span class="comment">        {</span></div>
-<div class="line"><span class="lineno">  183</span><span class="comment">          Debug.Log(numHash[i].Num % 6 + 1);</span></div>
-<div class="line"><span class="lineno">  184</span><span class="comment">        }*/</span></div>
-<div class="line"><span class="lineno">  185</span>        <span class="keywordflow">return</span> numHash[Page % Range].Num % 6 + 1;</div>
-<div class="line"><span class="lineno">  186</span>      }</div>
-<div class="line"><span class="lineno">  187</span> </div>
-<div class="line"><span class="lineno">  188</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_dice_numbers_8cs_source.html#l00169">169</a> of file <a class="el" href="_dice_numbers_8cs_source.html">DiceNumbers.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  170</span>    {</div>
+<div class="line"><span class="lineno">  171</span>      <span class="keyword">using</span> (HashAlgorithm algorithm = SHA256.Create())</div>
+<div class="line"><span class="lineno">  172</span>      {</div>
+<div class="line"><span class="lineno">  173</span>        <span class="keywordtype">int</span> LowerLimit = (int)(Math.Floor(((<span class="keywordtype">float</span>)Page + 0.5f) / (<span class="keywordtype">float</span>)Range) * (<span class="keywordtype">float</span>)Range);</div>
+<div class="line"><span class="lineno">  174</span>        <span class="keywordtype">int</span> UpperLimit = (int)(Math.Ceiling(((<span class="keywordtype">float</span>)Page + 0.5f) / (<span class="keywordtype">float</span>)Range) * (<span class="keywordtype">float</span>)Range);</div>
+<div class="line"><span class="lineno">  175</span>        NumHash[] numHash = <span class="keyword">new</span> NumHash[Range];</div>
+<div class="line"><span class="lineno">  176</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = LowerLimit; i &lt; UpperLimit; i++)</div>
+<div class="line"><span class="lineno">  177</span>        {</div>
+<div class="line"><span class="lineno">  178</span>          numHash[i % Range] = <span class="keyword">new</span> NumHash(i, algorithm.ComputeHash(Encoding.UTF8.GetBytes(i.ToString())));</div>
+<div class="line"><span class="lineno">  179</span>          <span class="comment">//Debug.Log(numHash[i % Range]);</span></div>
+<div class="line"><span class="lineno">  180</span>        }</div>
+<div class="line"><span class="lineno">  181</span>        Array.Sort(numHash);</div>
+<div class="line"><span class="lineno">  182</span>        <span class="comment">/*for (int i = 0; i &lt; Range; i++)</span></div>
+<div class="line"><span class="lineno">  183</span><span class="comment">        {</span></div>
+<div class="line"><span class="lineno">  184</span><span class="comment">          Debug.Log(numHash[i].Num % 6 + 1);</span></div>
+<div class="line"><span class="lineno">  185</span><span class="comment">        }*/</span></div>
+<div class="line"><span class="lineno">  186</span>        <span class="keywordflow">return</span> numHash[Page % Range].Num % 6 + 1;</div>
+<div class="line"><span class="lineno">  187</span>      }</div>
+<div class="line"><span class="lineno">  188</span> </div>
+<div class="line"><span class="lineno">  189</span>    }</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -344,7 +344,8 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>get the pseudo dice number of a (page) number using a standard random algorithm </p>
-<p>initialise the Random function Unity get a random number in the range of 1 to 6 Drawback it is puryly deterministic random, which means the first few hunderet numbers dosent have a equal distribution of each of the outputs We have a loaded dice Advantage it it a direct on to one translation </p><dl class="params"><dt>Parameters</dt><dd>
+<p>initialise the Random function Unity get a random number in the range of 1 to 6 Drawback it is puryly deterministic random, which means the first few hunderet numbers dosent have a equal distribution of each of the outputs We have a loaded dice Advantage it it a direct on to one translation\ </p><dl class="todo"><dt><b><a class="el" href="todo.html#_todo000007">Todo</a></b></dt><dd>get the IfOnce into the constructor </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">Page</td><td>positive integer number </td></tr>
   </table>
@@ -352,23 +353,23 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>number 1 to 6 depending on the Page </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_dice_numbers_8cs_source.html#l00076">76</a> of file <a class="el" href="_dice_numbers_8cs_source.html">DiceNumbers.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   77</span>    {</div>
-<div class="line"><span class="lineno">   78</span>      <span class="comment">// /todo get the IfOnce into the constructor</span></div>
-<div class="line"><span class="lineno">   79</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a9dae8a815b4b57f76306f17b90f7244e">IfOnce</a>)</div>
-<div class="line"><span class="lineno">   80</span>      {</div>
-<div class="line"><span class="lineno">   81</span>        UnityEngine.Random.InitState(42);</div>
-<div class="line"><span class="lineno">   82</span>        <a class="code hl_variable" href="#a9dae8a815b4b57f76306f17b90f7244e">IfOnce</a> = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   83</span>      }</div>
-<div class="line"><span class="lineno">   84</span>      <span class="keywordflow">return</span> UnityEngine.Random.Range(1, 7);</div>
-<div class="line"><span class="lineno">   85</span>      <span class="comment">/*for (int i = 1; i &lt; 20000; i++)</span></div>
-<div class="line"><span class="lineno">   86</span><span class="comment">      {</span></div>
-<div class="line"><span class="lineno">   87</span><span class="comment">        ans[UnityEngine.Random.Range(0, 6)]++;</span></div>
-<div class="line"><span class="lineno">   88</span><span class="comment">      }</span></div>
-<div class="line"><span class="lineno">   89</span><span class="comment">      foreach (var a in ans)</span></div>
-<div class="line"><span class="lineno">   90</span><span class="comment">        Debug.Log(a / 3333.0f);</span></div>
-<div class="line"><span class="lineno">   91</span><span class="comment">      */</span></div>
-<div class="line"><span class="lineno">   92</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_dice_numbers_8cs_source.html#l00077">77</a> of file <a class="el" href="_dice_numbers_8cs_source.html">DiceNumbers.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   78</span>    {</div>
+<div class="line"><span class="lineno">   79</span>      <span class="comment">// \todo get the IfOnce into the constructor</span></div>
+<div class="line"><span class="lineno">   80</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a9dae8a815b4b57f76306f17b90f7244e">IfOnce</a>)</div>
+<div class="line"><span class="lineno">   81</span>      {</div>
+<div class="line"><span class="lineno">   82</span>        UnityEngine.Random.InitState(42);</div>
+<div class="line"><span class="lineno">   83</span>        <a class="code hl_variable" href="#a9dae8a815b4b57f76306f17b90f7244e">IfOnce</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   84</span>      }</div>
+<div class="line"><span class="lineno">   85</span>      <span class="keywordflow">return</span> UnityEngine.Random.Range(1, 7);</div>
+<div class="line"><span class="lineno">   86</span>      <span class="comment">/*for (int i = 1; i &lt; 20000; i++)</span></div>
+<div class="line"><span class="lineno">   87</span><span class="comment">      {</span></div>
+<div class="line"><span class="lineno">   88</span><span class="comment">        ans[UnityEngine.Random.Range(0, 6)]++;</span></div>
+<div class="line"><span class="lineno">   89</span><span class="comment">      }</span></div>
+<div class="line"><span class="lineno">   90</span><span class="comment">      foreach (var a in ans)</span></div>
+<div class="line"><span class="lineno">   91</span><span class="comment">        Debug.Log(a / 3333.0f);</span></div>
+<div class="line"><span class="lineno">   92</span><span class="comment">      */</span></div>
+<div class="line"><span class="lineno">   93</span>    }</div>
 <div class="ttc" id="aclass_p_b_1_1_logic_1_1_dice_numbers_html_a9dae8a815b4b57f76306f17b90f7244e"><div class="ttname"><a href="#a9dae8a815b4b57f76306f17b90f7244e">PB.Logic.DiceNumbers.IfOnce</a></div><div class="ttdeci">static bool IfOnce</div><div class="ttdef"><b>Definition</b> <a href="_dice_numbers_8cs_source.html#l00018">DiceNumbers.cs:18</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -393,7 +394,7 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>relevant for the initialisation of the standar Random implementation /todo get it in the constructor </p>
+<p>relevant for the initialisation of the standar Random implementation </p><dl class="todo"><dt><b><a class="el" href="todo.html#_todo000006">Todo</a></b></dt><dd>get it in the constructor </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="_dice_numbers_8cs_source.html#l00018">18</a> of file <a class="el" href="_dice_numbers_8cs_source.html">DiceNumbers.cs</a>.</p>
 

@@ -1,15 +1,19 @@
 var searchData=
 [
-  ['tanswer_0',['TAnswer',['../struct_p_b_1_1_u_i_1_1_filll_u_i_1_1_t_answer.html',1,'PB.UI.FilllUI.TAnswer'],['../struct_p_b_1_1_u_i_1_1_filll_u_i_1_1_t_answer.html#a54a62c2203fe4496c91474be7f67f465',1,'PB.UI.FilllUI.TAnswer.TAnswer()']]],
-  ['target_1',['Target',['../class_p_b_1_1_logic_1_1_parser.html#afc5ddbdf6147d15e3f147b1ee1919884',1,'PB::Logic::Parser']]],
-  ['test_2',['Test',['../class_p_b_1_1_attribute_1_1_attr_money.html#afa53158915b5cdfea0f33caa1a788de1',1,'PB.Attribute.AttrMoney.Test()'],['../interface_p_b_1_1_attribute_1_1_i_attribute_interface.html#ab0fb0d6f77be522be5fe1f1e771865aa',1,'PB.Attribute.IAttributeInterface.Test()'],['../class_p_b_1_1_extra_u_i_1_1_extra_u_i_game_state.html#ad683a7f125f5979b9eac9f23b16935b0',1,'PB.ExtraUI.ExtraUIGameState.Test()'],['../class_p_b_1_1_extra_u_i_1_1_extra_u_i_picture.html#a2b33b8b0faabcb3903837bf5c876bc37',1,'PB.ExtraUI.ExtraUIPicture.Test()'],['../interface_p_b_1_1_extra_u_i_1_1_i_extra_ui_interface.html#a126914897910cf078abdf8a3670d7ede',1,'PB.ExtraUI.IExtraUiInterface.Test()']]],
-  ['text_3',['Text',['../class_p_b_1_1_book_1_1_text.html',1,'PB.Book.Text'],['../interface_p_b_1_1_book_1_1_i_text_node_interface.html#ac9e6c2892add3eef7994fb2a95b2a63e',1,'PB.Book.ITextNodeInterface.Text'],['../class_p_b_1_1_book_1_1_text_elements.html#a9bca554350dc5290887b27ea212097b4',1,'PB.Book.TextElements.Text']]],
-  ['text_4',['text',['../struct_p_b_1_1_book_1_1_jump_to.html#adea1bb51fbc8c91a9f018cc4d463369c',1,'PB.Book.JumpTo.text'],['../class_p_b_1_1_book_1_1_text_elements.html#af3389cb377c9ae046951445b9026d02e',1,'PB.Book.TextElements.text']]],
-  ['textelements_5',['TextElements',['../class_p_b_1_1_book_1_1_text_elements.html',1,'PB::Book']]],
-  ['texteval_6',['TextEval',['../class_p_b_1_1_logic_1_1_text_eval.html',1,'PB::Logic']]],
-  ['texteval_7',['textEval',['../class_p_b_1_1_logic_1_1_director.html#a328f9d6e7b71dc978caf469673ccf1d6',1,'PB::Logic::Director']]],
-  ['textnumber_8',['TextNumber',['../interface_p_b_1_1_book_1_1_i_text_node_interface.html#aba87e65e3f2c49b756683688e1abd10e',1,'PB.Book.ITextNodeInterface.TextNumber'],['../class_p_b_1_1_book_1_1_text_elements.html#a15f18311a947872599e735311e495360',1,'PB.Book.TextElements.TextNumber']]],
-  ['textnumber_9',['textNumber',['../class_p_b_1_1_book_1_1_text_elements.html#a17b0f8838d972a7230144aceda2939b3',1,'PB::Book::TextElements']]],
-  ['todo_20list_10',['Todo List',['../todo.html',1,'']]],
-  ['tostring_11',['ToString',['../struct_p_b_1_1_logic_1_1_dice_numbers_1_1_num_hash.html#ac55fa33cf3869ab4d0e5f7ba38d0cc83',1,'PB.Logic.DiceNumbers.NumHash.ToString()'],['../struct_p_b_1_1_u_i_1_1_filll_u_i_1_1_t_answer.html#aa828c0c4437271d7b4509b9e56d7e53f',1,'PB.UI.FilllUI.TAnswer.ToString()']]]
+  ['scrollposition_0',['scrollPosition',['../class_p_b_1_1_book_1_1_book_editor_1_1_book_editor.html#acc4e2ce6fff9e9c5fe414f9527547728',1,'PB::Book::BookEditor::BookEditor']]],
+  ['selectedbook_1',['selectedBook',['../class_p_b_1_1_book_1_1_book_editor_1_1_book_editor.html#ac55fab6b2308c9dcec3ab299d08b43aa',1,'PB::Book::BookEditor::BookEditor']]],
+  ['set_2',['Set',['../class_p_b_1_1_extra_u_i_1_1_extra_u_i_game_state.html#a1b756e218665c8d97e456a0cd8fa0101',1,'PB.ExtraUI.ExtraUIGameState.Set()'],['../class_p_b_1_1_extra_u_i_1_1_extra_u_i_picture.html#ad3f6c5059467e3427f11a4de75329e48',1,'PB.ExtraUI.ExtraUIPicture.Set()'],['../interface_p_b_1_1_extra_u_i_1_1_i_extra_ui_interface.html#a24f05163a6c8906e285c1711236dac73',1,'PB.ExtraUI.IExtraUiInterface.Set()']]],
+  ['set_5fextraui_3',['SET_EXTRAUI',['../class_p_b_1_1_logic_1_1_command_ref.html#acdc9f785968c385b451785207e71d7b2',1,'PB::Logic::CommandRef']]],
+  ['setanswer_4',['SetAnswer',['../class_p_b_1_1_logic_1_1_director.html#a9188457b3ab257422cf59e7fd289952b',1,'PB::Logic::Director']]],
+  ['setnodestyle_5',['SetNodeStyle',['../class_p_b_1_1_book_1_1_book_editor_1_1_book_editor.html#a8453456a422cda764a5fc300bcb4a925',1,'PB::Book::BookEditor::BookEditor']]],
+  ['showeditorwindow_6',['ShowEditorWindow',['../class_p_b_1_1_book_1_1_book_editor_1_1_book_editor.html#ae58e80b1d74dac6cc4ee9321a16282bd',1,'PB::Book::BookEditor::BookEditor']]],
+  ['start_7',['Start',['../class_p_b_1_1_attribute_1_1_attr_money.html#a9abb22dedfb4a57f94dbb024e0383b37',1,'PB.Attribute.AttrMoney.Start()'],['../class_p_b_1_1_book_1_1_fight_story_teller.html#afd5d6ba3f37cc1156e58619a15eb048e',1,'PB.Book.FightStoryTeller.Start()'],['../class_p_b_1_1_logic_1_1_director.html#a802d5b74cd2945f6c32c27c7e54dd55b',1,'PB.Logic.Director.Start()'],['../class_p_b_1_1_logic_1_1_text_eval.html#ac4c1b9c3db78d9b6747ac0f1df6dc889',1,'PB.Logic.TextEval.Start()'],['../class_p_b_1_1_u_i_1_1_filll_u_i.html#a5163abd21722de79f4303903cb5e37be',1,'PB.UI.FilllUI.Start()']]],
+  ['startanewbook_8',['StartANewBook',['../class_p_b_1_1_logic_1_1_director.html#abfa6ec3830f2e52e7f1e69b676722e7c',1,'PB::Logic::Director']]],
+  ['startarg_9',['StartArg',['../class_p_b_1_1_logic_1_1_parser.html#a02a435380a8fb5d562e708d0349c79ff',1,'PB::Logic::Parser']]],
+  ['state_10',['State',['../class_p_b_1_1_extra_u_i_1_1_extra_u_i_game_state.html#a8c8d0f9dc940238f2615dd8ab00d7562',1,'PB::ExtraUI::ExtraUIGameState']]],
+  ['statetext_11',['StateText',['../class_p_b_1_1_u_i_1_1_filll_u_i.html#a39f82e85d0c176a22cb34d4f6864879b',1,'PB::UI::FilllUI']]],
+  ['subscribe_3c_20t_20_3e_12',['Subscribe&lt; T &gt;',['../class_p_b_1_1_logic_1_1_event_aggregator.html#a75a2bb1dbf635c380e2084ec49ccbf64',1,'PB.Logic.EventAggregator.Subscribe&lt; T &gt;()'],['../interface_p_b_1_1_logic_1_1_i_event_aggregator.html#aeb4a51317fda30c6749862f9c9b377b6',1,'PB.Logic.IEventAggregator.Subscribe&lt; T &gt;()']]],
+  ['system_13',['System',['../namespace_system.html',1,'']]],
+  ['system_3a_3aruntime_14',['Runtime',['../namespace_system_1_1_runtime.html',1,'System']]],
+  ['system_3a_3aruntime_3a_3acompilerservices_15',['CompilerServices',['../namespace_system_1_1_runtime_1_1_compiler_services.html',1,'System::Runtime']]]
 ];

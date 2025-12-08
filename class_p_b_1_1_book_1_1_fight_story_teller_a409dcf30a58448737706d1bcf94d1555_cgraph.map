@@ -1,0 +1,9 @@
+<map id="PB.Book.FightStoryTeller.Load" name="PB.Book.FightStoryTeller.Load">
+<area shape="rect" id="Node000001" title="Interface to loa the book." alt="" coords="5,45,220,70"/>
+<area shape="rect" id="Node000002" href="$class_p_b_1_1_book_1_1_fight_story_teller.html#a47a6831291e4d2a85b249b44430e5f8f" title="fills the node wit dummy information" alt="" coords="268,5,485,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="217,42,254,37,255,43,218,47"/>
+<area shape="rect" id="Node000004" href="$namespace_p_b_1_1_logic.html#a67dcdf1dfca00b2602b3156175ee4bd9" title=" " alt="" coords="277,69,476,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="218,67,264,73,264,78,217,73"/>
+<area shape="rect" id="Node000003" href="$class_p_b_1_1_book_1_1_fight_story_teller.html#a37e2d71ce919570beb776c96ba496614" title="creats an empty node ready to be filled" alt="" coords="533,5,759,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="486,23,519,23,519,28,486,28"/>
+</map>

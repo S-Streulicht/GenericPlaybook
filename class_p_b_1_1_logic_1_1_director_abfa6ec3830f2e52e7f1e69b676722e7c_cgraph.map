@@ -1,0 +1,17 @@
+<map id="PB.Logic.Director.StartANewBook" name="PB.Logic.Director.StartANewBook">
+<area shape="rect" id="Node000001" title="start enters a new book" alt="" coords="5,95,244,120"/>
+<area shape="rect" id="Node000002" href="$class_p_b_1_1_logic_1_1_director.html#ab138d9d913337dd480060d7f3ac986f4" title="execute the comands of the text element" alt="" coords="300,55,487,95"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="231,92,286,85,287,91,232,97"/>
+<area shape="rect" id="Node000008" href="$interface_p_b_1_1_book_1_1_i_book_interface.html#a535d84b42856d2dc45baab34e94340b9" title=" " alt="" coords="292,119,495,159"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="232,117,279,123,278,128,231,123"/>
+<area shape="rect" id="Node000003" href="$class_p_b_1_1_logic_1_1_command_interpreter.html#a9d6638ecee519c9c46e29de807101954" title="execute a command string" alt="" coords="543,55,763,95"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="487,73,529,73,529,78,487,78"/>
+<area shape="rect" id="Node000004" href="$class_p_b_1_1_logic_1_1_parser.html#a3fc8803102d6afb61c2036327e6ee3e6" title="Parsing of the command." alt="" coords="811,63,969,88"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="763,73,797,73,797,78,763,78"/>
+<area shape="rect" id="Node000005" href="$class_p_b_1_1_logic_1_1_parser.html#a6695949ea26cc26b984c0eea34a13bbf" title="REmove start and end parenthesis." alt="" coords="1031,5,1265,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="938,60,1017,41,1064,31,1065,36,1018,46,940,65"/>
+<area shape="rect" id="Node000006" href="$class_p_b_1_1_logic_1_1_parser.html#af573c58c6272577cf660407670ab657d" title="Remove the target indicator." alt="" coords="1039,55,1257,95"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="970,73,1025,73,1025,78,970,78"/>
+<area shape="rect" id="Node000007" href="$class_p_b_1_1_logic_1_1_parser.html#a9c58137805c6023eb398ac8ab82a9018" title="Remove the whitespaces." alt="" coords="1017,120,1279,145"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="940,86,1018,105,1065,115,1064,120,1017,110,938,91"/>
+</map>

@@ -153,6 +153,9 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:ad062f9df67b2524b2788b4e6704c9dd6" id="r_ad062f9df67b2524b2788b4e6704c9dd6"><td class="memItemLeft" align="right" valign="top">bool IAttributeInterface.&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad062f9df67b2524b2788b4e6704c9dd6">Is</a> (List&lt; string &gt; arg)</td></tr>
 <tr class="memdesc:ad062f9df67b2524b2788b4e6704c9dd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">implementation of the interface Is  <br /></td></tr>
 <tr class="separator:ad062f9df67b2524b2788b4e6704c9dd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3336a8e1b09bc8439b143a79766176ea" id="r_a3336a8e1b09bc8439b143a79766176ea"><td class="memItemLeft" align="right" valign="top">Ttype IAttributeInterface.&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3336a8e1b09bc8439b143a79766176ea">GetInfo&lt; Ttype &gt;</a> ()</td></tr>
+<tr class="memdesc:a3336a8e1b09bc8439b143a79766176ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the actual money value as integer  <br /></td></tr>
+<tr class="separator:a3336a8e1b09bc8439b143a79766176ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa53158915b5cdfea0f33caa1a788de1" id="r_afa53158915b5cdfea0f33caa1a788de1"><td class="memItemLeft" align="right" valign="top">bool IAttributeInterface.&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afa53158915b5cdfea0f33caa1a788de1">Test</a> (string Interface, List&lt; string &gt; arg)</td></tr>
 <tr class="memdesc:afa53158915b5cdfea0f33caa1a788de1"><td class="mdescLeft">&#160;</td><td class="mdescRight">implementation of the interface test used to tests the argument list  <br /></td></tr>
 <tr class="separator:afa53158915b5cdfea0f33caa1a788de1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -253,7 +256,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   68</span> </div>
 <div class="line"><span class="lineno">   69</span>    }</div>
 <div class="ttc" id="aclass_p_b_1_1_attribute_1_1_attr_money_html_abe43d51e211fcbfbf27f1c1cebd05c0e"><div class="ttname"><a href="#abe43d51e211fcbfbf27f1c1cebd05c0e">PB.Attribute.AttrMoney.ChangeFunction</a></div><div class="ttdeci">readonly SortedDictionary&lt; string, Action&lt; int &gt; &gt; ChangeFunction</div><div class="ttdef"><b>Definition</b> <a href="_attr_money_8cs_source.html#l00020">AttrMoney.cs:20</a></div></div>
-<div class="ttc" id="aclass_p_b_1_1_attribute_1_1_attr_money_html_afa53158915b5cdfea0f33caa1a788de1"><div class="ttname"><a href="#afa53158915b5cdfea0f33caa1a788de1">PB.Attribute.AttrMoney.Test</a></div><div class="ttdeci">bool IAttributeInterface. Test(string Interface, List&lt; string &gt; arg)</div><div class="ttdoc">implementation of the interface test used to tests the argument list</div><div class="ttdef"><b>Definition</b> <a href="_attr_money_8cs_source.html#l00104">AttrMoney.cs:104</a></div></div>
+<div class="ttc" id="aclass_p_b_1_1_attribute_1_1_attr_money_html_afa53158915b5cdfea0f33caa1a788de1"><div class="ttname"><a href="#afa53158915b5cdfea0f33caa1a788de1">PB.Attribute.AttrMoney.Test</a></div><div class="ttdeci">bool IAttributeInterface. Test(string Interface, List&lt; string &gt; arg)</div><div class="ttdoc">implementation of the interface test used to tests the argument list</div><div class="ttdef"><b>Definition</b> <a href="_attr_money_8cs_source.html#l00114">AttrMoney.cs:114</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -265,6 +268,42 @@ Here is the call graph for this function:</div>
 </map>
 </div>
 
+</div>
+</div>
+<a id="a3336a8e1b09bc8439b143a79766176ea" name="a3336a8e1b09bc8439b143a79766176ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3336a8e1b09bc8439b143a79766176ea">&#9670;&#160;</a></span>GetInfo&lt; Ttype &gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Ttype IAttributeInterface. PB.Attribute.AttrMoney.GetInfo&lt; Ttype &gt; </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>returns the actual money value as integer </p>
+<p>if TType is a integer the actual value is returned else the default of the requested type. </p><dl class="section return"><dt>Returns</dt><dd>the integer value of money </dd></dl>
+
+<p>Implements <a class="el" href="interface_p_b_1_1_attribute_1_1_i_attribute_interface.html#a85a4f73556fdb751fec541ffbf6c8c8b">PB.Attribute.IAttributeInterface</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_attr_money_8cs_source.html#l00101">101</a> of file <a class="el" href="_attr_money_8cs_source.html">AttrMoney.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  102</span>    {</div>
+<div class="line"><span class="lineno">  103</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="#a12e44b4f7ea2187aedfebe8bb5c03904">Money</a> is Ttype value ? value : <span class="keywordflow">default</span>(Ttype);</div>
+<div class="line"><span class="lineno">  104</span>    }</div>
+<div class="ttc" id="aclass_p_b_1_1_attribute_1_1_attr_money_html_a12e44b4f7ea2187aedfebe8bb5c03904"><div class="ttname"><a href="#a12e44b4f7ea2187aedfebe8bb5c03904">PB.Attribute.AttrMoney.Money</a></div><div class="ttdeci">int Money</div><div class="ttdef"><b>Definition</b> <a href="_attr_money_8cs_source.html#l00016">AttrMoney.cs:16</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ad062f9df67b2524b2788b4e6704c9dd6" name="ad062f9df67b2524b2788b4e6704c9dd6"></a>
@@ -360,7 +399,6 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">   42</span>      <a class="code hl_variable" href="#a0361fcdfefa89b46bcbe3ea4e6975064">Isfunction</a>.Add(<span class="stringliteral">&quot;&gt;&quot;</span>, x =&gt; { <span class="keywordflow">return</span> <a class="code hl_variable" href="#a12e44b4f7ea2187aedfebe8bb5c03904">Money</a> &gt; x; });</div>
 <div class="line"><span class="lineno">   43</span>      <a class="code hl_variable" href="#a0361fcdfefa89b46bcbe3ea4e6975064">Isfunction</a>.Add(<span class="stringliteral">&quot;==&quot;</span>, x =&gt; { <span class="keywordflow">return</span> <a class="code hl_variable" href="#a12e44b4f7ea2187aedfebe8bb5c03904">Money</a> == x; });</div>
 <div class="line"><span class="lineno">   44</span>    }</div>
-<div class="ttc" id="aclass_p_b_1_1_attribute_1_1_attr_money_html_a12e44b4f7ea2187aedfebe8bb5c03904"><div class="ttname"><a href="#a12e44b4f7ea2187aedfebe8bb5c03904">PB.Attribute.AttrMoney.Money</a></div><div class="ttdeci">int Money</div><div class="ttdef"><b>Definition</b> <a href="_attr_money_8cs_source.html#l00016">AttrMoney.cs:16</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -396,30 +434,30 @@ Here is the call graph for this function:</div>
 
 <p>Implements <a class="el" href="interface_p_b_1_1_attribute_1_1_i_attribute_interface.html#ab0fb0d6f77be522be5fe1f1e771865aa">PB.Attribute.IAttributeInterface</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_attr_money_8cs_source.html#l00104">104</a> of file <a class="el" href="_attr_money_8cs_source.html">AttrMoney.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  105</span>    {</div>
-<div class="line"><span class="lineno">  106</span>      <span class="keywordtype">bool</span> ret = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  107</span> </div>
-<div class="line"><span class="lineno">  108</span>      <span class="keywordflow">switch</span> (Interface)</div>
-<div class="line"><span class="lineno">  109</span>      {</div>
-<div class="line"><span class="lineno">  110</span>        <span class="keywordflow">case</span> <span class="stringliteral">&quot;Change&quot;</span>:</div>
-<div class="line"><span class="lineno">  111</span>          <span class="keywordflow">if</span> (arg.Count != 2) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  112</span>          ret &amp;= <a class="code hl_variable" href="#abe43d51e211fcbfbf27f1c1cebd05c0e">ChangeFunction</a>.ContainsKey(arg[0]);</div>
-<div class="line"><span class="lineno">  113</span>          ret &amp;= <span class="keywordtype">int</span>.TryParse(arg[1], out _);</div>
-<div class="line"><span class="lineno">  114</span>          <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  115</span>        <span class="keywordflow">case</span> <span class="stringliteral">&quot;Is&quot;</span>:</div>
-<div class="line"><span class="lineno">  116</span>          <span class="keywordflow">if</span> (arg.Count != 2) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  117</span>          ret &amp;= <a class="code hl_variable" href="#a0361fcdfefa89b46bcbe3ea4e6975064">Isfunction</a>.ContainsKey(arg[0]);</div>
-<div class="line"><span class="lineno">  118</span>          ret &amp;= <span class="keywordtype">int</span>.TryParse(arg[1], out _);</div>
-<div class="line"><span class="lineno">  119</span>          <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  120</span>        <span class="keywordflow">default</span>:</div>
-<div class="line"><span class="lineno">  121</span>          Debug.Log(<span class="stringliteral">&quot;Wrong interface (&quot;</span> + Interface + <span class="stringliteral">&quot;) to be tested in &quot;</span> + <a class="code hl_variable" href="#a1bc1f9da45dc0b1ff8197b551fc87dab">classManager</a>.getClassname());</div>
-<div class="line"><span class="lineno">  122</span>          ret = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  123</span>          <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  124</span>      }</div>
-<div class="line"><span class="lineno">  125</span> </div>
-<div class="line"><span class="lineno">  126</span>      <span class="keywordflow">return</span> ret;</div>
-<div class="line"><span class="lineno">  127</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_attr_money_8cs_source.html#l00114">114</a> of file <a class="el" href="_attr_money_8cs_source.html">AttrMoney.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  115</span>    {</div>
+<div class="line"><span class="lineno">  116</span>      <span class="keywordtype">bool</span> ret = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  117</span> </div>
+<div class="line"><span class="lineno">  118</span>      <span class="keywordflow">switch</span> (Interface)</div>
+<div class="line"><span class="lineno">  119</span>      {</div>
+<div class="line"><span class="lineno">  120</span>        <span class="keywordflow">case</span> <span class="stringliteral">&quot;Change&quot;</span>:</div>
+<div class="line"><span class="lineno">  121</span>          <span class="keywordflow">if</span> (arg.Count != 2) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  122</span>          ret &amp;= <a class="code hl_variable" href="#abe43d51e211fcbfbf27f1c1cebd05c0e">ChangeFunction</a>.ContainsKey(arg[0]);</div>
+<div class="line"><span class="lineno">  123</span>          ret &amp;= <span class="keywordtype">int</span>.TryParse(arg[1], out _);</div>
+<div class="line"><span class="lineno">  124</span>          <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  125</span>        <span class="keywordflow">case</span> <span class="stringliteral">&quot;Is&quot;</span>:</div>
+<div class="line"><span class="lineno">  126</span>          <span class="keywordflow">if</span> (arg.Count != 2) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  127</span>          ret &amp;= <a class="code hl_variable" href="#a0361fcdfefa89b46bcbe3ea4e6975064">Isfunction</a>.ContainsKey(arg[0]);</div>
+<div class="line"><span class="lineno">  128</span>          ret &amp;= <span class="keywordtype">int</span>.TryParse(arg[1], out _);</div>
+<div class="line"><span class="lineno">  129</span>          <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  130</span>        <span class="keywordflow">default</span>:</div>
+<div class="line"><span class="lineno">  131</span>          Debug.Log(<span class="stringliteral">&quot;Wrong interface (&quot;</span> + Interface + <span class="stringliteral">&quot;) to be tested in &quot;</span> + <a class="code hl_variable" href="#a1bc1f9da45dc0b1ff8197b551fc87dab">classManager</a>.getClassname());</div>
+<div class="line"><span class="lineno">  132</span>          ret = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  133</span>          <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  134</span>      }</div>
+<div class="line"><span class="lineno">  135</span> </div>
+<div class="line"><span class="lineno">  136</span>      <span class="keywordflow">return</span> ret;</div>
+<div class="line"><span class="lineno">  137</span>    }</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">

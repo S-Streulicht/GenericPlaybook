@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['numhash_0',['NumHash',['../struct_p_b_1_1_logic_1_1_dice_numbers_1_1_num_hash.html#ae31c4ab8b6e1b806aeb498066dd80fbf',1,'PB::Logic::DiceNumbers::NumHash']]]
+  ['makenode_0',['MakeNode',['../class_p_b_1_1_book_1_1_text.html#a45d9c9b534f1d27be98bc22ee0952f95',1,'PB::Book::Text']]]
 ];

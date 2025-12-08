@@ -1,17 +1,28 @@
 <map id="PB.Logic.Director.Start" name="PB.Logic.Director.Start">
-<area shape="rect" id="Node000001" title="setup the instance get" alt="" coords="5,95,172,120"/>
-<area shape="rect" id="Node000002" href="$class_p_b_1_1_logic_1_1_director.html#ab138d9d913337dd480060d7f3ac986f4" title="execute the comands of the text element" alt="" coords="228,55,415,95"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="172,93,214,87,215,93,173,99"/>
-<area shape="rect" id="Node000008" href="$interface_p_b_1_1_book_1_1_i_book_interface.html#a535d84b42856d2dc45baab34e94340b9" title=" " alt="" coords="220,119,423,159"/>
-<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="173,116,207,121,206,126,172,121"/>
-<area shape="rect" id="Node000003" href="$class_p_b_1_1_logic_1_1_command_interpreter.html#a9d6638ecee519c9c46e29de807101954" title="execute a command string" alt="" coords="471,55,691,95"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="415,73,457,73,457,78,415,78"/>
-<area shape="rect" id="Node000004" href="$class_p_b_1_1_logic_1_1_parser.html#a3fc8803102d6afb61c2036327e6ee3e6" title="Parsing of the command." alt="" coords="739,63,897,88"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="691,73,725,73,725,78,691,78"/>
-<area shape="rect" id="Node000005" href="$class_p_b_1_1_logic_1_1_parser.html#a6695949ea26cc26b984c0eea34a13bbf" title="REmove start and end parenthesis." alt="" coords="959,5,1193,31"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="866,60,945,41,992,31,993,36,946,46,868,65"/>
-<area shape="rect" id="Node000006" href="$class_p_b_1_1_logic_1_1_parser.html#af573c58c6272577cf660407670ab657d" title="Remove the target indicator." alt="" coords="967,55,1185,95"/>
-<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="898,73,953,73,953,78,898,78"/>
-<area shape="rect" id="Node000007" href="$class_p_b_1_1_logic_1_1_parser.html#a9c58137805c6023eb398ac8ab82a9018" title="Remove the whitespaces." alt="" coords="945,120,1207,145"/>
-<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="868,86,946,105,993,115,992,120,945,110,866,91"/>
+<area shape="rect" id="Node000001" title="setup the instance get" alt="" coords="5,136,172,161"/>
+<area shape="rect" id="Node000002" href="$class_p_b_1_1_logic_1_1_director.html#a63050f99233d7101e9b9b50bb34b3c38" title="returns from a book to the next story" alt="" coords="243,5,436,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="101,134,151,92,183,68,219,48,259,32,261,37,221,52,186,73,154,96,105,138"/>
+<area shape="rect" id="Node000003" href="$interface_p_b_1_1_book_1_1_i_book_interface.html#a535d84b42856d2dc45baab34e94340b9" title=" " alt="" coords="507,49,709,89"/>
+<area shape="poly" id="edge9_Node000001_Node000003" title=" " alt="" coords="113,133,161,111,219,91,289,78,361,70,493,64,493,69,361,75,290,83,221,97,163,116,115,138"/>
+<area shape="rect" id="Node000004" href="$class_p_b_1_1_logic_1_1_director.html#ab138d9d913337dd480060d7f3ac986f4" title="execute the comands of the text element" alt="" coords="515,195,701,235"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="100,160,119,185,146,217,181,247,221,270,285,289,337,292,391,284,458,270,508,257,553,239,555,244,509,262,459,275,392,289,337,297,284,295,219,275,178,252,142,220,115,188,96,163"/>
+<area shape="rect" id="Node000010" href="$namespace_p_b_1_1_logic.html#a6a817d5ef0862cb798191f4113a45e48" title=" " alt="" coords="237,157,442,197"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="173,155,223,161,223,166,172,161"/>
+<area shape="rect" id="Node000011" href="$namespace_p_b_1_1_logic.html#a67dcdf1dfca00b2602b3156175ee4bd9" title=" " alt="" coords="240,221,439,261"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="116,159,164,182,221,206,245,214,243,219,219,211,162,187,113,164"/>
+<area shape="rect" id="Node000012" href="$class_p_b_1_1_logic_1_1_director.html#abfa6ec3830f2e52e7f1e69b676722e7c" title="start enters a new book" alt="" coords="220,107,459,132"/>
+<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="172,136,217,131,218,136,173,142"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="408,28,494,44,493,50,407,33"/>
+<area shape="rect" id="Node000005" href="$class_p_b_1_1_logic_1_1_command_interpreter.html#a9d6638ecee519c9c46e29de807101954" title="execute a command string" alt="" coords="757,195,977,235"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="702,213,744,213,744,218,702,218"/>
+<area shape="rect" id="Node000006" href="$class_p_b_1_1_logic_1_1_parser.html#a3fc8803102d6afb61c2036327e6ee3e6" title="Parsing of the command." alt="" coords="1025,203,1184,228"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="977,213,1012,213,1012,218,977,218"/>
+<area shape="rect" id="Node000007" href="$class_p_b_1_1_logic_1_1_parser.html#a6695949ea26cc26b984c0eea34a13bbf" title="REmove start and end parenthesis." alt="" coords="1246,145,1479,171"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="1153,200,1231,181,1279,171,1280,176,1233,186,1154,205"/>
+<area shape="rect" id="Node000008" href="$class_p_b_1_1_logic_1_1_parser.html#af573c58c6272577cf660407670ab657d" title="Remove the target indicator." alt="" coords="1253,195,1472,235"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="1184,213,1239,213,1239,218,1184,218"/>
+<area shape="rect" id="Node000009" href="$class_p_b_1_1_logic_1_1_parser.html#a9c58137805c6023eb398ac8ab82a9018" title="Remove the whitespaces." alt="" coords="1232,260,1493,285"/>
+<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="1154,226,1233,245,1280,255,1279,260,1231,250,1153,231"/>
+<area shape="poly" id="edge14_Node000012_Node000003" title=" " alt="" coords="407,104,493,88,494,93,408,109"/>
+<area shape="poly" id="edge13_Node000012_Node000004" title=" " alt="" coords="414,130,460,142,512,163,560,186,557,191,510,168,458,147,412,135"/>
 </map>
