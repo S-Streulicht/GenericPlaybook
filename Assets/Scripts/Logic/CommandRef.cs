@@ -12,5 +12,6 @@
     public const string SET_EXTRAUI = "SET";         /**< String reference of the Set command e.g. used for the Extra UIs */
     public const string GET_INFO = "GET";            /**< get the info of an attribut or other things */
     public const string UNSET_EXTRAUI = "UNSET";     /**< unset an attribut e.g. an Extra bUI element */
+    public const string LOAD = "LOAD";               /**< load command for a book */
   }
 }

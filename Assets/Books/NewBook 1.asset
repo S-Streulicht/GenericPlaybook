@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-4974896034756538795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6f41ca39e160c7429d60d6cc22046f4, type: 3}
+  m_Name: 36ede7d7-199f-4d64-b6e8-d9e5c9e12a99
+  m_EditorClassIdentifier: 
+  textNumber: 2
+  text: end
+  comands: []
+  jumpTos: []
+  area:
+    serializedVersion: 2
+    x: 351
+    y: 61
+    width: 200
+    height: 100
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 793d1090766c2ba489c299883ab49110, type: 3}
+  m_Name: NewBook 1
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: 4783100360838331725}
+  - {fileID: -4974896034756538795}
+--- !u!114 &4783100360838331725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6f41ca39e160c7429d60d6cc22046f4, type: 3}
+  m_Name: fc426b72-ebbf-4af7-a599-d1463e8f6436
+  m_EditorClassIdentifier: 
+  textNumber: 1
+  text: Start
+  comands: []
+  jumpTos:
+  - text: 
+    referenceId: 36ede7d7-199f-4d64-b6e8-d9e5c9e12a99
+    conditions: []
+    comands:
+    - LOAD()->FightStoryTeller
+  area:
+    serializedVersion: 2
+    x: 86
+    y: 50
+    width: 200
+    height: 100

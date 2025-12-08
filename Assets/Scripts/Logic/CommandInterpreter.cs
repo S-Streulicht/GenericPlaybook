@@ -6,6 +6,7 @@ using UnityEditor;
 using PB.Attribute;
 using PB.ExtraUI;
 using PB.Helper;
+using PB.Book;
 
 // interesting stuff about do stuff for every thing of type ... (abstract class)
 // https://stackoverflow.com/questions/49329764/get-all-components-with-a-specific-interface-in-unity
@@ -20,25 +21,26 @@ namespace PB.Logic
   public class CommandInterpreter : MonoBehaviour
   {
     /**
-    *  @brief   Serialised Dictionar for the string string key / attribute pair
-    *  @details Unity cannot serialize standard dictionaries. A subclass of type <string, string> is created. Derived from the general class.
+    * @brief a standard key value pair both as strings
     */
     [System.Serializable]
-    public class StringStringDictionary : SerializableDictionary<string, string> {}
+    private struct pair 
+    {
+      public string key;   /**< key element for a key value pair */
+      public string value; /**< value of a key pair elemewnt */
+    }
 
     // search https://docs.unity3d.com/ScriptReference/SerializeReference.html
-    [SerializeField] GameObject AvailableAttributs;        /**< A game object which contains all relevant scripts with implements IAttributeInterface*/
-    [SerializeField] GameObject AvailableExtraUis;         /**< A game object which contains all relevant scripts with implements IExtraUIInterface*/
-    [SerializeField] StringStringDictionary AttributeList; /**< Atributs with are acessabel from comands. They don't have to show up in the character sheed.*/
-    
+    [SerializeField] GameObject AvailableAttributs;  /**< A game object which contains all relevant scripts with implements IAttributeInterface*/
+    [SerializeField] GameObject AvailableExtraUis;   /**< A game object which contains all relevant scripts with implements IExtraUIInterface*/
+    [SerializeField] GameObject AvailableBooks;      /**< A game object which contains all relevant scripts wich implements IScriptBookInterface*/
+    [SerializeField] List<pair> Variables;           /**< Contains a set of variables the system can operate with*/
+
     private readonly ClassManager<CommandInterpreter> classManager; /**< containing acces to the Helper Class: Class Manager */
 
     private SortedDictionary<string, IAttributeInterface> AttributPair = new SortedDictionary<string, IAttributeInterface>(); /**< Connects the classname with the asress of the class such that the interfacefunction can be called*/
     private SortedDictionary<string, IExtraUiInterface> ExtraUIPair = new SortedDictionary<string, IExtraUiInterface>();      /**< Connects the classname with the asress of the class such that the interfacefunction can be called*/
-
-    private const string       GetGameStateVariable = "GET() -> ExtraUIGameState";  /**< The actual script command to reseive the gama state*/
-    private const string       GetGamePictureVariable = "GET() -> ExtraUIPicture";  /**< The actual script command to reseive the UI picture*/
-
+    private SortedDictionary<string, IScriptBookInterface> BookPair = new SortedDictionary<string, IScriptBookInterface>();   /**< Connects the classname with the acess of the class such that the interfacfunction can be called*/
     /**
     * @brief   constructor initialises the helper classes 
     */
@@ -55,6 +57,7 @@ namespace PB.Logic
     {
       AttributPair = GetAllComponentsWithIn<IAttributeInterface>(AvailableAttributs);
       ExtraUIPair = GetAllComponentsWithIn<IExtraUiInterface>(AvailableExtraUis);
+      BookPair = GetAllComponentsWithIn<IScriptBookInterface>(AvailableBooks);
     }
 
     /**
@@ -85,6 +88,15 @@ namespace PB.Logic
           {
             ExtraUIPair[classToCall].UnSet();
           }
+          break;
+        case CommandRef.LOAD:
+          if (BookPair.ContainsKey(classToCall))
+          {
+            BookPair[classToCall].Load(seperatedCommand.Arguments);
+          }
+          break;
+        default:
+          // empty on purpose
           break;
       }
 
@@ -119,26 +131,6 @@ namespace PB.Logic
       }
       //Debug.Log(AttributPair[seperatedCommand.Arguments[0]].Test("Is", seperatedCommand.Arguments));
       return default(TType);
-    }
-
-    /**
-    * @brief   returns the game state
-    * @details get the information by executing the string comand from the game object
-    * @return  The actual state
-    */
-    public string GetGameState()
-    {
-      return ReturnCommand<string>(GetGameStateVariable);
-    }
-
-    /**
-    * @brief   returns a texture set by a script
-    * @details get the information by executing the string comand from the game object
-    * @return  Texture set by script
-    */
-    public Texture2D GetTexture()
-    {
-      return ReturnCommand<Texture2D>(GetGamePictureVariable);
     }
 
     /**

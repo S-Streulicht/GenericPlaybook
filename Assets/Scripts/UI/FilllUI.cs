@@ -11,7 +11,7 @@ namespace PB.UI
   /**
   *  @brief     Fill the GUI with content
   *  @details   This is just a placeholder class providing a playable boog, but as a kind of tech demo.
-  *             /todo exchange the GUI for a more advanced display
+  *             \todo exchange the GUI for a more advanced display
   */
   public class FilllUI : MonoBehaviour
   {
@@ -95,7 +95,7 @@ namespace PB.UI
     *            activate the object but disable clicking
     *          get the state of the game
     *            if in default dont display the gameobject els display with actual information
-    *          /todo this is highly inefficent -> move to is changed
+    *          \todo this is highly inefficent -> move to is changed
     */
     void Update()
     {

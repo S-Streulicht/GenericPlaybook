@@ -17,29 +17,33 @@ namespace PB.Logic
   public class Director : MonoBehaviour
   {
     [SerializeField] Text Book;             /**< contains the actual book to be played \todo better way of setting the book */
+    [SerializeField] EventAggregator Events;/**< Handles events comming from sub book handling*/
     IBookInterface _book;                   /**< internaly used to refere to the interface of the book. Unfurtunately the interface is not serializable hence it cant be used directly */
 
     private ITextNodeInterface CurrentNode; /**< contains the currend node of a play book*/
-    private CommandInterpreter Interpreter; /**< contains the Comantlineinterpreter get filled at Start*/
-    private TextEval           textEval;    /**< contains the Textecvaluation component. Get filled during initalisation*/
+    private CommandInterpreter Interpreter; /**< contains the Comantlineinterpreter gest filled at Start*/
 
     /**
     * @brief   setup the instance get
     * @details Start is called before the first frame update
+    *          sets the event for the correct handling of starting and ending a book
     *          sets the internal book variable to use only the interface
     *          Get the commandInterpreter instance
-    *          Get the textEval instance
     *          test if a Book is loaded
     *          initialise the CurrnetNode to the root of the loaded node
     */
     void Start()
     {
-      _book = Book as IBookInterface;
+      Events.Subscribe<ProcessingStartedEvent>(e => StartANewBook(e.book));
+      Events.Subscribe<ProcessingFinishedEvent>(e => EndBook(e.succsess));
+
       Interpreter = GetComponent<CommandInterpreter>();
-      textEval = GetComponent<TextEval>();
+      
+      _book = Book as IBookInterface;
+
       if (null == Book)
       {
-        Debug.Log("Forgot to set the book");
+        Debug.Log("Director: Forgot to set the book");
         return;
       }
       CurrentNode = _book.GetRootNode();
@@ -47,14 +51,46 @@ namespace PB.Logic
       ExecuteNodeCommands();
     }
 
+    #region BookHandling
+
+    /**
+     * @brief   start enters a new book
+     * @details gettings the new books root node and execut its comand list
+     * @param   book the book to start
+     */
+    private void StartANewBook(IBookInterface book)
+    {
+       if (null == book)
+       {
+        Debug.Log("Director: fail to load a new book");
+        return;
+       }
+       _book = book;
+       CurrentNode = _book.GetRootNode();
+       ExecuteNodeCommands();
+    }
+
+    /**
+    * @brief   returns from a book to the next story
+    * @param   var som handover parameter currently unused
+    */
+    private void EndBook(bool var)
+    {
+      _book = Book as IBookInterface;
+      CurrentNode = _book.GetRootNode();
+      // execute comant is comming from the Set return
+    }
+
+    #endregion
+
     #region Normal play text
     /**
-    * @brief  get the text of the currend node befor returning all Comands are evaluated.
+    * @brief  get the text of the currend node
     * @return string of the current text
     */
     public string GetText()
     {
-      return textEval.Replace(CurrentNode.Text);
+      return CurrentNode.Text;
     }
 
     /**
@@ -96,8 +132,8 @@ namespace PB.Logic
     /**
     * @brief   Move to the linked text element
     * @details choose the numbers element of all valid answers
+    *          move to the new node given by the jumpTo
     *          execute the comands of the given Jumpto
-    *          Move to the new node given by the jumpTo
     *          execute the commands of the new node
     * @param   number the actual number of the valid answers
     */
@@ -108,12 +144,12 @@ namespace PB.Logic
 
       if (null != newNode)
       {
+        CurrentNode = newNode; // the node can be changed by a command
+ 
         foreach (string commandString in jumpTos[number].comands)
         {
           Interpreter.ExecuteCommand(commandString);
         }
-
-        CurrentNode = newNode;
       }
 
       ExecuteNodeCommands();
@@ -163,22 +199,21 @@ namespace PB.Logic
 
     /**
     * @brief   returns the game state
-    * @details get the information by calling the interpreter which is capsulating the state commmand
+    * @details get the information by calling the interpreter requesting infor from GameState object
     * @return  The actual state
     */
     public string GetGameState()
     {
-      return Interpreter.GetGameState();
+      return Interpreter.ReturnCommand<string>("GET() -> ExtraUIGameState");
     }
 
     /**
-    * @brief   returns a texture set by a script
-    * @details get the information by calling the interpreter which is capsulating the state commmand
+    * @brief   returns A texture set by a script
     * @return  Texture set by script
     */
     public Texture2D GetTexture()
     {
-      return Interpreter.GetTexture();
+      return Interpreter.ReturnCommand<Texture2D>("GET() -> ExtraUIPicture");
     }
   }
 }

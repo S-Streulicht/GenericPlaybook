@@ -94,6 +94,16 @@ namespace PB.Attribute
     }
 
     /**
+    * @brief   returns the actual money value as integer
+    * @details if TType is a integer the actual value is returned else the default of the requested type.
+    * @return  the integer value of money
+    */
+    Ttype IAttributeInterface.GetInfo<Ttype>()
+    {
+      return Money is Ttype value ? value : default(Ttype);
+    }
+
+    /**
     * @brief   implementation of the interface test used to tests the argument list
     * @details test the argument list of the other interfaces
     *          can be used as stand alone or as part of the other interfaces

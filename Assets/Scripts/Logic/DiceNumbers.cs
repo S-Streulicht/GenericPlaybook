@@ -15,7 +15,7 @@ namespace PB.Logic
   */
   public static class DiceNumbers
   {
-    static bool IfOnce = true; /**< relevant for the initialisation of the standar Random implementation /todo get it in the constructor*/
+    static bool IfOnce = true; /**< relevant for the initialisation of the standar Random implementation \todo get it in the constructor*/
 
     /**
     * @brief   get the pseudo dice number of a (page) number
@@ -69,13 +69,14 @@ namespace PB.Logic
     *          get a random number in the range of 1 to 6
     *          Drawback it is puryly deterministic random, which means the first few hunderet numbers dosent have a equal distribution of each of the outputs
     *          We have a loaded dice
-    *          Advantage it it a direct on to one translation
+    *          Advantage it it a direct on to one translation\
+    *          \todo get the IfOnce into the constructor
     * @param   Page positive integer number
     * @return  number 1 to 6 depending on the Page
     */
     static int UsingRandom(int Page)
     {
-      // /todo get the IfOnce into the constructor
+      // \todo get the IfOnce into the constructor
       if (IfOnce)
       {
         UnityEngine.Random.InitState(42);

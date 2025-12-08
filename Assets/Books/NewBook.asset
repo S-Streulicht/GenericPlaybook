@@ -45,14 +45,14 @@ MonoBehaviour:
   m_Name: 9b90753a-507c-47a7-85ae-5713702b9324
   m_EditorClassIdentifier: 
   textNumber: 1
-  text: Lorem ipsum dolor sit <b>amet</b> {{GET(ExtraUIGameState)}}, consetetur sadipscing
-    elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-    erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-    Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-    amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-    eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-    At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-    no sea takimata sanctus est Lorem ipsum dolor sit amet.
+  text: Lorem ipsum dolor sit <b>amet</b> {{GET() -> ExtraUIGameState}}, consetetur
+    sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+    magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+    et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+    dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+    diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
+    diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+    clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
   comands:
   - SET(Start) -> ExtraUIPicture
   jumpTos:
@@ -60,22 +60,22 @@ MonoBehaviour:
     referenceId: 4cc6da8b-cf2f-433b-a4a4-945fee9b7453
     conditions: []
     comands:
-    - UNSET(ExtraUIPicture)
+    - UNSET() -> ExtraUIPicture
   - text: jumpto the 5
     referenceId: 4fa9cf56-8282-4d92-a47f-34ed7620cac9
     conditions: []
     comands:
-    - UNSET(ExtraUIPicture)
+    - UNSET() -> ExtraUIPicture
   - text: jumpto the 7
     referenceId: 8fdd8638-294c-47f3-81ac-ed927e7ffcd4
     conditions:
     - IS(>, 111) -> AttrMoney
     comands:
-    - UNSET(ExtraUIPicture)
+    - UNSET() -> ExtraUIPicture
   area:
     serializedVersion: 2
     x: 34
-    y: 18
+    y: 9
     width: 200
     height: 100
 --- !u!114 &-1832395943682213312
