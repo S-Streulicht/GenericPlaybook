@@ -204,7 +204,7 @@ namespace PB.Logic
     */
     public string GetGameState()
     {
-      return Interpreter.ReturnCommand<string>("GET() -> ExtraUIGameState");
+      return Interpreter.ReturnCommand<string>(Commands.GET_GAME_STATE);
     }
 
     /**
@@ -213,7 +213,7 @@ namespace PB.Logic
     */
     public Texture2D GetTexture()
     {
-      return Interpreter.ReturnCommand<Texture2D>("GET() -> ExtraUIPicture");
+      return Interpreter.ReturnCommand<Texture2D>(Commands.GET_UI_PICTURE);
     }
   }
 }
