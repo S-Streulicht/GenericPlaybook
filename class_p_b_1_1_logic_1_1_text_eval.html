@@ -157,7 +157,7 @@ Private Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
-<tr class="memitem:a7634e1f1235367335a3d7405d0fda2d6" id="r_a7634e1f1235367335a3d7405d0fda2d6"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7634e1f1235367335a3d7405d0fda2d6">Pattern</a> = &quot;{{(\\w+\\&zwj;(.+\\&zwj;))}}&quot;</td></tr>
+<tr class="memitem:a7634e1f1235367335a3d7405d0fda2d6" id="r_a7634e1f1235367335a3d7405d0fda2d6"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7634e1f1235367335a3d7405d0fda2d6">Pattern</a> = &quot;{{w*([^}]*)}}&quot;</td></tr>
 <tr class="separator:a7634e1f1235367335a3d7405d0fda2d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -198,21 +198,31 @@ Static Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Either the evaled result of the match or "??" </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_text_eval_8cs_source.html#l00037">37</a> of file <a class="el" href="_text_eval_8cs_source.html">TextEval.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   38</span>    {</div>
-<div class="line"><span class="lineno">   39</span>      <span class="keywordtype">string</span> ret = <a class="code hl_variable" href="#a7bb1808ea6aad9125c58501e46365744">Interpreter</a>.ReturnCommand&lt;<span class="keywordtype">string</span>&gt;(m.Groups[1].Value.ToString());</div>
-<div class="line"><span class="lineno">   40</span>      <span class="keywordflow">if</span>(<span class="keyword">null</span> != ret) {<span class="keywordflow">return</span> ret;}</div>
-<div class="line"><span class="lineno">   41</span>      <span class="keywordflow">else</span> <span class="keywordflow">return</span> <span class="stringliteral">&quot;??&quot;</span>;</div>
-<div class="line"><span class="lineno">   42</span>    }</div>
-<div class="ttc" id="aclass_p_b_1_1_logic_1_1_text_eval_html_a7bb1808ea6aad9125c58501e46365744"><div class="ttname"><a href="#a7bb1808ea6aad9125c58501e46365744">PB.Logic.TextEval.Interpreter</a></div><div class="ttdeci">CommandInterpreter Interpreter</div><div class="ttdef"><b>Definition</b> <a href="_text_eval_8cs_source.html#l00018">TextEval.cs:18</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_text_eval_8cs_source.html#l00038">38</a> of file <a class="el" href="_text_eval_8cs_source.html">TextEval.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   39</span>    {</div>
+<div class="line"><span class="lineno">   40</span>      <span class="keywordtype">string</span> ret = <a class="code hl_variable" href="#a7bb1808ea6aad9125c58501e46365744">Interpreter</a>.ReturnCommand&lt;<span class="keywordtype">string</span>&gt;(m.Groups[1].Value.ToString());</div>
+<div class="line"><span class="lineno">   41</span>      <span class="keywordflow">if</span>(<span class="keyword">null</span> != ret) {<span class="keywordflow">return</span> ret;}</div>
+<div class="line"><span class="lineno">   42</span>      <span class="keywordflow">else</span> <span class="keywordflow">return</span> <span class="stringliteral">&quot;??&quot;</span>;</div>
+<div class="line"><span class="lineno">   43</span>    }</div>
+<div class="ttc" id="aclass_p_b_1_1_logic_1_1_text_eval_html_a7bb1808ea6aad9125c58501e46365744"><div class="ttname"><a href="#a7bb1808ea6aad9125c58501e46365744">PB.Logic.TextEval.Interpreter</a></div><div class="ttdeci">CommandInterpreter Interpreter</div><div class="ttdef"><b>Definition</b> <a href="_text_eval_8cs_source.html#l00019">TextEval.cs:19</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_p_b_1_1_logic_1_1_text_eval_a454bd520091b6cd6934608b55ba5bb3e_icgraph.png" border="0" usemap="#aclass_p_b_1_1_logic_1_1_text_eval_a454bd520091b6cd6934608b55ba5bb3e_icgraph" alt=""/></div>
 <map name="aclass_p_b_1_1_logic_1_1_text_eval_a454bd520091b6cd6934608b55ba5bb3e_icgraph" id="aclass_p_b_1_1_logic_1_1_text_eval_a454bd520091b6cd6934608b55ba5bb3e_icgraph">
-<area shape="rect" title="Evaluate the matched regular expression." alt="" coords="245,5,413,31"/>
-<area shape="rect" href="class_p_b_1_1_logic_1_1_text_eval.html#a8747eada77388cd91079354feb66f2e5" title="Find and replace the Pattern." alt="" coords="5,5,197,31"/>
-<area shape="poly" title=" " alt="" coords="231,21,197,21,197,15,231,15"/>
+<area shape="rect" title="Evaluate the matched regular expression." alt="" coords="701,70,869,95"/>
+<area shape="rect" href="class_p_b_1_1_logic_1_1_text_eval.html#a8747eada77388cd91079354feb66f2e5" title="Find and replace the Pattern." alt="" coords="461,70,653,95"/>
+<area shape="poly" title=" " alt="" coords="687,85,653,85,653,80,687,80"/>
+<area shape="rect" href="class_p_b_1_1_logic_1_1_director.html#a8a59a218eb687ab7d4da0cb6a12f9e3f" title="get only invalid answers of the set of all answers of the current node" alt="" coords="203,5,413,45"/>
+<area shape="poly" title=" " alt="" coords="487,69,395,48,396,43,489,64"/>
+<area shape="rect" href="class_p_b_1_1_logic_1_1_director.html#ab1987a1720d4fa5afee99a920b53bcb8" title="get the text of the currend node, comands are replaced by their output" alt="" coords="215,70,401,95"/>
+<area shape="poly" title=" " alt="" coords="448,85,401,85,401,80,448,80"/>
+<area shape="rect" href="class_p_b_1_1_logic_1_1_director.html#a048e8f454fcd9bcea4fbe732eb4269ec" title="get only valid answers of the set of all answers of the current node" alt="" coords="209,120,407,160"/>
+<area shape="poly" title=" " alt="" coords="489,101,396,123,395,117,487,96"/>
+<area shape="rect" href="class_p_b_1_1_u_i_1_1_filll_u_i.html#ae8fcda74da18d925d91284f304a2baa9" title="every frame the gui element is filled with information" alt="" coords="5,70,155,95"/>
+<area shape="poly" title=" " alt="" coords="216,51,132,73,131,67,214,46"/>
+<area shape="poly" title=" " alt="" coords="201,85,155,85,155,80,201,80"/>
+<area shape="poly" title=" " alt="" coords="214,119,131,98,132,93,216,114"/>
 </map>
 </div>
 
@@ -250,14 +260,14 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The original Text but the fields {{*}} are replaced with its evaluated values. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_text_eval_8cs_source.html#l00052">52</a> of file <a class="el" href="_text_eval_8cs_source.html">TextEval.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   53</span>    {</div>
-<div class="line"><span class="lineno">   54</span>      <span class="keywordtype">string</span> ret = Regex.Replace( input, <a class="code hl_variable" href="#a7634e1f1235367335a3d7405d0fda2d6">Pattern</a>, <span class="keyword">new</span> MatchEvaluator(<a class="code hl_function" href="#a454bd520091b6cd6934608b55ba5bb3e">Eval</a>) );</div>
-<div class="line"><span class="lineno">   55</span>      <span class="keywordflow">if</span>(<span class="keyword">null</span> != ret) {<span class="keywordflow">return</span> ret;}</div>
-<div class="line"><span class="lineno">   56</span>      <span class="keywordflow">else</span> <span class="keywordflow">return</span> input;</div>
-<div class="line"><span class="lineno">   57</span>    }</div>
-<div class="ttc" id="aclass_p_b_1_1_logic_1_1_text_eval_html_a454bd520091b6cd6934608b55ba5bb3e"><div class="ttname"><a href="#a454bd520091b6cd6934608b55ba5bb3e">PB.Logic.TextEval.Eval</a></div><div class="ttdeci">string Eval(Match m)</div><div class="ttdoc">Evaluate the matched regular expression.</div><div class="ttdef"><b>Definition</b> <a href="_text_eval_8cs_source.html#l00037">TextEval.cs:37</a></div></div>
-<div class="ttc" id="aclass_p_b_1_1_logic_1_1_text_eval_html_a7634e1f1235367335a3d7405d0fda2d6"><div class="ttname"><a href="#a7634e1f1235367335a3d7405d0fda2d6">PB.Logic.TextEval.Pattern</a></div><div class="ttdeci">const string Pattern</div><div class="ttdef"><b>Definition</b> <a href="_text_eval_8cs_source.html#l00016">TextEval.cs:16</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_text_eval_8cs_source.html#l00053">53</a> of file <a class="el" href="_text_eval_8cs_source.html">TextEval.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   54</span>    {</div>
+<div class="line"><span class="lineno">   55</span>      <span class="keywordtype">string</span> ret = Regex.Replace( input, <a class="code hl_variable" href="#a7634e1f1235367335a3d7405d0fda2d6">Pattern</a>, <span class="keyword">new</span> MatchEvaluator(<a class="code hl_function" href="#a454bd520091b6cd6934608b55ba5bb3e">Eval</a>) );</div>
+<div class="line"><span class="lineno">   56</span>      <span class="keywordflow">if</span>(<span class="keyword">null</span> != ret) {<span class="keywordflow">return</span> ret;}</div>
+<div class="line"><span class="lineno">   57</span>      <span class="keywordflow">else</span> <span class="keywordflow">return</span> input;</div>
+<div class="line"><span class="lineno">   58</span>    }</div>
+<div class="ttc" id="aclass_p_b_1_1_logic_1_1_text_eval_html_a454bd520091b6cd6934608b55ba5bb3e"><div class="ttname"><a href="#a454bd520091b6cd6934608b55ba5bb3e">PB.Logic.TextEval.Eval</a></div><div class="ttdeci">string Eval(Match m)</div><div class="ttdoc">Evaluate the matched regular expression.</div><div class="ttdef"><b>Definition</b> <a href="_text_eval_8cs_source.html#l00038">TextEval.cs:38</a></div></div>
+<div class="ttc" id="aclass_p_b_1_1_logic_1_1_text_eval_html_a7634e1f1235367335a3d7405d0fda2d6"><div class="ttname"><a href="#a7634e1f1235367335a3d7405d0fda2d6">PB.Logic.TextEval.Pattern</a></div><div class="ttdeci">const string Pattern</div><div class="ttdef"><b>Definition</b> <a href="_text_eval_8cs_source.html#l00017">TextEval.cs:17</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -266,6 +276,24 @@ Here is the call graph for this function:</div>
 <area shape="rect" title="Find and replace the Pattern." alt="" coords="5,5,197,31"/>
 <area shape="rect" href="class_p_b_1_1_logic_1_1_text_eval.html#a454bd520091b6cd6934608b55ba5bb3e" title="Evaluate the matched regular expression." alt="" coords="245,5,413,31"/>
 <area shape="poly" title=" " alt="" coords="198,15,231,15,231,21,198,21"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_p_b_1_1_logic_1_1_text_eval_a8747eada77388cd91079354feb66f2e5_icgraph.png" border="0" usemap="#aclass_p_b_1_1_logic_1_1_text_eval_a8747eada77388cd91079354feb66f2e5_icgraph" alt=""/></div>
+<map name="aclass_p_b_1_1_logic_1_1_text_eval_a8747eada77388cd91079354feb66f2e5_icgraph" id="aclass_p_b_1_1_logic_1_1_text_eval_a8747eada77388cd91079354feb66f2e5_icgraph">
+<area shape="rect" title="Find and replace the Pattern." alt="" coords="461,70,653,95"/>
+<area shape="rect" href="class_p_b_1_1_logic_1_1_director.html#a8a59a218eb687ab7d4da0cb6a12f9e3f" title="get only invalid answers of the set of all answers of the current node" alt="" coords="203,5,413,45"/>
+<area shape="poly" title=" " alt="" coords="487,69,395,48,396,43,489,64"/>
+<area shape="rect" href="class_p_b_1_1_logic_1_1_director.html#ab1987a1720d4fa5afee99a920b53bcb8" title="get the text of the currend node, comands are replaced by their output" alt="" coords="215,70,401,95"/>
+<area shape="poly" title=" " alt="" coords="448,85,401,85,401,80,448,80"/>
+<area shape="rect" href="class_p_b_1_1_logic_1_1_director.html#a048e8f454fcd9bcea4fbe732eb4269ec" title="get only valid answers of the set of all answers of the current node" alt="" coords="209,120,407,160"/>
+<area shape="poly" title=" " alt="" coords="489,101,396,123,395,117,487,96"/>
+<area shape="rect" href="class_p_b_1_1_u_i_1_1_filll_u_i.html#ae8fcda74da18d925d91284f304a2baa9" title="every frame the gui element is filled with information" alt="" coords="5,70,155,95"/>
+<area shape="poly" title=" " alt="" coords="216,51,132,73,131,67,214,46"/>
+<area shape="poly" title=" " alt="" coords="201,85,155,85,155,80,201,80"/>
+<area shape="poly" title=" " alt="" coords="214,119,131,98,132,93,216,114"/>
 </map>
 </div>
 
@@ -297,10 +325,10 @@ Here is the call graph for this function:</div>
 <p>setup the instance </p>
 <p>Start is called before the first frame update Get the commandInterpreter instance </p>
 
-<p class="definition">Definition at line <a class="el" href="_text_eval_8cs_source.html#l00025">25</a> of file <a class="el" href="_text_eval_8cs_source.html">TextEval.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   26</span>    {</div>
-<div class="line"><span class="lineno">   27</span>      <a class="code hl_variable" href="#a7bb1808ea6aad9125c58501e46365744">Interpreter</a> = GetComponent&lt;CommandInterpreter&gt;();</div>
-<div class="line"><span class="lineno">   28</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_text_eval_8cs_source.html#l00026">26</a> of file <a class="el" href="_text_eval_8cs_source.html">TextEval.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   27</span>    {</div>
+<div class="line"><span class="lineno">   28</span>      <a class="code hl_variable" href="#a7bb1808ea6aad9125c58501e46365744">Interpreter</a> = GetComponent&lt;CommandInterpreter&gt;();</div>
+<div class="line"><span class="lineno">   29</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -326,7 +354,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>contains the Comantlineinterpreter get filled at Start </p>
 
-<p class="definition">Definition at line <a class="el" href="_text_eval_8cs_source.html#l00018">18</a> of file <a class="el" href="_text_eval_8cs_source.html">TextEval.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_text_eval_8cs_source.html#l00019">19</a> of file <a class="el" href="_text_eval_8cs_source.html">TextEval.cs</a>.</p>
 
 </div>
 </div>
@@ -340,7 +368,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const string PB.Logic.TextEval.Pattern = &quot;{{(\\w+\\&zwj;(.+\\&zwj;))}}&quot;</td>
+          <td class="memname">const string PB.Logic.TextEval.Pattern = &quot;{{w*([^}]*)}}&quot;</td>
         </tr>
       </table>
   </td>
@@ -349,9 +377,9 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Regular expression which finds "{{OneWord(Anything with at least one cchar)}}" Example "GET(Something, Some other thing)" </p>
+<p>Regular expression which finds things inside {{}} </p>
 
-<p class="definition">Definition at line <a class="el" href="_text_eval_8cs_source.html#l00016">16</a> of file <a class="el" href="_text_eval_8cs_source.html">TextEval.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_text_eval_8cs_source.html#l00017">17</a> of file <a class="el" href="_text_eval_8cs_source.html">TextEval.cs</a>.</p>
 
 </div>
 </div>

@@ -54,7 +54,7 @@ var NAVTREEINDEX =
 [
 "_attr_money_8cs_source.html",
 "class_p_b_1_1_logic_1_1_command_interpreter.html#abd29f1efd1ff00a9e96b12eb8f077be6",
-"namespace_system_1_1_runtime.html"
+"namespace_p_b_1_1_book.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

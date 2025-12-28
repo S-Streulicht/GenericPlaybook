@@ -7,6 +7,7 @@ var hierarchy =
     [ "PB.Helper.ClassManager< PB.Logic.CommandInterpreter >", "class_p_b_1_1_helper_1_1_class_manager.html", null ],
     [ "PB.Logic.Command", "struct_p_b_1_1_logic_1_1_command.html", null ],
     [ "PB.Logic.CommandRef", "class_p_b_1_1_logic_1_1_command_ref.html", null ],
+    [ "PB.Logic.Commands", "class_p_b_1_1_logic_1_1_commands.html", null ],
     [ "PB.Logic.DiceNumbers", "class_p_b_1_1_logic_1_1_dice_numbers.html", null ],
     [ "EditorWindow", null, [
       [ "PB.Book.BookEditor.BookEditor", "class_p_b_1_1_book_1_1_book_editor_1_1_book_editor.html", null ]

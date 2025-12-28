@@ -3,6 +3,7 @@ var namespace_p_b_1_1_logic =
     [ "Command", "struct_p_b_1_1_logic_1_1_command.html", "struct_p_b_1_1_logic_1_1_command" ],
     [ "CommandInterpreter", "class_p_b_1_1_logic_1_1_command_interpreter.html", "class_p_b_1_1_logic_1_1_command_interpreter" ],
     [ "CommandRef", "class_p_b_1_1_logic_1_1_command_ref.html", "class_p_b_1_1_logic_1_1_command_ref" ],
+    [ "Commands", "class_p_b_1_1_logic_1_1_commands.html", "class_p_b_1_1_logic_1_1_commands" ],
     [ "DiceNumbers", "class_p_b_1_1_logic_1_1_dice_numbers.html", "class_p_b_1_1_logic_1_1_dice_numbers" ],
     [ "Director", "class_p_b_1_1_logic_1_1_director.html", "class_p_b_1_1_logic_1_1_director" ],
     [ "EventAggregator", "class_p_b_1_1_logic_1_1_event_aggregator.html", "class_p_b_1_1_logic_1_1_event_aggregator" ],

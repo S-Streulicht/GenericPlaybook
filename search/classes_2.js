@@ -7,5 +7,6 @@ var searchData=
   ['classmanager_3c_20pb_3a_3alogic_3a_3acommandinterpreter_20_3e_4',['ClassManager&lt; PB::Logic::CommandInterpreter &gt;',['../class_p_b_1_1_helper_1_1_class_manager.html',1,'PB::Helper']]],
   ['command_5',['Command',['../struct_p_b_1_1_logic_1_1_command.html',1,'PB::Logic']]],
   ['commandinterpreter_6',['CommandInterpreter',['../class_p_b_1_1_logic_1_1_command_interpreter.html',1,'PB::Logic']]],
-  ['commandref_7',['CommandRef',['../class_p_b_1_1_logic_1_1_command_ref.html',1,'PB::Logic']]]
+  ['commandref_7',['CommandRef',['../class_p_b_1_1_logic_1_1_command_ref.html',1,'PB::Logic']]],
+  ['commands_8',['Commands',['../class_p_b_1_1_logic_1_1_commands.html',1,'PB::Logic']]]
 ];

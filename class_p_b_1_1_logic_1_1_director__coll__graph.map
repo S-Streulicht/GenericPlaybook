@@ -1,27 +1,31 @@
 <map id="PB.Logic.Director" name="PB.Logic.Director">
-<area shape="rect" id="Node000001" title="Provides content for the GUI." alt="" coords="747,163,880,188"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="67,72,191,97"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="204,82,308,85,438,94,581,111,723,139,784,160,782,165,722,145,580,116,438,99,308,90,204,87"/>
-<area shape="rect" id="Node000007" href="$class_p_b_1_1_logic_1_1_event_aggregator.html" title="Handles the events comming from somware going to somware else." alt="" coords="408,21,599,47"/>
-<area shape="poly" id="edge7_Node000007_Node000002" title=" " alt="" coords="204,72,409,44,409,49,205,77"/>
-<area shape="rect" id="Node000011" href="$class_p_b_1_1_logic_1_1_command_interpreter.html" title="Interprets a command string and execute the coresponding comand at the corect place." alt="" coords="395,139,612,164"/>
-<area shape="poly" id="edge12_Node000011_Node000002" title=" " alt="" coords="205,95,431,136,430,141,204,101"/>
-<area shape="rect" id="Node000003" href="$class_p_b_1_1_book_1_1_text.html" title="This class handles the actual book." alt="" coords="450,188,557,213"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="570,196,722,186,746,183,747,189,723,191,570,201"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="64,287,193,312"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="207,283,251,273,311,255,370,233,394,222,449,208,450,213,396,227,372,238,313,260,253,278,208,288"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="19,188,239,213"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="253,198,450,198,450,203,253,203"/>
-<area shape="rect" id="Node000006" href="$interface_p_b_1_1_book_1_1_i_book_interface.html" title="This defines the bare minumum of functions used to get through a book." alt="" coords="70,237,187,263"/>
-<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="201,238,449,205,450,210,202,243"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="613,32,670,43,724,65,753,87,777,113,808,161,803,164,772,116,749,91,721,70,668,48,612,38"/>
-<area shape="rect" id="Node000008" href="$interface_p_b_1_1_logic_1_1_i_event_aggregator.html" title="Interface of the event aggregator." alt="" coords="61,5,196,31"/>
-<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="210,19,408,27,408,33,210,24"/>
-<area shape="rect" id="Node000009" href="$interface_p_b_1_1_book_1_1_i_book_interface.html" title="This defines the bare minumum of functions used to get through a book." alt="" coords="416,237,591,263"/>
-<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="604,237,663,227,722,213,787,186,789,191,723,218,664,232,605,242"/>
-<area shape="rect" id="Node000010" href="$interface_p_b_1_1_book_1_1_i_text_node_interface.html" title="This defines the bare minumum of functions an text element should have to be usable by the Director." alt="" coords="402,287,605,312"/>
-<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="617,286,671,273,721,253,745,238,767,220,799,187,803,190,771,224,748,243,724,258,672,278,619,291"/>
-<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="626,158,746,168,746,173,626,163"/>
-<area shape="rect" id="Node000012" href="$class_p_b_1_1_helper_1_1_class_manager.html" title=" " alt="" coords="5,123,252,163"/>
-<area shape="poly" id="edge13_Node000011_Node000012" title=" " alt="" coords="266,148,276,149,395,150,394,155,276,154,266,154"/>
+<area shape="rect" id="Node000001" title="Provides content for the GUI." alt="" coords="1073,240,1207,265"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="67,312,191,337"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="205,329,342,339,525,346,731,343,836,335,938,323,988,312,1037,296,1113,263,1115,268,1038,301,990,318,939,329,836,341,731,348,525,351,342,345,204,335"/>
+<area shape="rect" id="Node000007" href="$class_p_b_1_1_logic_1_1_event_aggregator.html" title="Handles the events comming from somware going to somware else." alt="" coords="409,392,600,417"/>
+<area shape="poly" id="edge7_Node000007_Node000002" title=" " alt="" coords="182,339,277,365,410,389,409,395,275,370,181,344"/>
+<area shape="rect" id="Node000011" href="$class_p_b_1_1_logic_1_1_command_interpreter.html" title="Interprets a command string and execute the coresponding comand at the corect place." alt="" coords="396,191,613,216"/>
+<area shape="poly" id="edge12_Node000011_Node000002" title=" " alt="" coords="181,305,463,214,465,219,183,310"/>
+<area shape="rect" id="Node000013" href="$class_p_b_1_1_logic_1_1_text_eval.html" title="Evales a patter in a text." alt="" coords="769,191,905,216"/>
+<area shape="poly" id="edge15_Node000013_Node000002" title=" " alt="" coords="204,309,768,212,769,217,205,315"/>
+<area shape="rect" id="Node000003" href="$class_p_b_1_1_book_1_1_text.html" title="This class handles the actual book." alt="" coords="784,63,891,88"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="905,75,978,89,1016,102,1051,121,1082,149,1106,181,1136,238,1131,241,1102,184,1078,152,1048,126,1014,107,977,94,904,81"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="440,55,569,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="583,67,784,71,784,77,583,72"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="395,104,615,129"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="620,100,783,79,784,85,621,105"/>
+<area shape="rect" id="Node000006" href="$interface_p_b_1_1_book_1_1_i_book_interface.html" title="This defines the bare minumum of functions used to get through a book." alt="" coords="446,5,563,31"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="577,28,784,64,783,69,576,33"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="579,417,678,430,737,433,800,432,864,427,928,416,990,397,1048,369,1077,346,1101,317,1131,264,1136,267,1106,320,1081,349,1051,374,992,402,929,421,865,432,800,438,737,438,678,435,579,422"/>
+<area shape="rect" id="Node000008" href="$interface_p_b_1_1_logic_1_1_i_event_aggregator.html" title="Interface of the event aggregator." alt="" coords="61,407,196,432"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="210,414,409,406,409,411,210,419"/>
+<area shape="rect" id="Node000009" href="$interface_p_b_1_1_book_1_1_i_book_interface.html" title="This defines the bare minumum of functions used to get through a book." alt="" coords="750,240,925,265"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="939,250,1073,250,1073,255,939,255"/>
+<area shape="rect" id="Node000010" href="$interface_p_b_1_1_book_1_1_i_text_node_interface.html" title="This defines the bare minumum of functions an text element should have to be usable by the Director." alt="" coords="736,289,939,315"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="952,285,1049,270,1085,263,1086,268,1050,275,953,291"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="595,186,638,181,789,168,855,169,939,175,996,182,1050,198,1089,217,1122,237,1119,242,1087,222,1048,203,995,187,938,181,854,174,789,173,639,186,596,191"/>
+<area shape="poly" id="edge16_Node000013_Node000011" title=" " alt="" coords="627,201,769,201,769,206,627,206"/>
+<area shape="rect" id="Node000012" href="$class_p_b_1_1_helper_1_1_class_manager.html" title=" " alt="" coords="5,183,252,223"/>
+<area shape="poly" id="edge13_Node000011_Node000012" title=" " alt="" coords="266,201,396,201,396,206,266,206"/>
+<area shape="poly" id="edge14_Node000001_Node000013" title=" " alt="" coords="920,211,1050,231,1081,237,1080,243,1049,237,919,217"/>
 </map>

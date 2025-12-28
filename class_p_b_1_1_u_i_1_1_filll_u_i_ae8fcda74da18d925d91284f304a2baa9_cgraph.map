@@ -1,16 +1,22 @@
 <map id="PB.UI.FilllUI.Update" name="PB.UI.FilllUI.Update">
-<area shape="rect" id="Node000001" title="every frame the gui element is filled with information" alt="" coords="5,134,155,159"/>
+<area shape="rect" id="Node000001" title="every frame the gui element is filled with information" alt="" coords="5,141,155,166"/>
 <area shape="rect" id="Node000002" href="$class_p_b_1_1_logic_1_1_director.html#aa9feb02cb189c329afaf10eb652f6f8c" title="returns the game state" alt="" coords="209,5,407,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="94,132,140,94,201,55,217,48,219,53,204,60,143,99,97,136"/>
-<area shape="rect" id="Node000003" href="$class_p_b_1_1_logic_1_1_director.html#a8a59a218eb687ab7d4da0cb6a12f9e3f" title="get only invalid answers of the set of all answers of the current node" alt="" coords="203,69,413,109"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="131,131,214,110,216,115,132,137"/>
-<area shape="rect" id="Node000005" href="$class_p_b_1_1_logic_1_1_director.html#ab1987a1720d4fa5afee99a920b53bcb8" title="get the text of the currend node" alt="" coords="215,134,401,159"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="155,144,201,144,201,149,155,149"/>
-<area shape="rect" id="Node000006" href="$class_p_b_1_1_logic_1_1_director.html#a3f31fa7fb6fc81a810a6bbe5f0073604" title="returns A texture set by a script" alt="" coords="205,183,411,209"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="140,157,236,178,235,183,139,162"/>
-<area shape="rect" id="Node000007" href="$class_p_b_1_1_logic_1_1_director.html#a048e8f454fcd9bcea4fbe732eb4269ec" title="get only valid answers of the set of all answers of the current node" alt="" coords="209,233,407,273"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="101,157,147,187,204,218,225,226,223,231,202,222,144,191,98,162"/>
-<area shape="rect" id="Node000004" href="$class_p_b_1_1_logic_1_1_director.html#ad27253b27c15d37ef0462d0a018c1a87" title="get JumpTos wich are either valide or not valide" alt="" coords="461,152,660,192"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="377,107,414,119,491,145,489,150,413,124,375,112"/>
-<area shape="poly" id="edge7_Node000007_Node000004" title=" " alt="" coords="371,231,413,217,485,194,486,199,414,223,373,236"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="93,138,138,98,169,75,201,55,216,48,218,53,204,60,172,79,142,102,96,142"/>
+<area shape="rect" id="Node000003" href="$class_p_b_1_1_logic_1_1_director.html#a8a59a218eb687ab7d4da0cb6a12f9e3f" title="get only invalid answers of the set of all answers of the current node" alt="" coords="203,133,413,173"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="155,151,189,151,189,156,155,156"/>
+<area shape="rect" id="Node000007" href="$class_p_b_1_1_logic_1_1_director.html#ab1987a1720d4fa5afee99a920b53bcb8" title="get the text of the currend node, comands are replaced by their output" alt="" coords="215,198,401,223"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="129,163,203,183,241,192,240,197,202,188,128,169"/>
+<area shape="rect" id="Node000008" href="$class_p_b_1_1_logic_1_1_director.html#a3f31fa7fb6fc81a810a6bbe5f0073604" title="returns A texture set by a script" alt="" coords="205,247,411,273"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="98,164,143,199,204,234,223,241,222,246,202,238,140,203,94,168"/>
+<area shape="rect" id="Node000009" href="$class_p_b_1_1_logic_1_1_director.html#a048e8f454fcd9bcea4fbe732eb4269ec" title="get only valid answers of the set of all answers of the current node" alt="" coords="209,69,407,109"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="126,138,222,110,224,116,127,143"/>
+<area shape="rect" id="Node000004" href="$class_p_b_1_1_logic_1_1_director.html#ad27253b27c15d37ef0462d0a018c1a87" title="get JumpTos wich are either valide or not valide" alt="" coords="461,73,660,113"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="392,131,462,114,463,119,394,136"/>
+<area shape="rect" id="Node000005" href="$class_p_b_1_1_logic_1_1_text_eval.html#a8747eada77388cd91079354feb66f2e5" title="Find and replace the Pattern." alt="" coords="465,141,657,166"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="414,151,451,151,451,156,414,156"/>
+<area shape="rect" id="Node000006" href="$class_p_b_1_1_logic_1_1_text_eval.html#a454bd520091b6cd6934608b55ba5bb3e" title="Evaluate the matched regular expression." alt="" coords="708,141,876,166"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="657,151,695,151,695,156,657,156"/>
+<area shape="poly" id="edge7_Node000007_Node000005" title=" " alt="" coords="364,195,490,166,492,172,365,201"/>
+<area shape="poly" id="edge10_Node000009_Node000004" title=" " alt="" coords="407,88,448,89,448,94,407,94"/>
+<area shape="poly" id="edge11_Node000009_Node000005" title=" " alt="" coords="388,107,497,135,496,140,387,112"/>
 </map>

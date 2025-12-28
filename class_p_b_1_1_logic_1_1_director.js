@@ -14,6 +14,7 @@ var class_p_b_1_1_logic_1_1_director =
     [ "_book", "class_p_b_1_1_logic_1_1_director.html#ad90255c6eeec693a4a12b8fa013c490b", null ],
     [ "Book", "class_p_b_1_1_logic_1_1_director.html#a0a34ca040bc5f38f5c396b0e587ec20d", null ],
     [ "CurrentNode", "class_p_b_1_1_logic_1_1_director.html#a8a3d54a464807c7aa12578f127da13a8", null ],
+    [ "EvalText", "class_p_b_1_1_logic_1_1_director.html#ae6909f246e7efbcec879b917d785590d", null ],
     [ "Events", "class_p_b_1_1_logic_1_1_director.html#aea35cd3fcbab52102db96c8efa20b304", null ],
     [ "Interpreter", "class_p_b_1_1_logic_1_1_director.html#aacf04c9e57697ca8f8039671d0f529e0", null ]
 ];
