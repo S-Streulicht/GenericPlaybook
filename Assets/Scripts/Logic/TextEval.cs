@@ -13,7 +13,8 @@ namespace PB.Logic
   {
     //private const string Pattern = "{{(\\w+?)}}"; /**< Regular expression wich finds "{{OneWord and a Character}}" Example: "{{gg }}" */
     //private const string Pattern = "{{(\\w+\\(\\w+\\))}}"; /**< Regular expression which finds "{{OneWord(OneOtherword)}}" Example "GET(Something)"*/
-    private const string Pattern = "{{(\\w+\\(.+\\))}}"; /**< Regular expression which finds "{{OneWord(Anything with at least one cchar)}}" Example "GET(Something, Some other thing)"*/
+    //private const string Pattern = "{{(\\w+\\(.+\\))}}"; /**< Regular expression which finds "{{OneWord(Anything with at least one cchar)}}" Example "GET(Something, Some other thing)"*/
+    private const string Pattern = "{{w*([^}]*)}}"; /**< Regular expression which finds things inside {{}} */
     //private const string Pattern = "{{().+)}}"; /**< Regular expression which finds "{{Anything with any length above one caracter}} Example "{{ {{Bla}} }}" is found as one reference */
     private CommandInterpreter Interpreter; /**< contains the Comantlineinterpreter get filled at Start*/
 

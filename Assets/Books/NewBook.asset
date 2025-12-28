@@ -28,8 +28,8 @@ MonoBehaviour:
   jumpTos: []
   area:
     serializedVersion: 2
-    x: 644
-    y: 14
+    x: 775
+    y: 0
     width: 200
     height: 100
 --- !u!114 &-5991664832945135628
@@ -45,28 +45,29 @@ MonoBehaviour:
   m_Name: 9b90753a-507c-47a7-85ae-5713702b9324
   m_EditorClassIdentifier: 
   textNumber: 1
-  text: Lorem ipsum dolor sit <b>amet</b> {{GET() -> ExtraUIGameState}}, consetetur
-    sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
-    magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-    et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
-    dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-    diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
-    diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-    clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+  text: 'Lorem ipsum dolor sit <b>amet</b> <br>Game state is: ({{GET() -> ExtraUIGameState}}),<br><b>{{GET()
+    -> AttrMoney}}</b><br>consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero
+    eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no
+    sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+    consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+    et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+    duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+    Lorem ipsum dolor sit amet.'
   comands:
   - SET(Start) -> ExtraUIPicture
   jumpTos:
-  - text: jump to the 4
+  - text: jump to the 4; add 10
     referenceId: 4cc6da8b-cf2f-433b-a4a4-945fee9b7453
     conditions: []
     comands:
     - UNSET() -> ExtraUIPicture
-  - text: jumpto the 5
+  - text: jumpto the 5 (add smile)
     referenceId: 4fa9cf56-8282-4d92-a47f-34ed7620cac9
     conditions: []
     comands:
     - UNSET() -> ExtraUIPicture
-  - text: jumpto the 7
+  - text: jumpto the 7 if AttrMony > 111 (current {{GET() -> AttrMoney}})
     referenceId: 8fdd8638-294c-47f3-81ac-ed927e7ffcd4
     conditions:
     - IS(>, 111) -> AttrMoney
@@ -74,8 +75,8 @@ MonoBehaviour:
     - UNSET() -> ExtraUIPicture
   area:
     serializedVersion: 2
-    x: 34
-    y: 9
+    x: -12
+    y: 110
     width: 200
     height: 100
 --- !u!114 &-1832395943682213312
@@ -108,19 +109,19 @@ MonoBehaviour:
     referenceId: 4fa9cf56-8282-4d92-a47f-34ed7620cac9
     conditions: []
     comands: []
-  - text: Get to 7
+  - text: jumpto the 7 if AttrMony > 111 (current {{GET() -> AttrMoney}})
     referenceId: 8fdd8638-294c-47f3-81ac-ed927e7ffcd4
     conditions:
     - IS(>, 111) -> AttrMoney
     comands: []
-  - text: Get To 4
+  - text: Get To 4 add 10
     referenceId: 4cc6da8b-cf2f-433b-a4a4-945fee9b7453
     conditions: []
     comands: []
   area:
     serializedVersion: 2
-    x: 576
-    y: 149
+    x: 528
+    y: 183
     width: 200
     height: 100
 --- !u!114 &11400000
@@ -162,8 +163,8 @@ MonoBehaviour:
   jumpTos: []
   area:
     serializedVersion: 2
-    x: 336
-    y: 228
+    x: 768
+    y: 313
     width: 200
     height: 100
 --- !u!114 &1404967823078539787
@@ -189,8 +190,8 @@ MonoBehaviour:
   jumpTos: []
   area:
     serializedVersion: 2
-    x: 330
-    y: 112
+    x: 772
+    y: 116
     width: 200
     height: 100
 --- !u!114 &5419234578610706401
@@ -215,11 +216,11 @@ MonoBehaviour:
   - CHANGE(ADD, 4) -> AttrMoney
   - CHANGE(ADD, 6) -> AttrMoney
   jumpTos:
-  - text: getting to 3
+  - text: getting to 3 (Loose)
     referenceId: 67963ae1-cc41-4625-b378-003d9e54157b
     conditions: []
     comands: []
-  - text: getting to 6
+  - text: getting to 6 subtracting (2)
     referenceId: 12434914-7aa0-45ce-82ef-0dc64fcf5d78
     conditions: []
     comands:

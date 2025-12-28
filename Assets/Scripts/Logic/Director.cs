@@ -22,13 +22,14 @@ namespace PB.Logic
 
     private ITextNodeInterface CurrentNode; /**< contains the currend node of a play book*/
     private CommandInterpreter Interpreter; /**< contains the Comantlineinterpreter gest filled at Start*/
-
+    private TextEval           EvalText;    /**< Evakuate comands within a text */
     /**
     * @brief   setup the instance get
     * @details Start is called before the first frame update
     *          sets the event for the correct handling of starting and ending a book
     *          sets the internal book variable to use only the interface
     *          Get the commandInterpreter instance
+    *          Get the instace to the Text evaluation class
     *          test if a Book is loaded
     *          initialise the CurrnetNode to the root of the loaded node
     */
@@ -38,7 +39,8 @@ namespace PB.Logic
       Events.Subscribe<ProcessingFinishedEvent>(e => EndBook(e.succsess));
 
       Interpreter = GetComponent<CommandInterpreter>();
-      
+      EvalText = GetComponent<TextEval>();
+
       _book = Book as IBookInterface;
 
       if (null == Book)
@@ -85,19 +87,19 @@ namespace PB.Logic
 
     #region Normal play text
     /**
-    * @brief  get the text of the currend node
+    * @brief  get the text of the currend node, comands are replaced by their output
     * @return string of the current text
     */
     public string GetText()
     {
-      return CurrentNode.Text;
+      return EvalText.Replace(CurrentNode.Text);
     }
 
     /**
     * @brief   get only valid answers of the set of all answers of the current node
     * @details exctract all jumpToos which are valide
     *          get the text of all the jumpTos
-    *          return the text
+    *          return the text including the initerpretatin of including commands
     * @return  returns a list of answers. Remak the order matters in the feedback to choose the answwers
     */
     public List<String> GetValideAnswers()
@@ -106,7 +108,7 @@ namespace PB.Logic
       List<JumpTo> jumpTos = GetJumpsBasedOn(true);
       foreach (JumpTo jump in jumpTos)
       {
-        ret.Add(jump.text);
+        ret.Add(EvalText.Replace(jump.text));
       }
       return ret;
     }
@@ -115,7 +117,7 @@ namespace PB.Logic
     * @brief   get only invalid answers of the set of all answers of the current node
     * @details exctract all jumpToos which are invalide
     *          get the text of all the jumpTos
-    *          return the text
+    *          return the text including the initerpretatin of including commands
     * @return  returns a list of answers. Remak invalide answers can't be choosen
     */
     public List<String> GetInValideAnswers()
@@ -124,7 +126,7 @@ namespace PB.Logic
       List<JumpTo> jumpTos = GetJumpsBasedOn(false);
       foreach (JumpTo jump in jumpTos)
       {
-        ret.Add(jump.text);
+        ret.Add(EvalText.Replace(jump.text));
       }
       return ret;
     }

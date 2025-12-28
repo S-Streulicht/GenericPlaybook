@@ -125,7 +125,12 @@ namespace PB.Logic
       {
         if (ExtraUIPair.ContainsKey(classToCall))
         {
-          var answer = ExtraUIPair[classToCall].GetInfo<TType>();
+          var answer = ExtraUIPair[classToCall].GetInfo<string>();
+          return (TType)System.Convert.ChangeType(answer, typeof(TType));
+        }
+        if (AttributPair.ContainsKey(classToCall))
+        {
+          var answer = AttributPair[classToCall].GetInfo<int>();
           return (TType)System.Convert.ChangeType(answer, typeof(TType));
         }
       }
